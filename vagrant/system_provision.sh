@@ -18,4 +18,5 @@ apt-get install -y postgresql postgresql-contrib
 # create user
 sudo -u postgres createuser pecare
 sudo -u postgres createdb pecare -O pecare
-#systemctl stop postgresql
+
+systemctl stop postgresql
