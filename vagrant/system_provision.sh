@@ -13,7 +13,7 @@ curl -sL https://deb.nodesource.com/setup_9.x | bash -
 apt-get install -y nodejs
 
 # postgreSQL
-apt-get install -y postgresql postgresql-contrib
+apt-get install -y postgresql postgresql-contrib postgresql-server-dev-all
 
 # create user
 sudo -u postgres createuser pecare
