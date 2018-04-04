@@ -50,6 +50,7 @@ group :development do
 end
 
 group :test do
+  gem 'rails-controller-testing', '>= 1.0.1'
   gem 'minitest-reporters', '>= 1.1.14'
 end
 
