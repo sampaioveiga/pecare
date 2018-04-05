@@ -15,8 +15,14 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container-fluid">
-      <%= yield %>
-      <%= render 'layouts/footer' %>
+      <div class="_row">
+      <div class="_col-md-12">
+        <%= render 'layouts/flash' %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+        <%= debug(params) if Rails.env.development? %>
+        </div>
+      </div>
     </div>
   </body>
 </html>

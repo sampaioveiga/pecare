@@ -19,7 +19,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-ubuntu-xenial-16.04-cloudimg-console.log
+/ubuntu-xenial-16.04-cloudimg-console.log
 
 /node_modules
 /yarn-error.log

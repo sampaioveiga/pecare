@@ -1,18 +1,39 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* Variables */
-$logo-color: #eaeaea;
+/* Variables, mixims */
+$logo-color: gray;
+$light-gray: lightgray;
+$darkgray: darkgrey;
+$darkergray: dimgray;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
 
 body {
-  padding-top: 50px;
+  padding-top: 55px;
+  background-color: $darkgray;
+}
+
+/* secundary navbar with affix */
+.affix {
+  top: 55px;
+  width: 100%;
+  z-index: 9999 !important;
+}
+
+.affix + .container-fluid {
+  padding-top: 55px;
 }
 
 /* Header */
 
 #logo {
   color: $logo-color;
-  font-size: 1.6em;
+  font-size: 1.9em;
   font-weight: bold;
   &:hover {
     color: #fff;
@@ -29,8 +50,18 @@ body {
 /* Footer */
 
 footer {
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid $darkergray;
   small {
-    float: left;
+    float: right;
   }
+}
+
+/* Debug div */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
 }
