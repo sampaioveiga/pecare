@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@patient) do |f| %>
+      <%= render 'shared/error_messages', obj: f.object %>
+
+      <%= f.label :name, t('.name') %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :date_birth, t('.dob') %>
+      <%= f.date_field :date_birth, class: 'form-control' %>
+
+      <%= f.label :rnu, t('.rnu') %>
+      <%= f.number_field :rnu, class: 'form-control' %>
+
+      <%= f.label :npsonho, t('.npsonho') %>
+      <%= f.number_field :npsonho, class: 'form-control' %>
+
+      <%= f.submit t('.submit'), class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

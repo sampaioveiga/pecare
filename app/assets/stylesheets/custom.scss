@@ -4,8 +4,9 @@
 /* Variables, mixims */
 $logo-color: gray;
 $light-gray: lightgray;
-$darkgray: darkgrey;
-$darkergray: dimgray;
+$dark-gray: darkgrey;
+$darker-gray: dimgray;
+$error-color: red;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -15,7 +16,7 @@ $darkergray: dimgray;
 
 body {
   padding-top: 55px;
-  background-color: $darkgray;
+  background-color: $light-gray;
 }
 
 /* secundary navbar with affix */
@@ -36,7 +37,7 @@ body {
   font-size: 1.9em;
   font-weight: bold;
   &:hover {
-    color: #fff;
+    color: $light-gray;
     text-decoration: none;
   }
 }
@@ -47,10 +48,42 @@ body {
   margin-top: -7px;
 }
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid $dark-gray;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+form {
+  margin-bottom: 1em;
+}
+
+#error_explanation {
+  color: $error-color;
+  ul {
+    color: $error-color;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
 /* Footer */
 
 footer {
-  border-top: 1px solid $darkergray;
+  border-top: 1px solid $dark-gray;
   small {
     float: right;
   }

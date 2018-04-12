@@ -1,4 +1,17 @@
 pt:
-  hello_world: "Olá mundo"
   help: "Ajuda"
   log-in: "Entrar"
+  form-cannot-be-saved: "O formulário não pode ser submetido"
+
+  patients:
+    show:
+      age: "Idade"
+      dob: "Data de nascimento"
+      npsonho: "Processo"
+    new:
+      name: "Nome"
+      dob: "Data de nascimento"
+      rnu: "RNU"
+      npsonho: "Processo"
+      submit: "Submeter"
+      error: "erro"

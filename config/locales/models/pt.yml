@@ -1,0 +1,6 @@
+pt:
+  attributes:
+    name: "Nome"
+    date_birth: "Data de nascimento"
+    rnu: "RNU"
+    npsonho: "Processo"
