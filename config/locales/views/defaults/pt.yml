@@ -2,16 +2,16 @@ pt:
   help: "Ajuda"
   log-in: "Entrar"
   form-cannot-be-saved: "O formulário não pode ser submetido"
+  new-patient-created-flash: "A nova ficha foi criada"
 
   patients:
     show:
       age: "Idade"
       dob: "Data de nascimento"
       npsonho: "Processo"
-    new:
+    form:
       name: "Nome"
       dob: "Data de nascimento"
       rnu: "RNU"
       npsonho: "Processo"
       submit: "Submeter"
-      error: "erro"

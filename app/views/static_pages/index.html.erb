@@ -3,6 +3,7 @@
 <h1>
   Content
 </h1>
-<h2>
-  <%= link_to 'Patient 1', patient_path(1) %>
+<h2>  
+  <%= link_to 'New patient', new_patient_path() %><br />
+  <%= link_to 'Patient 1', patient_path(1) if Patient.count > 0 %>
 </h2>
