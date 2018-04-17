@@ -1,0 +1,13 @@
+<% provide(:title, t('.patients-index')) %>
+
+<h1><%= t('.patients-index') %></h1>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= will_paginate %>
+    <ul class="patients">
+      <%= render @patients %>
+    </ul>
+    <%= will_paginate %>
+  </div>
+</div>

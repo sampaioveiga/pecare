@@ -9,6 +9,10 @@ pt:
       age: "Idade"
       dob: "Data de nascimento"
       npsonho: "Processo"
+    index:
+      patients-index: "Lista de Utentes"
+    new:
+      patient-new: "Adicionar utente"
     form:
       name: "Nome"
       dob: "Data de nascimento"

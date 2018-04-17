@@ -48,6 +48,18 @@ body {
   margin-top: -7px;
 }
 
+/* patient index */
+
+.patients {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $dark-gray;
+  }
+}
+
 /* forms */
 
 input, textarea, select, .uneditable-input {

@@ -4,6 +4,10 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
   end
 
+  def index
+    @patients = Patient.order(:name).paginate(page: params[:page])
+  end
+
   def new
     @patient = Patient.new
   end
