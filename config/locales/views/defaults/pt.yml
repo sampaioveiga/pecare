@@ -9,6 +9,9 @@ pt:
       age: "Idade"
       dob: "Data de nascimento"
       npsonho: "Processo"
+    search-patients:
+      name-contains: "Procurar por nome"
+      search: "Procurar"
     index:
       patients-index: "Lista de Utentes"
     new:

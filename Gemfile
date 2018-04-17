@@ -22,6 +22,7 @@ gem 'jquery-rails', '~> 4.3.1'
 gem 'will_paginate', '~> 3.1.6'
 gem 'bootstrap-will_paginate', '~> 1.0.0'
 gem 'will-paginate-i18n', '~> 0.1.15'
+gem 'ransack', '~> 1.8.8'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

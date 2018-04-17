@@ -5,7 +5,8 @@ class PatientsController < ApplicationController
   end
 
   def index
-    @patients = Patient.order(:name).paginate(page: params[:page])
+    @q = Patient.ransack(params[:q])
+    @patients = @q.result(distinct: true).order(:name).paginate(page: params[:page])
   end
 
   def new
