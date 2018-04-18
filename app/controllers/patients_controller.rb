@@ -1,7 +1,21 @@
 class PatientsController < ApplicationController
+  before_action :set_patient, only: [ :show, :edit, :update ]
 
   def show
-    @patient = Patient.find(params[:id])
+  end
+
+  def npsonho
+    @patient = Patient.find_by(npsonho: params[:processo])
+    if @patient === nil
+      @patient = Patient.new(
+        name: params[:nome],
+        rnu: params[:rnu],
+        npsonho: params[:processo]
+      )
+      render(:new)
+    else
+      render(:show)
+    end
   end
 
   def index
@@ -17,9 +31,21 @@ class PatientsController < ApplicationController
     @patient = Patient.new(patient_params)
     if @patient.save
       flash[:success] = "#{ t('new-patient-created-flash') }."
-      redirect_to @patient
+      redirect_to(@patient)
     else
-      render :new
+      render(:new)
+    end 
+  end
+
+  def edit
+  end
+
+  def update
+    if @patient.update_attributes(patient_params)
+      flash[:success] = "#{ t('edit-patient-success-flash') }"
+      redirect_to(@patient)
+    else
+      render(:edit)
     end
   end
 
@@ -32,6 +58,10 @@ class PatientsController < ApplicationController
         :rnu,
         :npsonho
       )
+    end
+
+    def set_patient
+      @patient = Patient.find(params[:id])
     end
 
 end

@@ -1,26 +1,29 @@
 <% provide(:title, @patient.name) %>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <span class="navbar-right">
-      <p class="navbar-text text-info">
-        <strong><%= @patient.name %></strong>
-      </p>
-      <p class="navbar-text text-info">
-        <small><%=t '.dob' %> </small><%=l @patient.date_birth %>
-      </p>
-      <p class="navbar-text text-info">
-        <small><%=t '.age' %> </small><%= distance_of_time_in_words_to_now(@patient.date_birth) %>
-      </p>
-      <p class="navbar-text text-info">
-        <small>RNU: </small>
-        <%= @patient.rnu %>
-      </p>
-      <p class="navbar-text text-info">
-        <small><%=t '.npsonho' %> </small>
-        <%= @patient.npsonho %>
-      </p>
-    </span>
-  </div>
-</nav>
 
-<%= link_to 'New Patient', new_patient_path() %>
+<!-- aside column -->
+<aside class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= @patient.name %></h4>
+    </div>
+    <div class="panel-body">
+      <dl>
+        <dt><%=t '.dob' %></dt><dd><%=l @patient.date_birth %></dd>
+        <dt><%=t '.age' %></dt><dd><%= distance_of_time_in_words_to_now(@patient.date_birth) %></dd>
+        <dt>RNU:</dt><dd><%= @patient.rnu %></dd>
+        <dt><%=t '.npsonho' %></dt><dd><%= @patient.npsonho %></dd>
+      </dl>
+      <%= link_to t('.edit-patient-link'), edit_patient_path(@patient), class: 'btn btn-default btn-block' %>
+      <%= link_to t('.patient-index'), patients_path(), class: 'btn btn-default btn-block' %>
+    </div>
+  </div>
+</aside>
+
+<!-- main column  -->
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <p>teste</p>
+    </div>
+  </div>
+</div>

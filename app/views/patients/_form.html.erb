@@ -13,5 +13,9 @@
   <%= f.label :npsonho, t('.npsonho') %>
   <%= f.number_field :npsonho, class: 'form-control' %>
 
-  <%= f.submit t('.submit'), class: 'btn btn-primary' %>
+  <div class="col-md-2">
+    <%= f.submit t('.submit'), class: 'btn btn-primary' %>
+  </div>
+  
+  <%= link_to t('.back'), :back, class: 'btn btn-default' %>
 <% end %>

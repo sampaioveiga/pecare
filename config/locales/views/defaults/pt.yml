@@ -3,12 +3,15 @@ pt:
   log-in: "Entrar"
   form-cannot-be-saved: "O formulário não pode ser submetido"
   new-patient-created-flash: "A nova ficha foi criada"
+  edit-patient-success-flash: "Ficha atualizada"
 
   patients:
     show:
       age: "Idade"
       dob: "Data de nascimento"
       npsonho: "Processo"
+      edit-patient-link: "Editar ficha"
+      patient-index: "Procurar fichas"
     search-patients:
       name-contains: "Procurar por nome"
       search: "Procurar"
@@ -16,9 +19,12 @@ pt:
       patients-index: "Lista de Utentes"
     new:
       patient-new: "Adicionar utente"
+    edit:
+      patient-edit: "Editar ficha"
     form:
       name: "Nome"
       dob: "Data de nascimento"
       rnu: "RNU"
       npsonho: "Processo"
       submit: "Submeter"
+      back: "Cancelar"
