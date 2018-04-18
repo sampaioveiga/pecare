@@ -19,15 +19,11 @@ body {
   background-color: $light-gray;
 }
 
-/* secundary navbar with affix */
+/* aside of show patient */
+
 .affix {
   top: 55px;
-  width: 100%;
   z-index: 9999 !important;
-}
-
-.affix + .container-fluid {
-  padding-top: 55px;
 }
 
 /* Header */
