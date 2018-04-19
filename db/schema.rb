@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410082632) do
+ActiveRecord::Schema.define(version: 20180419154934) do
 
   create_table "patients", force: :cascade do |t|
     t.string "name", null: false
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 20180410082632) do
     t.index ["name"], name: "index_patients_on_name"
     t.index ["npsonho"], name: "index_patients_on_npsonho", unique: true
     t.index ["rnu"], name: "index_patients_on_rnu", unique: true
+    t.index [nil, nil], name: "index_patients_on_patient_id_and_date"
+  end
+
+  create_table "pulmonary_appointments", force: :cascade do |t|
+    t.date "date", null: false
+    t.integer "weight"
+    t.integer "blood_pressure_1"
+    t.integer "blood_pressure_2"
+    t.integer "pulse"
+    t.integer "oxygen"
+    t.integer "pef"
+    t.boolean "inhaler", default: false
+    t.text "medication"
+    t.integer "patient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_pulmonary_appointments_on_patient_id"
   end
 
 end

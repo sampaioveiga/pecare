@@ -1,4 +1,6 @@
 class Patient < ApplicationRecord
+  has_many :pulmonary_appointments
+  
   validates :name,
     presence: true
   validates :date_birth,
