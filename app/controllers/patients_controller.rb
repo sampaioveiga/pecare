@@ -31,7 +31,7 @@ class PatientsController < ApplicationController
   def create
     @patient = Patient.new(patient_params)
     if @patient.save
-      flash[:success] = "#{ t('new-patient-created-flash') }."
+      flash[:success] = "#{ t('new-form-saved-flash') }."
       redirect_to(@patient)
     else
       render(:new)
@@ -43,7 +43,7 @@ class PatientsController < ApplicationController
 
   def update
     if @patient.update_attributes(patient_params)
-      flash[:success] = "#{ t('edit-patient-success-flash') }"
+      flash[:success] = "#{ t('edit-form-saved-flash') }"
       redirect_to(@patient)
     else
       render(:edit)
@@ -55,7 +55,7 @@ class PatientsController < ApplicationController
     def patient_params
       params.require(:patient).permit(
         :name,
-        :date_birth,
+        :date_of_birth,
         :rnu,
         :npsonho
       )

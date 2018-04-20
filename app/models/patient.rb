@@ -3,7 +3,7 @@ class Patient < ApplicationRecord
   
   validates :name,
     presence: true
-  validates :date_birth,
+  validates :date_of_birth,
     presence: true
   validates :rnu,
     presence: true,

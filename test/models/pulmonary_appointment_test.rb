@@ -6,8 +6,7 @@ class PulmonaryAppointmentTest < ActiveSupport::TestCase
     @pulmonary_appointment = @patient.pulmonary_appointments.build(
       date: 25/12/2018,
       weight: 10,
-      blood_pressure_1: 20,
-      blood_pressure_2: 30,
+      blood_pressure: "120/80",
       pulse: 40,
       oxygen: 50,
       pef: 60,

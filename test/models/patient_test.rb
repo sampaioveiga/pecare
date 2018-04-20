@@ -3,7 +3,7 @@ require 'test_helper'
 class PatientTest < ActiveSupport::TestCase
   
   def setup
-    @patient = Patient.new(name: 'Patient Demo', date_birth: '25-12-1950', rnu: 123456789, npsonho: 123456)
+    @patient = Patient.new(name: 'Patient Demo', date_of_birth: '25-12-1950', rnu: 123456789, npsonho: 123456)
   end
 
   test "should be valid" do
@@ -16,7 +16,7 @@ class PatientTest < ActiveSupport::TestCase
   end
 
   test "date of birth should be present" do
-    @patient.date_birth = '  '
+    @patient.date_of_birth = '  '
     assert_not @patient.valid?
   end
 

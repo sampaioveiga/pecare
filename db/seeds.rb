@@ -4,13 +4,13 @@
 # create 100 patients
 100.times do |p|
   name = Faker::Name.name
-  date_birth = Faker::Date.birthday(40, 80)
+  date_of_birth = Faker::Date.birthday(40, 80)
   rnu = Faker::Number.number(9)
   npsonho = Faker::Number.number(6)
 
   Patient.create!(
     name: name,
-    date_birth: date_birth,
+    date_of_birth: date_of_birth,
     rnu: rnu,
     npsonho: npsonho
   )
@@ -21,8 +21,7 @@ patients = Patient.order(:created_at).take(80)
 2.times do
   date = Faker::Date.between(2.years.ago, Date.today)
   weight = Faker::Number.between(50, 100)
-  blood_pressure_1 = Faker::Number.between(100, 120)
-  blood_pressure_2 = Faker::Number.between(70, 80)
+  blood_pressure = Faker::Number.decimal(2, 2)
   pulse = Faker::Number.between(50, 80)
   oxygen = Faker::Number.between(90, 99)
   pef = Faker::Number.number(2)
@@ -32,8 +31,7 @@ patients = Patient.order(:created_at).take(80)
   patients.each { |patient| patient.pulmonary_appointments.create!(
     date: date,
     weight: weight,
-    blood_pressure_1: blood_pressure_1,
-    blood_pressure_2: blood_pressure_2,
+    blood_pressure: blood_pressure,
     pulse: pulse,
     oxygen: oxygen,
     pef: pef,

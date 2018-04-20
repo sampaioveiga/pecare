@@ -12,7 +12,7 @@ class PatientsEditTest < ActionDispatch::IntegrationTest
     patch patient_path(@patient), params: {
       patient: {
         name: "",
-        date_birth: "",
+        date_of_birth: "",
         rnu: 1234567,
         npsonho: 1234
       }
@@ -24,13 +24,13 @@ class PatientsEditTest < ActionDispatch::IntegrationTest
     get edit_patient_path(@patient)
     assert_template 'patients/edit'
     name = "Another name"
-    date_birth = "25/12/1950"
+    date_of_birth = "25/12/1950"
     rnu = 101202303
     npsonho = 102030
     patch patient_path(@patient), params: {
       patient: {
         name: name,
-        date_birth: date_birth,
+        date_of_birth: date_birth,
         rnu: rnu,
         npsonho: npsonho
       }

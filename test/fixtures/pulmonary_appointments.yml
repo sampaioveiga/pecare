@@ -3,8 +3,7 @@
 one:
   date: 2018-04-01
   weight: 1
-  blood_pressure_1: 1
-  blood_pressure_2: 1
+  blood_pressure: 1
   pulse: 1
   oxygen: 1
   pef: 1
@@ -14,8 +13,7 @@ one:
 two:
   date: 2018-04-19
   weight: 2
-  blood_pressure_1: 2
-  blood_pressure_2: 2
+  blood_pressure: 2
   pulse: 2
   oxygen: 2
   pef: 2
@@ -25,8 +23,7 @@ two:
 three:
   date: 2018-04-10
   weight: 3
-  blood_pressure_1: 3
-  blood_pressure_2: 3
+  blood_pressure: 3
   pulse: 3
   oxygen: 3
   pef: 3

@@ -8,7 +8,7 @@ class PatientsCreationTest < ActionDispatch::IntegrationTest
       post patients_path, params: {
         patient: {
             name: "",
-            date_birth: "",
+            date_of_birth: "",
             rnu: "",
             npsonho: ""
         }
@@ -23,7 +23,7 @@ class PatientsCreationTest < ActionDispatch::IntegrationTest
       post patients_path, params: {
         patient: { name:
           "Patient name",
-          date_birth: "25/12/1950",
+          date_of_birth: "25/12/1950",
           rnu: 123456789,
           npsonho: 123456
         } 

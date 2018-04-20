@@ -1,7 +1,7 @@
 <% if obj.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
-      <%= t('form-cannot-be-saved') %>.
+      <%= t('form-cannot-be-saved-flash') %>.
     </div>
     <ul>
     <% obj.errors.full_messages.each do |msg| %>

@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180419154934) do
 
   create_table "patients", force: :cascade do |t|
     t.string "name", null: false
-    t.date "date_birth", null: false
+    t.date "date_of_birth", null: false
     t.integer "rnu", null: false
     t.integer "npsonho", null: false
     t.datetime "created_at", null: false
@@ -28,8 +28,7 @@ ActiveRecord::Schema.define(version: 20180419154934) do
   create_table "pulmonary_appointments", force: :cascade do |t|
     t.date "date", null: false
     t.integer "weight"
-    t.integer "blood_pressure_1"
-    t.integer "blood_pressure_2"
+    t.string "blood_pressure"
     t.integer "pulse"
     t.integer "oxygen"
     t.integer "pef"

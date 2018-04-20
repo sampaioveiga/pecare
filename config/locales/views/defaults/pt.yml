@@ -1,10 +1,9 @@
 pt:
   help: "Ajuda"
   log-in: "Entrar"
-  form-cannot-be-saved: "O formulário não pode ser submetido"
-  new-patient-created-flash: "A nova ficha foi criada"
-  edit-patient-success-flash: "Ficha atualizada"
-  new-patient-pulmonary_appointment-created-flash: "Nova ficha de consulta de pneumologia criada"
+  form-cannot-be-saved-flash: "A ficha não pode ser submetida."
+  new-form-saved-flash: "A nova ficha foi criada."
+  edit-form-saved-flash: "A ficha foi atualizada."
   ok: "Sim"
   submit: "Submeter"
   back: "Cancelar"
@@ -32,7 +31,6 @@ pt:
   pulmonary_appointments:
     new:
       new-pulmonary-appointment: "Nova consulta de pneumologia"
-      date: "Data"
     pulmonary_appointment:
       weight: "Peso"
       blood-pressure: "TA"
@@ -41,7 +39,6 @@ pt:
       pef: "PEF"
       inhaler: "Inalador"
       medication: "Outra Medicação"
-      date: "Data_"
     form:
       appointment-date: "Data da consulta"
       weight: "Peso"
@@ -51,7 +48,6 @@ pt:
       pef: "PEF"
       inhaler: "Inalador"
       medication: "Outra Medicação"
-      date: "Dta"
   shared:
     patient_data:
       dob: "Data de nascimento"

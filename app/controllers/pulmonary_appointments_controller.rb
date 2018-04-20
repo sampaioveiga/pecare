@@ -11,7 +11,7 @@ class PulmonaryAppointmentsController < ApplicationController
     @patient = Patient.find(params[:patient_id])
     @pulmonary_appointment = @patient.pulmonary_appointments.build(pulmonary_appointment_params)
     if @pulmonary_appointment.save
-      flash[:success] = t('new-patient-pulmonary_appointment-created-flash')
+      flash[:success] = t('new-form-saved-flash')
       redirect_to @patient
     else
       render :new
@@ -24,8 +24,7 @@ class PulmonaryAppointmentsController < ApplicationController
       params.require(:pulmonary_appointment).permit(
         :date,
         :weight,
-        :blood_pressure_1,
-        :blood_pressure_2,
+        :blood_pressure,
         :pulse,
         :oxygen,
         :pef,
