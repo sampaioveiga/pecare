@@ -15,3 +15,29 @@
     npsonho: npsonho
   )
 end
+
+# create pulmonary appointments
+patients = Patient.order(:created_at).take(80)
+2.times do
+  date = Faker::Date.between(2.years.ago, Date.today)
+  weight = Faker::Number.between(50, 100)
+  blood_pressure_1 = Faker::Number.between(100, 120)
+  blood_pressure_2 = Faker::Number.between(70, 80)
+  pulse = Faker::Number.between(50, 80)
+  oxygen = Faker::Number.between(90, 99)
+  pef = Faker::Number.number(2)
+  inhaler = Faker::Boolean.boolean
+  medication = Faker::ChuckNorris.fact
+
+  patients.each { |patient| patient.pulmonary_appointments.create!(
+    date: date,
+    weight: weight,
+    blood_pressure_1: blood_pressure_1,
+    blood_pressure_2: blood_pressure_2,
+    pulse: pulse,
+    oxygen: oxygen,
+    pef: pef,
+    inhaler: inhaler,
+    medication: medication
+  )}
+end

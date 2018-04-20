@@ -7,12 +7,8 @@
       <h4><%= @patient.name %></h4>
     </div>
     <div class="panel-body">
-      <dl>
-        <dt><%=t '.dob' %></dt><dd><%=l @patient.date_birth %></dd>
-        <dt><%=t '.age' %></dt><dd><%= distance_of_time_in_words_to_now(@patient.date_birth) %></dd>
-        <dt>RNU:</dt><dd><%= @patient.rnu %></dd>
-        <dt><%=t '.npsonho' %></dt><dd><%= @patient.npsonho %></dd>
-      </dl>
+      <%= render 'shared/patient_data' %>
+      <%= link_to t('.new-patient-pulmonary-appointment'), new_patient_pulmonary_appointment_path(@patient), class: 'btn btn-primary btn-block'%>
       <%= link_to t('.edit-patient-link'), edit_patient_path(@patient), class: 'btn btn-default btn-block' %>
       <%= link_to t('.patient-index'), patients_path(), class: 'btn btn-default btn-block' %>
     </div>
@@ -20,11 +16,17 @@
 </aside>
 
 <!-- main column  -->
-<div class="col-md-9">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <p>teste</p>
-      <p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p><p>teste</p>
+<% if @patient.pulmonary_appointments.any? %>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><%= t(".pulmonary-appointments") %> <span class="badge"><%= @patient.pulmonary_appointments.count %></span></h4>
+      </div>
+      <div class="panel-body">
+        <div class="panel-group" id="pulmonary_appointments_accordion" role="tablist" aria-multiselectable="true">
+          <%= render @pulmonary_appointments %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+<% end %>

@@ -4,14 +4,17 @@ pt:
   form-cannot-be-saved: "O formulário não pode ser submetido"
   new-patient-created-flash: "A nova ficha foi criada"
   edit-patient-success-flash: "Ficha atualizada"
+  new-patient-pulmonary_appointment-created-flash: "Nova ficha de consulta de pneumologia criada"
+  ok: "Sim"
+  submit: "Submeter"
+  back: "Cancelar"
 
   patients:
     show:
-      age: "Idade"
-      dob: "Data de nascimento"
-      npsonho: "Processo"
       edit-patient-link: "Editar ficha"
       patient-index: "Procurar fichas"
+      pulmonary-appointments: "Consultas pneumologia"
+      new-patient-pulmonary-appointment: "Nova consulta pneumologia"
     search-patients:
       name-contains: "Procurar por nome"
       search: "Procurar"
@@ -26,5 +29,31 @@ pt:
       dob: "Data de nascimento"
       rnu: "RNU"
       npsonho: "Processo"
-      submit: "Submeter"
-      back: "Cancelar"
+  pulmonary_appointments:
+    new:
+      new-pulmonary-appointment: "Nova consulta de pneumologia"
+      date: "Data"
+    pulmonary_appointment:
+      weight: "Peso"
+      blood-pressure: "TA"
+      pulse: "Pulso"
+      oxygen: "Oxigénio"
+      pef: "PEF"
+      inhaler: "Inalador"
+      medication: "Outra Medicação"
+      date: "Data_"
+    form:
+      appointment-date: "Data da consulta"
+      weight: "Peso"
+      blood-pressure: "TA"
+      pulse: "Pulso"
+      oxygen: "Oxigénio"
+      pef: "PEF"
+      inhaler: "Inalador"
+      medication: "Outra Medicação"
+      date: "Dta"
+  shared:
+    patient_data:
+      dob: "Data de nascimento"
+      age: "Idade"
+      npsonho: "Processo"

@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+  <div class="panel-heading" role="tab" id=<%= "heading_pulmonary_appointment_#{pulmonary_appointment.id}" %>>
+    <h4 class="panel-title">
+      <a role="button" data-toggle="collapse" data-parent="#pulmonary_appointments_accordion" href=<%= "#collapse_pulmonary_appointment_#{pulmonary_appointment.id}" %> aria-expanded="false" aria-controls="<%= "collapse_pulmonary_appointment_#{pulmonary_appointment.id}" %>">
+        <%= "#{pulmonary_appointment.date} - Enf. XYZ" %>
+      </a>
+    </h4>
+  </div>
+  <div id="<%= "collapse_pulmonary_appointment_#{pulmonary_appointment.id}" %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%= "heading_pulmonary_appointment_#{pulmonary_appointment.id}" %>">
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t('.weight') %></th>
+            <th><%= t('.blood-pressure') %></th>
+            <th><%= t('.pulse') %></th>
+            <th><%= t('.oxygen') %></th>
+            <th><%= t('.pef') %></th>
+            <th><%= t('.inhaler') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= pulmonary_appointment.weight %> Kg</td>
+            <td><%= pulmonary_appointment.blood_pressure_1 %> mmHg</td>
+            <td><%= pulmonary_appointment.pulse %> bpm</td>
+            <td><%= pulmonary_appointment.oxygen %> %</td>
+            <td><%= pulmonary_appointment.pef %> l/m</td>
+            <td><%= t('.ok') if pulmonary_appointment.inhaler? %></td>
+          </tr>
+          <tr>
+            <th><%= t('.medication') %></th>
+            <td colspan="5"><%= pulmonary_appointment.medication %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

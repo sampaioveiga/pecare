@@ -2,6 +2,7 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [ :show, :edit, :update ]
 
   def show
+    @pulmonary_appointments = @patient.pulmonary_appointments
   end
 
   def npsonho
