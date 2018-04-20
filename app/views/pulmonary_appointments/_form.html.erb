@@ -1,44 +1,53 @@
 <%= form_for([@patient, @pulmonary_appointment]) do |f| %>
   <%= render 'shared/error_messages', obj: f.object %>
 
-   <div class="col-md-6">
-    <p>Enfermeiro</p>
-    <p>Enf. XPTO</p>
+  <div class="row">
+    <div class="col-md-6">
+      <p>Enfermeiro</p>
+      <p>Enf. XPTO</p>
+    </div>
+
+    <div class="col-md-6">
+      <%= f.label :date, t('.appointment-date') %>
+      <%= f.date_field :date, class: 'form-control'%>
+    </div>
   </div>
 
-  <div class="col-md-6">
-    <%= f.label :date, t('.appointment-date') %>
-    <%= f.date_field :date, class: 'form-control'%>
+  <div class="row">
+    <div class="col-md-2">
+      <%= f.label :weight, t('.weight') %>
+      <%= f.number_field :weight, placeholder: 'Kg', class: 'form-control'%>
+    </div>
+
+    <div class="col-md-2">
+      <%= f.label :blood_pressure, t('.blood-pressure') %>
+      <%= f.text_field :blood_pressure, placeholder: 'mmHg', class: 'form-control' %>
+    </div>
+
+    <div class="col-md-2">
+      <%= f.label :pulse, t('.pulse') %>
+      <%= f.number_field :pulse, placeholder: 'bpm', class: 'form-control' %>
+    </div>
+
+    <div class="col-md-2">
+      <%= f.label :oxygen, t('.oxygen') %>
+      <%= f.number_field :oxygen, placeholder: '%', class: 'form-control' %>
+    </div>
+
+    <div class="col-md-2">
+      <%= f.label :pef, t('.pef') %>
+      <%= f.number_field :pef, placeholder: 'l/m', class: 'form-control' %>
+    </div>
+
+    <div class="col-md-1">
+      <%= f.label :inhaler, t('.inhaler') %>
+      <%= f.check_box(:inhaler) %>
+    </div>
   </div>
 
-  <div class="col-md-2">
-    <%= f.label :weight, t('.weight') %>
-    <%= f.number_field :weight, placeholder: 'Kg', class: 'form-control'%>
-  </div>
-
-  <div class="col-md-2">
-    <%= f.label :blood_pressure, t('.blood-pressure') %>
-    <%= f.text_field :blood_pressure, placeholder: 'mmHg', class: 'form-control' %>
-  </div>
-
-  <div class="col-md-2">
-    <%= f.label :pulse, t('.pulse') %>
-    <%= f.number_field :pulse, placeholder: 'bpm', class: 'form-control' %>
-  </div>
-
-  <div class="col-md-2">
-    <%= f.label :oxygen, t('.oxygen') %>
-    <%= f.number_field :oxygen, placeholder: '%', class: 'form-control' %>
-  </div>
-
-  <div class="col-md-2">
-    <%= f.label :pef, t('.pef') %>
-    <%= f.number_field :pef, placeholder: 'l/m', class: 'form-control' %>
-  </div>
-
-  <div class="col-md-2">
-    <%= f.label :inhaler, t('.inhaler') %>
-    <%= f.number_field :inhaler, class: 'form-control' %>
+  <div class="col-md-12">
+    <%= f.label :medication, t('.medication') %>
+    <%= f.text_area :medication, class: 'form-control' %>
   </div>
 
   <div class="col-md-2">

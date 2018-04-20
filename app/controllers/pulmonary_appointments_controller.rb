@@ -18,6 +18,31 @@ class PulmonaryAppointmentsController < ApplicationController
     end
   end
 
+  def edit
+    @pulmonary_appointment = PulmonaryAppointment.find(params[:id])
+    @patient = @pulmonary_appointment.patient
+  end
+
+  def update
+    @pulmonary_appointment = PulmonaryAppointment.find(params[:id])
+    @patient = @pulmonary_appointment.patient
+    if @pulmonary_appointment.update(pulmonary_appointment_params)
+      flash[:success] = t('edit-form-saved-flash')
+      redirect_to @patient
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @pulmonary_appointment = PulmonaryAppointment.find(params[:id])
+    @patient = @pulmonary_appointment.patient
+    @pulmonary_appointment.destroy
+    flash[:danger] = t('item-removed-flash')
+
+    redirect_to @patient
+  end
+
   private
 
     def pulmonary_appointment_params
