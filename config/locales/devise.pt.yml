@@ -22,6 +22,11 @@ pt:
       timeout: 'A sua sessão expirou, por favor autentique-se novamente para continuar.'
       inactive: 'A sua conta ainda não foi activada.'
     sessions:
+      new:
+        log-in: 'Entrar'
+        email: 'E-mail'
+        password: 'Senha'
+        remember-me: 'Lembrar-se de mim'
       signed_in: 'Autenticação efetuada com sucesso.'
       signed_out: 'Saiu da sessão com sucesso.'
     passwords:
@@ -34,6 +39,13 @@ pt:
       send_paranoid_instructions: 'Se o seu e-mail existir na nossa base de dados, irá receber dentro de alguns minutos um e-mail com instruções para confirmar a sua conta.'
       confirmed: 'A sua conta foi confirmada com sucesso. Agora está autenticado.'
     registrations:
+      new:
+        sign-up: 'Novo registo'
+        email-format-ulsne: '@ulsne.min-saude.pt'
+        email: 'E-mail'
+        password: 'Senha'
+        password-confirmation: 'Confirmação da senha'
+        characters-minimum: 'caracteres no mínimo'
       signed_up: 'Bem-vindo! A autenticação foi efetuada com sucesso.'
       signed_up_but_unconfirmed: 'A mensagem com o link de confirmação foi enviada para o seu endereço de e-mail. Por favor clique no link para ativar a sua conta.'
       signed_up_but_inactive: 'A autenticação foi efetuada com sucesso. No entanto, não foi possível autorizá-lo porque a sua conta ainda não está ativa.'

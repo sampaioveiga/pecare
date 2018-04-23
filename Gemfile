@@ -24,6 +24,7 @@ gem 'bootstrap-will_paginate', '~> 1.0.0'
 gem 'will-paginate-i18n', '~> 0.1.15'
 gem 'ransack', '>= 1.8.8'
 gem 'devise', '>= 4.4.3'
+gem 'devise-i18n' , '>= 1.6.2'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '>= 4.2'

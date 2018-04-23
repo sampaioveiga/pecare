@@ -5,3 +5,9 @@ pt:
     rnu: "RNU"
     npsonho: "Processo"
     date: "Data da consulta"
+    password: 'Senha'
+    full_name: 'Nome'
+    employee_id: 'Número mecanográfico'
+    department: 'Serviço'
+    office_location: 'Unidade'
+    email: 'E-mail'
