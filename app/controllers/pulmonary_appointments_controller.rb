@@ -3,7 +3,7 @@ class PulmonaryAppointmentsController < ApplicationController
   def new
     @patient = Patient.find(params[:patient_id])
     @pulmonary_appointment = @patient.pulmonary_appointments.new(
-      date: Date.today
+      appointment_date: Date.today
     )
   end
 
@@ -47,7 +47,7 @@ class PulmonaryAppointmentsController < ApplicationController
 
     def pulmonary_appointment_params
       params.require(:pulmonary_appointment).permit(
-        :date,
+        :appointment_date,
         :weight,
         :blood_pressure,
         :pulse,

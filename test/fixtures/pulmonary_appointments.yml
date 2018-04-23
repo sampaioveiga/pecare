@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date: 2018-04-01
+  appointment_date: 2018-04-01
   weight: 1
   blood_pressure: 1
   pulse: 1
@@ -11,7 +11,7 @@ one:
   medication: MyText
 
 two:
-  date: 2018-04-19
+  appointment_date: 2018-04-19
   weight: 2
   blood_pressure: 2
   pulse: 2
@@ -21,7 +21,7 @@ two:
   medication: MyText
 
 three:
-  date: 2018-04-10
+  appointment_date: 2018-04-10
   weight: 3
   blood_pressure: 3
   pulse: 3

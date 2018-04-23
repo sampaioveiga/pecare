@@ -4,7 +4,7 @@ class PulmonaryAppointmentTest < ActiveSupport::TestCase
   def setup
     @patient = patients(:first_patient)
     @pulmonary_appointment = @patient.pulmonary_appointments.build(
-      date: 25/12/2018,
+      appointment_date: 25/12/2018,
       weight: 10,
       blood_pressure: "120/80",
       pulse: 40,
@@ -25,7 +25,7 @@ class PulmonaryAppointmentTest < ActiveSupport::TestCase
   end
 
   test "date shoud be present" do
-    @pulmonary_appointment.date = nil
+    @pulmonary_appointment.appointment_date = nil
     assert_not @pulmonary_appointment.valid?
   end
 

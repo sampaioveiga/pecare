@@ -30,7 +30,7 @@ class PatientsEditTest < ActionDispatch::IntegrationTest
     patch patient_path(@patient), params: {
       patient: {
         name: name,
-        date_of_birth: date_birth,
+        date_of_birth: date_of_birth,
         rnu: rnu,
         npsonho: npsonho
       }

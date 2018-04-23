@@ -54,4 +54,7 @@ Rails.application.configure do
 
   # Enable web-console in development
   config.web_console.whitelisted_ips =  %w( 127.0.0.1 10.0.2.2 )
+
+  # action mailer for devise
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

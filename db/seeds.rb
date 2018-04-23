@@ -19,7 +19,7 @@ end
 # create pulmonary appointments
 patients = Patient.order(:created_at).take(80)
 2.times do
-  date = Faker::Date.between(2.years.ago, Date.today)
+  appointment_date = Faker::Date.between(2.years.ago, Date.today)
   weight = Faker::Number.between(50, 100)
   blood_pressure = Faker::Number.decimal(2, 2)
   pulse = Faker::Number.between(50, 80)
@@ -29,7 +29,7 @@ patients = Patient.order(:created_at).take(80)
   medication = Faker::ChuckNorris.fact
 
   patients.each { |patient| patient.pulmonary_appointments.create!(
-    date: date,
+    appointment_date: appointment_date,
     weight: weight,
     blood_pressure: blood_pressure,
     pulse: pulse,
@@ -39,3 +39,24 @@ patients = Patient.order(:created_at).take(80)
     medication: medication
   )}
 end
+
+# Office locations
+OfficeLocation.create!(location_name: "Hospital de Bragança")
+OfficeLocation.create!(location_name: "Hospital de Macedo de Cavaleiros")
+OfficeLocation.create!(location_name: "Hospital de Mirandela")
+OfficeLocation.create!(location_name: "CS de Alfândega da Fé")
+OfficeLocation.create!(location_name: "CS de Bragança - Sé")
+OfficeLocation.create!(location_name: "CS de Bragança - Santa Maria")
+OfficeLocation.create!(location_name: "CS de Vinhais")
+OfficeLocation.create!(location_name: "CS de Macedo de Cavaleiros")
+OfficeLocation.create!(location_name: "CS de Mirandela I")
+OfficeLocation.create!(location_name: "CS de Mirandela II")
+OfficeLocation.create!(location_name: "CS de Miranda do Douro")
+OfficeLocation.create!(location_name: "CS de Vimioso")
+OfficeLocation.create!(location_name: "CS de Mogadouro")
+OfficeLocation.create!(location_name: "CS de Torre de Moncorvo")
+OfficeLocation.create!(location_name: "CS de Freixo de Espada à Cinta")
+OfficeLocation.create!(location_name: "CS de Vila Flor")
+OfficeLocation.create!(location_name: "CS de Carrazeda de Ansiães")
+OfficeLocation.create!(location_name: "Praça Cavaleiro Ferreira")
+OfficeLocation.create!(location_name: "UDEP")

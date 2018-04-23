@@ -1,7 +1,7 @@
 class CreatePulmonaryAppointments < ActiveRecord::Migration[5.1]
   def change
     create_table :pulmonary_appointments do |t|
-      t.date        :date, null: false
+      t.date        :appointment_date, null: false
       t.integer     :weight
       t.string      :blood_pressure
       t.integer     :pulse
@@ -13,6 +13,6 @@ class CreatePulmonaryAppointments < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :patients, [ :patient_id, :date]
+    add_index :patients, [ :patient_id, :appointment_date]
   end
 end
