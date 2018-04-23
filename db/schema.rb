@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180423103330) do
+ActiveRecord::Schema.define(version: 20180423104304) do
+
+  create_table "departments", force: :cascade do |t|
+    t.string "department_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["department_name"], name: "index_departments_on_department_name", unique: true
+  end
 
   create_table "office_locations", force: :cascade do |t|
     t.string "location_name", null: false
@@ -73,7 +80,9 @@ ActiveRecord::Schema.define(version: 20180423103330) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "office_location_id"
+    t.integer "department_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.index ["department_id"], name: "index_users_on_department_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["employee_id"], name: "index_users_on_employee_id", unique: true
     t.index ["full_name"], name: "index_users_on_full_name"

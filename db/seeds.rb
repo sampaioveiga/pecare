@@ -1,6 +1,93 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
+
+# Office locations with definitive data
+OfficeLocation.create!(location_name: "Hospital de Bragança")
+OfficeLocation.create!(location_name: "Hospital de Macedo de Cavaleiros")
+OfficeLocation.create!(location_name: "Hospital de Mirandela")
+OfficeLocation.create!(location_name: "CS de Alfândega da Fé")
+OfficeLocation.create!(location_name: "CS de Bragança - Sé")
+OfficeLocation.create!(location_name: "CS de Bragança - Santa Maria")
+OfficeLocation.create!(location_name: "CS de Vinhais")
+OfficeLocation.create!(location_name: "CS de Macedo de Cavaleiros")
+OfficeLocation.create!(location_name: "CS de Mirandela I")
+OfficeLocation.create!(location_name: "CS de Mirandela II")
+OfficeLocation.create!(location_name: "CS de Miranda do Douro")
+OfficeLocation.create!(location_name: "CS de Vimioso")
+OfficeLocation.create!(location_name: "CS de Mogadouro")
+OfficeLocation.create!(location_name: "CS de Torre de Moncorvo")
+OfficeLocation.create!(location_name: "CS de Freixo de Espada à Cinta")
+OfficeLocation.create!(location_name: "CS de Vila Flor")
+OfficeLocation.create!(location_name: "CS de Carrazeda de Ansiães")
+OfficeLocation.create!(location_name: "Praça Cavaleiro Ferreira")
+OfficeLocation.create!(location_name: "UDEP")
+
+# Departments with definitive data
+Department.create!(department_name: "Informática e Comunicações")
+Department.create!(department_name: "Medicina Interna")
+Department.create!(department_name: "Hospital Dia")
+Department.create!(department_name: "Ortopedia")
+Department.create!(department_name: "Unidade de Cuidados na Comunidade")
+Department.create!(department_name: "Unidade Cuidados de Saúde Personalizados")
+Department.create!(department_name: "Consulta Externa")
+Department.create!(department_name: "AVC")
+Department.create!(department_name: "Gabinete do Cidadão")
+Department.create!(department_name: "Apoio Social")
+Department.create!(department_name: "Gestão de Utentes")
+Department.create!(department_name: "Hotelaria e Transportes")
+Department.create!(department_name: "PPCIRA")
+Department.create!(department_name: "Urgência Médico-Cirurgica")
+Department.create!(department_name: "Urgência Básica")
+Department.create!(department_name: "Cuidados Intensivos")
+Department.create!(department_name: "Bloco Operatório")
+Department.create!(department_name: "Anestesiologia")
+Department.create!(department_name: "Cirurgia Geral")
+Department.create!(department_name: "Estomatologia")
+Department.create!(department_name: "Otorrinolaringologia")
+Department.create!(department_name: "Urologia")
+Department.create!(department_name: "Cardiologia")
+Department.create!(department_name: "Medicina Física e Reabilitação")
+Department.create!(department_name: "Nefrologia")
+Department.create!(department_name: "Neurologia")
+Department.create!(department_name: "Gastrenterologia")
+Department.create!(department_name: "Pneumologia")
+Department.create!(department_name: "Oncologia")
+Department.create!(department_name: "Ginecologia e Obstetrícia")
+Department.create!(department_name: "Pediatria e Neonatologia")
+Department.create!(department_name: "Saúde Mental")
+Department.create!(department_name: "Pedopsiquiatria")
+Department.create!(department_name: "Psicologia Clínica")
+Department.create!(department_name: "Imagiologia")
+Department.create!(department_name: "Patologia Clínica")
+Department.create!(department_name: "Medicina Transfusional")
+Department.create!(department_name: "Medicina Intensiva")
+Department.create!(department_name: "Saúde Pública")
+Department.create!(department_name: "Unidade  Cuidados Paliativos")
+Department.create!(department_name: "Esterilização")
+Department.create!(department_name: "Farmácia Hospitalar")
+Department.create!(department_name: "Nutrição e Alimentação")
+Department.create!(department_name: "Internato Médico")
+Department.create!(department_name: "Codificação Clínica")
+Department.create!(department_name: "Apoio ao Conselho")
+Department.create!(department_name: "Comunicação e Imagem")
+Department.create!(department_name: "Jurídico e Contencioso")
+Department.create!(department_name: "Planeamento e Controlo")
+Department.create!(department_name: "Qualidade")
+Department.create!(department_name: "Assistência Espiritual e Religiosa")
+Department.create!(department_name: "Compras e Logística")
+Department.create!(department_name: "Contabilidade e Gestão Financeira")
+Department.create!(department_name: "Formação e Desenvolvimento")
+Department.create!(department_name: "Instalações e Equipamentos")
+Department.create!(department_name: "Recursos Humanos")
+Department.create!(department_name: "Saúde e Risco Ocupacional")
+Department.create!(department_name: "Cirurgia de Ambulatório")
+Department.create!(department_name: "Oftalmologia")
+Department.create!(department_name: "Auditoria")
+Department.create!(department_name: "Arquivo clínico")
+Department.create!(department_name: "Admissão de Doentes")
+
+
 # create 100 patients
 100.times do |p|
   name = Faker::Name.name
@@ -12,7 +99,7 @@
     name: name,
     date_of_birth: date_of_birth,
     rnu: rnu,
-    npsonho: npsonho
+    npsonho: npsonho,
   )
 end
 
@@ -39,24 +126,3 @@ patients = Patient.order(:created_at).take(80)
     medication: medication
   )}
 end
-
-# Office locations
-OfficeLocation.create!(location_name: "Hospital de Bragança")
-OfficeLocation.create!(location_name: "Hospital de Macedo de Cavaleiros")
-OfficeLocation.create!(location_name: "Hospital de Mirandela")
-OfficeLocation.create!(location_name: "CS de Alfândega da Fé")
-OfficeLocation.create!(location_name: "CS de Bragança - Sé")
-OfficeLocation.create!(location_name: "CS de Bragança - Santa Maria")
-OfficeLocation.create!(location_name: "CS de Vinhais")
-OfficeLocation.create!(location_name: "CS de Macedo de Cavaleiros")
-OfficeLocation.create!(location_name: "CS de Mirandela I")
-OfficeLocation.create!(location_name: "CS de Mirandela II")
-OfficeLocation.create!(location_name: "CS de Miranda do Douro")
-OfficeLocation.create!(location_name: "CS de Vimioso")
-OfficeLocation.create!(location_name: "CS de Mogadouro")
-OfficeLocation.create!(location_name: "CS de Torre de Moncorvo")
-OfficeLocation.create!(location_name: "CS de Freixo de Espada à Cinta")
-OfficeLocation.create!(location_name: "CS de Vila Flor")
-OfficeLocation.create!(location_name: "CS de Carrazeda de Ansiães")
-OfficeLocation.create!(location_name: "Praça Cavaleiro Ferreira")
-OfficeLocation.create!(location_name: "UDEP")

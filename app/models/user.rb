@@ -4,4 +4,5 @@ class User < ApplicationRecord
          :confirmable, :lockable, :timeoutable
 
   belongs_to :office_location
+  belongs_to :department
 end
