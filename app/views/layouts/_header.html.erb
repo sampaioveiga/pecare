@@ -17,7 +17,7 @@
         <li class=<%= 'active' if current_page?(static_pages_help_path()) %>>
           <%= link_to t('.help'), static_pages_help_path() %>
         </li>
-        <li><%= link_to t('.log-in'), '#' %></li>
+        <li><%= link_to t('.log-in'), new_user_session_path() %></li>
       </ul>
     </nav>
   </div>
