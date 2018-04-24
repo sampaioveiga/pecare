@@ -11,3 +11,6 @@ pt:
     department: 'Serviço'
     office_location: 'Unidade'
     email: 'E-mail'
+  activerecord:
+    models:
+      user: Utilizador
