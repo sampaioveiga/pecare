@@ -1,67 +1,68 @@
 pt:
-  form-cannot-be-saved-flash: "A ficha não pode ser submetida."
-  new-form-saved-flash: "A nova ficha foi criada."
-  edit-form-saved-flash: "A ficha foi atualizada."
-  item-removed-flash: "A ficha foi definitivamente eliminada."
-  submit: "Submeter"
-  back: "Cancelar"
-  are-u-sure: "Tem a certeza? A remoção é definitiva!"
+  form-cannot-be-saved-flash: 'A ficha não pode ser submetida.'
+  new-form-saved-flash: 'A nova ficha foi criada.'
+  edit-form-saved-flash: 'A ficha foi atualizada.'
+  item-removed-flash: 'A ficha foi definitivamente eliminada.'
+  submit: 'Submeter'
+  back: 'Cancelar'
+  are-u-sure: 'Tem a certeza? A remoção é definitiva!'
 
   layouts:
     header:
-      help: "Ajuda"
-      log-in: "Entrar"
+      help: 'Ajuda'
+      log-in: 'Entrar'
+      log-out: 'Sair'
 
   patients:
     show:
-      edit-patient-link: "Editar ficha"
-      patient-index: "Procurar fichas"
-      pulmonary-appointments: "Consultas pneumologia"
-      new-patient-pulmonary-appointment: "Nova consulta pneumologia"
+      edit-patient-link: 'Editar ficha'
+      patient-index: 'Procurar fichas'
+      pulmonary-appointments: 'Consultas pneumologia'
+      new-patient-pulmonary-appointment: 'Nova consulta pneumologia'
     search-patients:
-      name-contains: "Procurar por nome"
-      search: "Procurar"
+      name-contains: 'Procurar por nome'
+      search: 'Procurar'
     index:
-      patients-index: "Lista de Utentes"
+      patients-index: 'Lista de Utentes'
     new:
-      patient-new: "Adicionar utente"
+      patient-new: 'Adicionar utente'
     edit:
-      patient-edit: "Editar ficha"
+      patient-edit: 'Editar ficha'
     form:
-      name: "Nome"
-      dob: "Data de nascimento"
-      rnu: "RNU"
-      npsonho: "Processo"
+      name: 'Nome'
+      dob: 'Data de nascimento'
+      rnu: 'RNU'
+      npsonho: 'Processo'
 
   pulmonary_appointments:
     new:
-      new-pulmonary-appointment: "Nova consulta de pneumologia"
+      new-pulmonary-appointment: 'Nova consulta de pneumologia'
     edit:
-      edit-pulmonary-appointment: "Editar consulta de pneumologia"
+      edit-pulmonary-appointment: 'Editar consulta de pneumologia'
     pulmonary_appointment:
-      weight: "Peso"
-      blood-pressure: "TA"
-      pulse: "Pulso"
-      oxygen: "Oxigénio"
-      pef: "PEF"
-      inhaler: "Inalador"
-      inhaler-yes: "Sim"
-      inhaler-no: "Não"
-      medication: "Outra Medicação"
-      edit-patient-pulmonary-appointment: "Editar"
-      destroy-patient-pulmonary-appointment: "Remover"
+      weight: 'Peso'
+      blood-pressure: 'TA'
+      pulse: 'Pulso'
+      oxygen: 'Oxigénio'
+      pef: 'PEF'
+      inhaler: 'Inalador'
+      inhaler-yes: 'Sim'
+      inhaler-no: 'Não'
+      medication: 'Outra Medicação'
+      edit-patient-pulmonary-appointment: 'Editar'
+      destroy-patient-pulmonary-appointment: 'Remover'
     form:
-      appointment-date: "Data da consulta"
-      weight: "Peso"
-      blood-pressure: "TA"
-      pulse: "Pulso"
-      oxygen: "Oxigénio"
-      pef: "PEF"
-      inhaler: "Inalador"
-      medication: "Outra Medicação"
+      appointment-date: 'Data da consulta'
+      weight: 'Peso'
+      blood-pressure: 'TA'
+      pulse: 'Pulso'
+      oxygen: 'Oxigénio'
+      pef: 'PEF'
+      inhaler: 'Inalador'
+      medication: 'Outra Medicação'
 
   shared:
     patient_data:
-      dob: "Data de nascimento"
-      age: "Idade"
-      npsonho: "Processo"
+      dob: 'Data de nascimento'
+      age: 'Idade'
+      npsonho: 'Processo'

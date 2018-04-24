@@ -17,7 +17,11 @@
         <li class=<%= 'active' if current_page?(static_pages_help_path()) %>>
           <%= link_to t('.help'), static_pages_help_path() %>
         </li>
-        <li><%= link_to t('.log-in'), new_user_session_path() %></li>
+        <% if user_signed_in? %>
+          <%= render 'shared/logged_in_user_header' %>
+        <% else %>
+          <li><%= link_to t('.log-in'), new_user_session_path() %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

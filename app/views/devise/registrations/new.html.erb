@@ -18,9 +18,44 @@
         <%= devise_error_messages! %>
 
         <div class="field">
+          <%= f.label :title, t(".title")%>
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :full_name, t(".full_name")%>
+          <%= f.text_field :full_name, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :employee_id, t(".employee_id")%>
+          <%= f.text_field :employee_id, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :phone_number, t(".phone_number")%>
+          <%= f.text_field :phone_number, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :cellphone_number, t(".cellphone_number")%>
+          <%= f.text_field :cellphone_number, class: 'form-control' %>
+        </div>
+
+        <div class="field">
           <%= f.label :email, t(".email") %>
           <em>(<%= t(".email-format-ulsne") %>)</em>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :department_id, t(".department_id")%>
+          <%= f.collection_select(:department_id, Department.order(:department_name), :id, :department_name, {}, class: 'form-control') %>
+        </div>
+
+        <div class="field">
+          <%= f.label :office_location_id, t(".office_location_id")%>
+          <%= f.collection_select(:office_location_id, OfficeLocation.order(:location_name), :id, :location_name, {}, class: 'form-control') %>
         </div>
 
         <div class="field">
