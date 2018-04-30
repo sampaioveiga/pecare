@@ -87,6 +87,37 @@ Department.create!(department_name: "Auditoria")
 Department.create!(department_name: "Arquivo clínico")
 Department.create!(department_name: "Admissão de Doentes")
 
+# users 1 & 2
+user = User.new(
+  title: "Eng.",
+  full_name: "Miguel Sampaio",
+  employee_id: 40234,
+  phone_number: 1306,
+  cellphone_number: 51393,
+  email: "miguel.veiga@ulsne.min-saude.pt",
+  password: "123456",
+  password_confirmation: "123456",
+  department_id: 1,
+  office_location_id: 1,
+  admin: true
+)
+user.skip_confirmation!
+user.save!
+user = User.new(
+  title: "Enf.",
+  full_name: "Nurse One",
+  employee_id: 12345,
+  phone_number: 1306,
+  cellphone_number: 51393,
+  email: "12345@ulsne.min-saude.pt",
+  password: "123456",
+  password_confirmation: "123456",
+  department_id: 28,
+  office_location_id: 1,
+  admin: false
+)
+user.skip_confirmation!
+user.save!
 
 # create 100 patients
 100.times do |p|
@@ -114,6 +145,7 @@ patients = Patient.order(:created_at).take(80)
   pef = Faker::Number.number(2)
   inhaler = Faker::Boolean.boolean
   medication = Faker::ChuckNorris.fact
+  user_id = 2
 
   patients.each { |patient| patient.pulmonary_appointments.create!(
     appointment_date: appointment_date,
@@ -123,6 +155,7 @@ patients = Patient.order(:created_at).take(80)
     oxygen: oxygen,
     pef: pef,
     inhaler: inhaler,
-    medication: medication
+    medication: medication,
+    user_id: user_id
   )}
 end

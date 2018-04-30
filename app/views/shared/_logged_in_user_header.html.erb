@@ -1,2 +1,2 @@
-<li><%= link_to current_user.full_name, edit_user_registration_path() %></li>
+<li><%= link_to "#{has_title(current_user)} #{current_user.full_name}", edit_user_registration_path() %></li>
 <li><%= link_to t('.log-out'), destroy_user_session_path(), method: :delete %></li>
