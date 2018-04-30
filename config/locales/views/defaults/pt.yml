@@ -52,6 +52,7 @@ pt:
       edit-patient-pulmonary-appointment: 'Editar'
       destroy-patient-pulmonary-appointment: 'Remover'
     form:
+      user-name: 'Utilizador'
       appointment-date: 'Data da consulta'
       weight: 'Peso'
       blood-pressure: 'TA'

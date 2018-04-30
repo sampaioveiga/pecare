@@ -47,6 +47,7 @@ class PulmonaryAppointmentsController < ApplicationController
 
     def pulmonary_appointment_params
       params.require(:pulmonary_appointment).permit(
+        :user_id,
         :appointment_date,
         :weight,
         :blood_pressure,
