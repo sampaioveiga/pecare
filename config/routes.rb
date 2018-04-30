@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'patients/npsonho', to: 'patients#npsonho', as: 'npsonho_patient'
   resources :patients, except: [ :destroy ] do
-    resources :pulmonary_appointments, only: [ :new, :create, :edit, :update, :destroy ]
+    resources :pulmonary_appointments, only: [ :new, :create ]
   end
+  resources :pulmonary_appointments, only: [ :edit, :update, :destroy ]
 end

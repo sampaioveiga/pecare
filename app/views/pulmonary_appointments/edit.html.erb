@@ -17,7 +17,65 @@
 <div class="col-md-9">
   <div class="panel panel-default">
     <div class="panel-body">
-      <%= render 'form' %>
+      <%= form_for(@pulmonary_appointment) do |f| %>
+        <%= render 'shared/error_messages', obj: f.object %>
+
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.label :user_id, t('.user-name') %>
+            <%= text_field_tag :user_full_name, current_user.full_name, disabled: true, class: 'form-control' %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+          </div>
+
+          <div class="col-md-6">
+            <%= f.label :appointment_date, t('.appointment-date') %>
+            <%= f.date_field :appointment_date, class: 'form-control'%>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2">
+            <%= f.label :weight, t('.weight') %>
+            <%= f.number_field :weight, placeholder: 'Kg', class: 'form-control'%>
+          </div>
+
+          <div class="col-md-2">
+            <%= f.label :blood_pressure, t('.blood-pressure') %>
+            <%= f.text_field :blood_pressure, placeholder: 'mmHg', class: 'form-control' %>
+          </div>
+
+          <div class="col-md-2">
+            <%= f.label :pulse, t('.pulse') %>
+            <%= f.number_field :pulse, placeholder: 'bpm', class: 'form-control' %>
+          </div>
+
+          <div class="col-md-2">
+            <%= f.label :oxygen, t('.oxygen') %>
+            <%= f.number_field :oxygen, placeholder: '%', class: 'form-control' %>
+          </div>
+
+          <div class="col-md-2">
+            <%= f.label :pef, t('.pef') %>
+            <%= f.number_field :pef, placeholder: 'l/m', class: 'form-control' %>
+          </div>
+
+          <div class="col-md-1">
+            <%= f.label :inhaler, t('.inhaler') %>
+            <%= f.check_box(:inhaler) %>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <%= f.label :medication, t('.medication') %>
+          <%= f.text_area :medication, class: 'form-control' %>
+        </div>
+
+        <div class="col-md-2">
+          <%= f.submit t('submit'), class: 'btn btn-success' %>
+        </div>
+
+        <%= link_to t('back'), :back, class: 'btn btn-default' %>
+      <% end %>
     </div>
   </div>
 </div>

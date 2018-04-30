@@ -37,8 +37,26 @@ pt:
   pulmonary_appointments:
     new:
       new-pulmonary-appointment: 'Nova consulta de pneumologia'
+      user-name: 'Utilizador'
+      appointment-date: 'Data da consulta'
+      weight: 'Peso'
+      blood-pressure: 'TA'
+      pulse: 'Pulso'
+      oxygen: 'Oxigénio'
+      pef: 'PEF'
+      inhaler: 'Inalador'
+      medication: 'Outra Medicação'
     edit:
       edit-pulmonary-appointment: 'Editar consulta de pneumologia'
+      user-name: 'Utilizador'
+      appointment-date: 'Data da consulta'
+      weight: 'Peso'
+      blood-pressure: 'TA'
+      pulse: 'Pulso'
+      oxygen: 'Oxigénio'
+      pef: 'PEF'
+      inhaler: 'Inalador'
+      medication: 'Outra Medicação'
     pulmonary_appointment:
       weight: 'Peso'
       blood-pressure: 'TA'
@@ -51,16 +69,6 @@ pt:
       medication: 'Outra Medicação'
       edit-patient-pulmonary-appointment: 'Editar'
       destroy-patient-pulmonary-appointment: 'Remover'
-    form:
-      user-name: 'Utilizador'
-      appointment-date: 'Data da consulta'
-      weight: 'Peso'
-      blood-pressure: 'TA'
-      pulse: 'Pulso'
-      oxygen: 'Oxigénio'
-      pef: 'PEF'
-      inhaler: 'Inalador'
-      medication: 'Outra Medicação'
 
   shared:
     patient_data:
