@@ -26,3 +26,8 @@ ubuntu-xenial-16.04-cloudimg-console.log
 
 .byebug_history
 
+# General
+.vagrant/
+
+# Log files (if you are creating logs in debug mode, uncomment this)
+*.logs
