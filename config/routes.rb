@@ -10,4 +10,8 @@ Rails.application.routes.draw do
     resources :pulmonary_appointments, only: [ :new, :create ]
   end
   resources :pulmonary_appointments, only: [ :edit, :update, :destroy ]
+
+  namespace :pulmonary do
+    resources :inhaler_device_types, except: [ :new, :create, :edit, :update, :destroy ]
+  end
 end

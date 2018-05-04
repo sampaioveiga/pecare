@@ -87,6 +87,20 @@ Department.create!(department_name: "Auditoria")
 Department.create!(department_name: "Arquivo clínico")
 Department.create!(department_name: "Admissão de Doentes")
 
+InhalerDeviceType.create!(inhaler_type_name: "Pressurizados")
+InhalerDeviceType.create!(inhaler_type_name: "Aeroliser")
+InhalerDeviceType.create!(inhaler_type_name: "Handihaler")
+InhalerDeviceType.create!(inhaler_type_name: "Turbohaler")
+InhalerDeviceType.create!(inhaler_type_name: "Diskus")
+InhalerDeviceType.create!(inhaler_type_name: "Breezehaler")
+InhalerDeviceType.create!(inhaler_type_name: "Ellipta")
+InhalerDeviceType.create!(inhaler_type_name: "Genuair")
+InhalerDeviceType.create!(inhaler_type_name: "Rotacaps")
+InhalerDeviceType.create!(inhaler_type_name: "Novolizer")
+InhalerDeviceType.create!(inhaler_type_name: "Spiromax")
+InhalerDeviceType.create!(inhaler_type_name: "Aerosolterapia")
+InhalerDeviceType.create!(inhaler_type_name: "Oxigenoterapia Domiciliária")
+
 # users 1 & 2
 user = User.new(
   title: "Eng.",

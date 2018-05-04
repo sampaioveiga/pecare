@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180430091928) do
+ActiveRecord::Schema.define(version: 20180504102202) do
 
   create_table "departments", force: :cascade do |t|
     t.string "department_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["department_name"], name: "index_departments_on_department_name", unique: true
+  end
+
+  create_table "inhaler_device_types", force: :cascade do |t|
+    t.string "inhaler_type_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["inhaler_type_name"], name: "index_inhaler_device_types_on_inhaler_type_name"
   end
 
   create_table "office_locations", force: :cascade do |t|
