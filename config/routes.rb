@@ -13,5 +13,6 @@ Rails.application.routes.draw do
 
   namespace :pulmonary do
     resources :inhaler_device_types, except: [ :new, :create, :edit, :update, :destroy ]
+    resources :inhaler_devices, except: [ :new, :create, :edit, :update, :destroy ]
   end
 end

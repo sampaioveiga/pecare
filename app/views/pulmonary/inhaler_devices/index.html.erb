@@ -1,0 +1,8 @@
+<% @inhaler_devices.each do |idev| %>
+  <p>
+    <%= idev.inhaler_device_type.inhaler_type_name %><br />
+    <%= idev.active_ingredient_inn %><br />
+    <%= idev.active_ingredient_trade_name %><br />
+    <%= idev.medicine_dosage %><br />
+  </p>
+<% end %>
