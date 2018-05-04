@@ -24,9 +24,10 @@ ubuntu-xenial-16.04-cloudimg-console.log
 /node_modules
 /yarn-error.log
 
+Gemfile.lock
 .byebug_history
 
-# General
+# General Vagrant related stuff
 .vagrant/
 
 # Log files (if you are creating logs in debug mode, uncomment this)
