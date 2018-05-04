@@ -99,13 +99,12 @@ InhalerDeviceType.create!(inhaler_type_name: "Rotacaps")
 InhalerDeviceType.create!(inhaler_type_name: "Novolizer")
 InhalerDeviceType.create!(inhaler_type_name: "Spiromax")
 InhalerDeviceType.create!(inhaler_type_name: "Aerosolterapia")
-InhalerDeviceType.create!(inhaler_type_name: "Oxigenoterapia Domiciliária")
 
 20.times do
   active_ingredient_inn = Faker::Dessert.flavor
   active_ingredient_trade_name = Faker::Dessert.topping
   medicine_dosage = Faker::Number.decimal(2)
-  inhaler_device_type = Faker::Number.between(1, 10)
+  inhaler_device_type = Faker::Number.between(1, 12)
   InhalerDevice.create!(
     active_ingredient_inn: active_ingredient_inn,
     active_ingredient_trade_name: active_ingredient_trade_name,

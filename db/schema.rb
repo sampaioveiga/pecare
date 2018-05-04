@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180504104849) do
+ActiveRecord::Schema.define(version: 20180504134032) do
 
   create_table "departments", force: :cascade do |t|
     t.string "department_name", null: false
@@ -56,6 +56,18 @@ ActiveRecord::Schema.define(version: 20180504104849) do
     t.index ["npsonho"], name: "index_patients_on_npsonho", unique: true
     t.index ["rnu"], name: "index_patients_on_rnu", unique: true
     t.index [nil, nil], name: "index_patients_on_patient_id_and_appointment_date"
+  end
+
+  create_table "prescribed_inhalers", force: :cascade do |t|
+    t.integer "pulmonary_appointment_id"
+    t.integer "inhaler_device_id"
+    t.integer "before_technic"
+    t.integer "after_technic"
+    t.text "observation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["inhaler_device_id"], name: "index_prescribed_inhalers_on_inhaler_device_id"
+    t.index ["pulmonary_appointment_id"], name: "index_prescribed_inhalers_on_pulmonary_appointment_id"
   end
 
   create_table "pulmonary_appointments", force: :cascade do |t|
