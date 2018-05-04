@@ -3,7 +3,8 @@ class PulmonaryAppointmentsController < ApplicationController
   def new
     @patient = Patient.find(params[:patient_id])
     @pulmonary_appointment = @patient.pulmonary_appointments.new(
-      appointment_date: Date.today
+      appointment_date: Date.today,
+      user_id: current_user.id
     )
   end
 
@@ -20,6 +21,7 @@ class PulmonaryAppointmentsController < ApplicationController
 
   def edit
     @pulmonary_appointment = PulmonaryAppointment.find(params[:id])
+    @pulmonary_appointment.user_id = current_user.id
     @patient = @pulmonary_appointment.patient
   end
 

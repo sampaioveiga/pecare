@@ -24,8 +24,9 @@
           <div class="col-md-6">
             <%= f.label :user_id, t('.user-name') %>
             <%= text_field_tag :user_full_name, current_user.full_name, disabled: true, class: 'form-control' %>
-            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :user_id %>
           </div>
+          <%= console %>
 
           <div class="col-md-6">
             <%= f.label :appointment_date, t('.appointment-date') %>
