@@ -4,7 +4,7 @@ pt:
     date_of_birth: "Data de nascimento"
     rnu: "RNU"
     npsonho: "Processo"
-    date: "Data da consulta"
+    appointment_date: "Data da consulta"
     password: 'Senha'
     full_name: 'Nome'
     employee_id: 'Número mecanográfico'

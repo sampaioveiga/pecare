@@ -1,0 +1,27 @@
+<div class="nested-fields well">
+  <div class="field">
+    <div class="col-md-12">
+      <%= f.label :inhaler_device_id %>
+      <%= f.number_field :inhaler_device_id, value: 1, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="col-md-3">
+      <%= f.label :before_technic %>
+      <%= f.select :before_technic, options_for_select([["Ma", 0], ["avg",1], ["good",2]]), {}, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="col-md-3">
+      <%= f.label :after_technic %>
+      <%= f.select :after_technic, options_for_select([["Ma", 0], ["avg",1], ["good",2]]), {}, class: 'form-control' %>
+    </div>
+  </div>
+  <div class="field">
+    <div class=" col-md-6">
+      <%= f.label :observation %>
+      <%= f.text_field :observation, class: 'form-control' %>
+    </div>
+  </div>
+  <%= link_to_remove_association "remove inhaler", f, class: 'btn btn-danger' %>
+</div>

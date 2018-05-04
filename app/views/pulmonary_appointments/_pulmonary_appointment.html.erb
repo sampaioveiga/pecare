@@ -32,6 +32,7 @@
             <td><%= link_to t('.edit-patient-pulmonary-appointment'), edit_pulmonary_appointment_path(pulmonary_appointment), class: 'btn btn-default' %></td>
             <td><%= link_to t('.destroy-patient-pulmonary-appointment'), pulmonary_appointment_path(pulmonary_appointment), method: :delete, data: { confirm: t('are-u-sure')} , class: 'btn btn-danger' %></td>
           </tr>
+          <%= render pulmonary_appointment.prescribed_inhalers %>
           <tr>
             <th><%= t('.medication') %></th>
             <td colspan="7"><%= pulmonary_appointment.medication %></td>

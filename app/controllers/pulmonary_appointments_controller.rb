@@ -57,7 +57,16 @@ class PulmonaryAppointmentsController < ApplicationController
         :oxygen,
         :pef,
         :inhaler,
-        :medication
+        :medication,
+        prescribed_inhalers_attributes: [
+          :id,
+          :pulmonary_appointment_id,
+          :inhaler_device_id,
+          :before_technic,
+          :after_technic,
+          :observation,
+          :_destroy
+        ]
       )
     end
 
