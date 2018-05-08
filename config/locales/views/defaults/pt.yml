@@ -99,11 +99,15 @@ pt:
       dob: 'Data de nascimento'
       age: 'Idade'
       npsonho: 'Processo'
-    pulmonary_menu:
+    pulmonary_appointments_menu:
       pulmonary-appointment-options: 'Menu pneumologia'
       new-patient-pulmonary-appointment: 'Nova consulta'
+    pulmonary_menu:
       device-types: 'Tipos de dispositivos'
+      new-inhaler-device-type: 'Novo tipo de dispositivo'
       inhalers: 'Inaladores'
+      new-inhaler-device: 'Novo inalador'
+      patient-index: 'Ver todas as fichas'
 
   pulmonary:
     inhaler_device_types:
@@ -111,6 +115,28 @@ pt:
         inhaler-device-types: 'Dispositivos inaladores'
         new-inhaler-device-type: 'Novo dispositivo'
         edit-inhaler-device-type: 'Editar'
+      new:
+        new: 'Novo tipo de dispositivo'
+        inhaler_type_name: 'Nome do tipo de dispositivo'
+        submit: 'Submeter'
+        cancel: 'Cancelar'
+      create:
+        new-inhaler-device-type-flash: 'Novo tipo de dispositivo criado'
+      edit:
+        edit: 'Editar'
+        inhaler_type_name: 'Nome do tipo de dispositivo'
+        submit: 'Submeter'
+        cancel: 'Cancelar'
+      update:
+        edit-inhaler-device-type-flash: 'Nome do tipo de dispositivo atualizado'
+    inhaler_devices:
+      index:
+        inhalers: 'Inaladores'
+        inhaler-device-type: 'Tipo de dispositivo'
+        inn: 'DCI'
+        trade-name: 'Nome comercial'
+        medicine-dosage: 'Dose'
+        edit: 'Editar'
         patient-index: 'Ver todas as fichas'
       new:
         new: 'Novo tipo de dispositivo'

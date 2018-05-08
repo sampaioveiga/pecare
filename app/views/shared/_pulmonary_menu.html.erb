@@ -1,11 +1,11 @@
-<li role="presentation" class="dropdown active">
-  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-    <%= t('.pulmonary-appointment-options') %> <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu">
-    <li role="presentation"><%= link_to t('.new-patient-pulmonary-appointment'), new_patient_pulmonary_appointment_path(@patient) %></li>
-    <li role="separator" class="divider"></li>
-    <li role="presentation"><%= link_to t('.device-types'), pulmonary_inhaler_device_types_path %></li>
-    <li role="presentation"><%= link_to t('.inhalers'), pulmonary_inhaler_devices_path %></li>
-  </ul>
-</li>
+<li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('.device-types'), pulmonary_inhaler_device_types_path %></li>
+<% if controller_name === 'inhaler_device_types' %>
+  <li role="presentation"><%= link_to t('.new-inhaler-device-type'), new_pulmonary_inhaler_device_type_path %></li>
+<% end %>
+<li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('.inhalers'), pulmonary_inhaler_devices_path %></li>
+<% if controller_name === 'inhaler_devices' %>
+  <li role="presentation"><%= link_to t('.new-inhaler-device'), new_pulmonary_inhaler_device_path %></li>
+<% end %>
+<% if controller_name === 'inhaler_devices' || controller_name === 'inhaler_device_types' %>
+  <li role="presentation"><%= link_to t('.patient-index'), patients_path %></li>
+<% end %>

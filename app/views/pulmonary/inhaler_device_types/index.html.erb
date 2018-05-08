@@ -7,8 +7,7 @@
     </div>
     <div class="panel-body">
       <ul class="nav nav-pills nav-stacked">
-        <li role="presentation" class="active"><%= link_to t('.new-inhaler-device-type'), new_pulmonary_inhaler_device_type_path %></li>
-        <li role="presentation"><%= link_to t('.patient-index'), patients_path %></li>
+        <%= render 'shared/pulmonary_menu' %>
       </ul>
     </div>
   </div>

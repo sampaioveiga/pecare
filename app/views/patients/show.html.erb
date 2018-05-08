@@ -9,12 +9,10 @@
     <div class="panel-body">
       <%= render 'shared/patient_data' %>
       <ul class="nav nav-pills nav-stacked">
-        <%= render 'shared/pulmonary_menu' %>
+        <%= render 'shared/pulmonary_appointments_menu' %>
         <li role="presentation"><%= link_to t('.edit-patient-link'), edit_patient_path(@patient) %></li>
         <li role="presentation"><%= link_to t('.patient-index'), patients_path() %></li>
       </ul>
-      <%#= link_to t('.edit-patient-link'), edit_patient_path(@patient), class: 'btn btn-default btn-block' %>
-      <%#= link_to t('.patient-index'), patients_path(), class: 'btn btn-default btn-block' %>
     </div>
   </div>
 </aside>

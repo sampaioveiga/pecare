@@ -1,8 +1,43 @@
-<% @inhaler_devices.each do |idev| %>
-  <p>
-    <%= idev.inhaler_device_type.inhaler_type_name %><br />
-    <%= idev.active_ingredient_inn %><br />
-    <%= idev.active_ingredient_trade_name %><br />
-    <%= idev.medicine_dosage %><br />
-  </p>
-<% end %>
+<% provide(:title, t('.inhalers')) %>
+
+<aside class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.inhalers') %></h4>
+    </div>
+    <div class="panel-body">
+      <ul class="nav nav-pills nav-stacked">
+        <%= render 'shared/pulmonary_menu' %>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t('.inhaler-device-type') %></th>
+            <th><%= t('.inn') %></th>
+            <th><%= t('.trade-name') %></th>
+            <th><%= t('.medicine-dosage') %></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @inhaler_devices.each do |idev| %>
+            <tr>
+              <td><%= idev.inhaler_device_type %></td>
+              <td><%= idev.active_ingredient_inn %></td>
+              <td><%= idev.active_ingredient_trade_name %></td>
+              <td><%= idev.medicine_dosage %></td>
+              <td><%= link_to t('.edit'), edit_pulmonary_inhaler_device_path(idev), class: 'btn btn-default btn-xs' %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
