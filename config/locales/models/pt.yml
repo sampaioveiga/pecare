@@ -11,6 +11,7 @@ pt:
     department: 'Serviço'
     office_location: 'Unidade'
     email: 'E-mail'
+    inhaler_type_name: 'Nome do tipo de dispositivo'
   activerecord:
     models:
       user: Utilizador

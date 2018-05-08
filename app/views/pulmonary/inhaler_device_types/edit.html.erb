@@ -1,0 +1,31 @@
+<% provide(:title, "#{t('.edit')} #{@inhaler_device_type.inhaler_type_name}") %>
+
+<aside class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.edit') %> <%= @inhaler_device_type.inhaler_type_name %></h4>
+    </div>
+  </div>
+</aside>
+
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <%= form_for(@inhaler_device_type, url: pulmonary_inhaler_device_type_path) do |f| %>
+        <%= render 'shared/error_messages', obj: f.object %>
+
+        <div class="field">
+          <%= f.label :inhaler_type_name, t('.inhaler_type_name') %>
+          <%= f.text_field :inhaler_type_name, class: 'form-control' %>
+        </div>
+
+        <div class="action">
+          <div class="col-md-3">
+            <%= f.submit t('.submit'), class: 'btn btn-success' %>
+          </div>
+          <%= link_to t('.cancel'), :back, class: 'btn btn-default' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

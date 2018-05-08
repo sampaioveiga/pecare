@@ -1,3 +1,38 @@
-<% @inhaler_device_types.each do |idt| %>
-  <p><%= idt.inhaler_type_name %></p>
-<% end %>
+<% provide(:title, t('.inhaler-device-types')) %>
+
+<aside class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.inhaler-device-types') %></h4>
+    </div>
+    <div class="panel-body">
+      <ul class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active"><%= link_to t('.new-inhaler-device-type'), new_pulmonary_inhaler_device_type_path %></li>
+        <li role="presentation"><%= link_to t('.patient-index'), patients_path %></li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Tipo de dispositivo</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @inhaler_device_types.each do |idt| %>
+          <tr>
+            <td><%= idt.inhaler_type_name %></td>
+            <td><%= link_to t(".edit-inhaler-device-type"), edit_pulmonary_inhaler_device_type_path(idt), class: 'btn btn-default btn-xs' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>

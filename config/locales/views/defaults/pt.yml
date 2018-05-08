@@ -104,3 +104,25 @@ pt:
       new-patient-pulmonary-appointment: 'Nova consulta'
       device-types: 'Tipos de dispositivos'
       inhalers: 'Inaladores'
+
+  pulmonary:
+    inhaler_device_types:
+      index:
+        inhaler-device-types: 'Dispositivos inaladores'
+        new-inhaler-device-type: 'Novo dispositivo'
+        edit-inhaler-device-type: 'Editar'
+        patient-index: 'Ver todas as fichas'
+      new:
+        new: 'Novo tipo de dispositivo'
+        inhaler_type_name: 'Nome do tipo de dispositivo'
+        submit: 'Submeter'
+        cancel: 'Cancelar'
+      create:
+        new-inhaler-device-type-flash: 'Novo tipo de dispositivo criado'
+      edit:
+        edit: 'Editar'
+        inhaler_type_name: 'Nome do tipo de dispositivo'
+        submit: 'Submeter'
+        cancel: 'Cancelar'
+      update:
+        edit-inhaler-device-type-flash: 'Nome do tipo de dispositivo atualizado'
