@@ -8,7 +8,7 @@
   </div>
   <div id="<%= "collapse_pulmonary_appointment_#{pulmonary_appointment.id}" %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%= "heading_pulmonary_appointment_#{pulmonary_appointment.id}" %>">
     <div class="panel-body">
-      <table class="table">
+      <table class="table table-condensed">
         <thead>
           <tr>
             <th><%= t('.weight') %></th>
@@ -17,8 +17,6 @@
             <th><%= t('.oxygen') %></th>
             <th><%= t('.pef') %></th>
             <th><%= t('.inhaler') %></th>
-            <th></th>
-            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -29,16 +27,30 @@
             <td><%= pulmonary_appointment.oxygen %> %</td>
             <td><%= pulmonary_appointment.pef %> l/m</td>
             <td><%= t('.inhaler-yes') if pulmonary_appointment.inhaler? %><%= t('.inhaler-no') unless pulmonary_appointment.inhaler? %></td>
-            <td><%= link_to t('.edit-patient-pulmonary-appointment'), edit_pulmonary_appointment_path(pulmonary_appointment), class: 'btn btn-default' %></td>
-            <td><%= link_to t('.destroy-patient-pulmonary-appointment'), pulmonary_appointment_path(pulmonary_appointment), method: :delete, data: { confirm: t('are-u-sure')} , class: 'btn btn-danger' %></td>
-          </tr>
-          <%= render pulmonary_appointment.prescribed_inhalers %>
-          <tr>
-            <th><%= t('.medication') %></th>
-            <td colspan="7"><%= pulmonary_appointment.medication %></td>
           </tr>
         </tbody>
       </table>
+      <table class="table table-condensed">
+        <tbody>
+          <%= render pulmonary_appointment.prescribed_inhalers %>
+        </tbody>
+      </table>
+      <% unless pulmonary_appointment.medication.empty?%>
+        <table class="table table-condensed">
+          <tbody>
+            <tr>
+              <th><%= t('.medication') %></th>
+              <td><%= pulmonary_appointment.medication %></td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+    <div class="panel-footer">
+      <div class="text-right">
+        <%= link_to t('.edit-patient-pulmonary-appointment'), edit_pulmonary_appointment_path(pulmonary_appointment), class: 'btn btn-default btn-xs' %>
+        <%#= link_to t('.destroy-patient-pulmonary-appointment'), pulmonary_appointment_path(pulmonary_appointment), method: :delete, data: { confirm: t('are-u-sure')} , class: 'btn btn-danger btn-xs' %>
+      </div>
     </div>
   </div>
 </div>

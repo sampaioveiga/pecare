@@ -2,15 +2,19 @@
 
 <!-- aside column -->
 <aside class="col-md-3">
-  <div class="panel panel-default" data-spy="affix" data-offset-top="55">
+  <div class="panel panel-default"> <!-- data-spy="affix" data-offset-top="55" -->
     <div class="panel-heading">
       <h4><%= @patient.name %></h4>
     </div>
     <div class="panel-body">
       <%= render 'shared/patient_data' %>
-      <%= link_to t('.new-patient-pulmonary-appointment'), new_patient_pulmonary_appointment_path(@patient), class: 'btn btn-primary btn-block'%>
-      <%= link_to t('.edit-patient-link'), edit_patient_path(@patient), class: 'btn btn-default btn-block' %>
-      <%= link_to t('.patient-index'), patients_path(), class: 'btn btn-default btn-block' %>
+      <ul class="nav nav-pills nav-stacked">
+        <%= render 'shared/pulmonary_menu' %>
+        <li role="presentation"><%= link_to t('.edit-patient-link'), edit_patient_path(@patient) %></li>
+        <li role="presentation"><%= link_to t('.patient-index'), patients_path() %></li>
+      </ul>
+      <%#= link_to t('.edit-patient-link'), edit_patient_path(@patient), class: 'btn btn-default btn-block' %>
+      <%#= link_to t('.patient-index'), patients_path(), class: 'btn btn-default btn-block' %>
     </div>
   </div>
 </aside>

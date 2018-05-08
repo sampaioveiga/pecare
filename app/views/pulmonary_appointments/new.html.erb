@@ -66,13 +66,13 @@
         </div>
 
         <div class="col-md-12">
-          <h3>Inaladores</h3>
+          <h3><%= t('.inhalers') %></h3>
           <div id="prescribed_inhalers">
             <%= f.fields_for :prescribed_inhalers do |inhaler| %>
               <%= render 'prescribed_inhaler_fields', f: inhaler %>
             <% end %>
             <div class="links">
-              <%= link_to_add_association 'add inhaler', f, :prescribed_inhalers, class: 'btn btn-primary' %>
+              <%= link_to_add_association t('.add-inhaler'), f, :prescribed_inhalers, class: 'btn btn-primary' %>
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ class PatientsController < ApplicationController
   before_action :set_patient, only: [ :show, :edit, :update ]
 
   def show
-    @pulmonary_appointments = @patient.pulmonary_appointments
+    @pulmonary_appointments = @patient.pulmonary_appointments.includes(:prescribed_inhalers, :inhaler_devices)
   end
 
   def npsonho

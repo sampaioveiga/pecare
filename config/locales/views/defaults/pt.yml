@@ -16,7 +16,7 @@ pt:
   patients:
     show:
       edit-patient-link: 'Editar ficha'
-      patient-index: 'Procurar fichas'
+      patient-index: 'Ver todas as fichas'
       pulmonary-appointments: 'Consultas pneumologia'
       new-patient-pulmonary-appointment: 'Nova consulta pneumologia'
     search-patients:
@@ -46,6 +46,8 @@ pt:
       pef: 'PEF'
       inhaler: 'Inalador'
       medication: 'Outra Medicação'
+      inhalers: 'Inaladores'
+      add-inhaler: 'Adicionar dispositivo'
     edit:
       edit-pulmonary-appointment: 'Editar consulta de pneumologia'
       user-name: 'Utilizador'
@@ -57,6 +59,7 @@ pt:
       pef: 'PEF'
       inhaler: 'Inalador'
       medication: 'Outra Medicação'
+      add-inhaler: 'Adicionar dispositivo'
     pulmonary_appointment:
       weight: 'Peso'
       blood-pressure: 'TA'
@@ -69,9 +72,35 @@ pt:
       medication: 'Outra Medicação'
       edit-patient-pulmonary-appointment: 'Editar'
       destroy-patient-pulmonary-appointment: 'Remover'
+    prescribed_inhaler_fields:
+      inhaler-device: 'Dispositivo'
+      before-technic: 'Técnica antes'
+      after-technic: 'Técnica depois'
+      observation: 'Observações'
+      remove-inhaler: 'Remover dispositivo'
+      bt-bad: 'Má'
+      bt-average: 'Razoável'
+      bt-good: 'Boa'
+      at-bad: 'Má'
+      at-average: 'Razoável'
+      at-good: 'Boa'
+    
+  prescribed_inhalers:
+    prescribed_inhaler:
+      bt-bad: 'Técnica antes má'
+      bt-average: 'Técnica antes razoável'
+      bt-good: 'Técnica antes boa'
+      at-bad: 'Técnica depois má'
+      at-average: 'Técnica depois razoável'
+      at-good: 'Técnica depois boa'
 
   shared:
     patient_data:
       dob: 'Data de nascimento'
       age: 'Idade'
       npsonho: 'Processo'
+    pulmonary_menu:
+      pulmonary-appointment-options: 'Menu pneumologia'
+      new-patient-pulmonary-appointment: 'Nova consulta'
+      device-types: 'Tipos de dispositivos'
+      inhalers: 'Inaladores'

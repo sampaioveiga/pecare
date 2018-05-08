@@ -100,18 +100,26 @@ InhalerDeviceType.create!(inhaler_type_name: "Novolizer")
 InhalerDeviceType.create!(inhaler_type_name: "Spiromax")
 InhalerDeviceType.create!(inhaler_type_name: "Aerosolterapia")
 
-20.times do
-  active_ingredient_inn = Faker::Dessert.flavor
-  active_ingredient_trade_name = Faker::Dessert.topping
-  medicine_dosage = Faker::Number.decimal(2)
-  inhaler_device_type = Faker::Number.between(1, 12)
-  InhalerDevice.create!(
-    active_ingredient_inn: active_ingredient_inn,
-    active_ingredient_trade_name: active_ingredient_trade_name,
-    medicine_dosage: medicine_dosage,
-    inhaler_device_type_id: inhaler_device_type
-  )
-end
+#20.times do
+#  active_ingredient_inn = Faker::Dessert.flavor
+#  active_ingredient_trade_name = Faker::Dessert.topping
+#  medicine_dosage = Faker::Number.decimal(2)
+#  inhaler_device_type = Faker::Number.between(1, 12)
+#  InhalerDevice.create!(
+#    active_ingredient_inn: active_ingredient_inn,
+#    active_ingredient_trade_name: active_ingredient_trade_name,
+#    medicine_dosage: medicine_dosage,
+#    inhaler_device_type_id: inhaler_device_type
+#  )
+#end
+InhalerDevice.create!(inhaler_device_type: "Pressurizados", active_ingredient_inn: "Ventilan", active_ingredient_trade_name: "Salbutamol")
+InhalerDevice.create!(inhaler_device_type: "Aeroliser", active_ingredient_inn: "Asmatec", active_ingredient_trade_name: "Salbu")
+InhalerDevice.create!(inhaler_device_type: "Aeroliser", active_ingredient_inn: "Miflonede", active_ingredient_trade_name: "Busedonida", medicine_dosage: "200")
+InhalerDevice.create!(inhaler_device_type: "Aeroliser", active_ingredient_inn: "Miflonede", active_ingredient_trade_name: "Busedonida", medicine_dosage: "400")
+InhalerDevice.create!(inhaler_device_type: "Breezehaler", active_ingredient_inn: "Onbrez", active_ingredient_trade_name: "Buse", medicine_dosage: "150")
+InhalerDevice.create!(inhaler_device_type: "Breezehaler", active_ingredient_inn: "Onbrez", active_ingredient_trade_name: "Buse", medicine_dosage: "300")
+InhalerDevice.create!(inhaler_device_type: "Breezehaler", active_ingredient_inn: "Oslif", active_ingredient_trade_name: "Salbu", medicine_dosage: "150")
+InhalerDevice.create!(inhaler_device_type: "Breezehaler", active_ingredient_inn: "Oslif", active_ingredient_trade_name: "Salbu", medicine_dosage: "300")
 
 # users 1 & 2
 user = User.new(

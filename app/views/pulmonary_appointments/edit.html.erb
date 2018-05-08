@@ -26,7 +26,6 @@
             <%= text_field_tag :user_full_name, current_user.full_name, disabled: true, class: 'form-control' %>
             <%= f.hidden_field :user_id %>
           </div>
-          <%= console %>
 
           <div class="col-md-6">
             <%= f.label :appointment_date, t('.appointment-date') %>
@@ -63,6 +62,18 @@
           <div class="col-md-1">
             <%= f.label :inhaler, t('.inhaler') %>
             <%= f.check_box(:inhaler) %>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <h3>Inaladores</h3>
+          <div id="prescribed_inhalers">
+            <%= f.fields_for :prescribed_inhalers do |inhaler| %>
+              <%= render 'prescribed_inhaler_fields', f: inhaler %>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association t('.add-inhaler'), f, :prescribed_inhalers, class: 'btn btn-primary' %>
+            </div>
           </div>
         </div>
 
