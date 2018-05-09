@@ -12,6 +12,9 @@ pt:
     office_location: 'Unidade'
     email: 'E-mail'
     inhaler_type_name: 'Nome do tipo de dispositivo'
+    active_ingredient_inn: 'Designação Comum Internacional'
+    active_ingredient_trade_name: 'Nome comercial'
+    medicine_dosage: 'Dosagem'
   activerecord:
     models:
       user: Utilizador

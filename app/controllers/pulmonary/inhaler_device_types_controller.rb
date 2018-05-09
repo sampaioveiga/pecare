@@ -6,6 +6,10 @@ class Pulmonary::InhalerDeviceTypesController < ApplicationController
     @inhaler_device_types = InhalerDeviceType.order(:inhaler_type_name)
   end
 
+  def show
+    redirect_to pulmonary_inhaler_device_types_path
+  end
+
   def new
     @inhaler_device_type = InhalerDeviceType.new
   end

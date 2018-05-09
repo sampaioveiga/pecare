@@ -1,15 +1,10 @@
 <% provide(:title, "#{t('.edit')} #{@inhaler_device_type.inhaler_type_name}") %>
 
-<aside class="col-md-3">
+<div class="col-md-9 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4><%= t('.edit') %> <%= @inhaler_device_type.inhaler_type_name %></h4>
     </div>
-  </div>
-</aside>
-
-<div class="col-md-9">
-  <div class="panel panel-default">
     <div class="panel-body">
       <%= form_for(@inhaler_device_type, url: pulmonary_inhaler_device_type_path) do |f| %>
         <%= render 'shared/error_messages', obj: f.object %>

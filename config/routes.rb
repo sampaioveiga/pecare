@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :pulmonary_appointments, only: [ :edit, :update, :destroy ]
 
   namespace :pulmonary do
-    resources :inhaler_device_types, except: [ :show, :destroy ]
-    resources :inhaler_devices, except: [ :show, :destroy ]
+    resources :inhaler_device_types, except: [ :destroy ]
+    resources :inhaler_devices, except: [ :destroy ]
   end
 end

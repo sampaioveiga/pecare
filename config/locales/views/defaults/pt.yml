@@ -102,6 +102,8 @@ pt:
     pulmonary_appointments_menu:
       pulmonary-appointment-options: 'Menu pneumologia'
       new-patient-pulmonary-appointment: 'Nova consulta'
+      device-types: 'Tipos de dispositivos'
+      inhalers: 'Inaladores'
     pulmonary_menu:
       device-types: 'Tipos de dispositivos'
       new-inhaler-device-type: 'Novo tipo de dispositivo'
@@ -139,16 +141,22 @@ pt:
         edit: 'Editar'
         patient-index: 'Ver todas as fichas'
       new:
-        new: 'Novo tipo de dispositivo'
-        inhaler_type_name: 'Nome do tipo de dispositivo'
+        new-inhaler-device: 'Novo inalador'
+        inhaler-device-type: 'Tipo de inalador'
+        active-ingredient-inn: 'Designação Comum Internacional'
+        active-ingredient-trade-name: 'Nome comercial'
+        medicine-dosage: 'Dosagem'
         submit: 'Submeter'
         cancel: 'Cancelar'
       create:
-        new-inhaler-device-type-flash: 'Novo tipo de dispositivo criado'
+        new-inhaler-device-flash: 'Novo inalador criado'
       edit:
-        edit: 'Editar'
-        inhaler_type_name: 'Nome do tipo de dispositivo'
+        edit-inhaler-device: 'Editar inalador'
+        inhaler-device-type: 'Tipo de inalador'
+        active-ingredient-inn: 'Designação Comum Internacional'
+        active-ingredient-trade-name: 'Nome comercial'
+        medicine-dosage: 'Dosagem'
         submit: 'Submeter'
         cancel: 'Cancelar'
       update:
-        edit-inhaler-device-type-flash: 'Nome do tipo de dispositivo atualizado'
+        edit-inhaler-device-flash: 'Inalador atualizado'

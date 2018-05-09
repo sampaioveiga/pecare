@@ -1,0 +1,41 @@
+<% provide(:title, t('.edit-inhaler-device')) %>
+
+<div class="col-md-9 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.edit-inhaler-device')%></h4>
+    </div>
+    <div class="panel-body">
+      <%= form_for(@inhaler_device, url: pulmonary_inhaler_device_path) do |f| %>
+        <%= render 'shared/error_messages', obj: f.object %>
+
+        <div class="field">
+          <%= f.label :inhaler_device_type, t('.inhaler-device-type') %>
+          <%= f.collection_select :inhaler_device_type, InhalerDeviceType.order(:inhaler_type_name), :inhaler_type_name, :inhaler_type_name, {}, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :active_ingredient_inn, t('.active-ingredient-inn') %>
+          <%= f.text_field :active_ingredient_inn, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :active_ingredient_trade_name, t('.active-ingredient-trade-name') %>
+          <%= f.text_field :active_ingredient_trade_name, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :medicine_dosage, t('.medicine-dosage') %>
+          <%= f.text_field :medicine_dosage, class: 'form-control' %>
+        </div>
+
+        <div class="action">
+          <div class="col-md-3">
+            <%= f.submit t('.submit'), class: 'btn btn-success' %>
+          </div>
+          <%= link_to t('.cancel'), :back, class: 'btn btn-default' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
