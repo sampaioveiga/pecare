@@ -3,10 +3,7 @@
 <div class="col-md-3">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4>
-        <%= @patient.name %><br />
-        <%= t('.new-pulmonary-appointment') %>
-      </h4>
+      <h4><%= @patient.name %></h4>
     </div>
     <div class="panel-body">
       <%= render "shared/patient_data" %>
@@ -16,6 +13,9 @@
 
 <div class="col-md-9">
   <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.new-pulmonary-appointment') %></h4>
+    </div>
     <div class="panel-body">
       <%= form_for([@patient, @pulmonary_appointment]) do |f| %>
         <%= render 'shared/error_messages', obj: f.object %>

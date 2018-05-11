@@ -1,3 +1,6 @@
 <li>
-  <%= link_to patient.name, patient %>
+  <span class="lead"><%= link_to patient.name, patient %></span>
+  <small><%= t('.npsonho') %></small> <strong><%= patient.npsonho %></strong>
+  <small><%= t('.rnu') %></small> <strong><%= patient.rnu %></strong>
+  <small><%= t('.dob') %></small> <strong><%= patient.date_of_birth %></strong>
 </li>

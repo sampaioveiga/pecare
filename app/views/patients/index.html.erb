@@ -3,6 +3,9 @@
 <!-- aside column -->
 <aside class="col-md-3">
   <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.patient-search') %></h4>
+    </div>
     <div class="panel-body">
       <div>
         <%= render 'search-patients' %>
@@ -13,6 +16,9 @@
 
 <div class="col-md-9">
   <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.patients-index') %></h4>
+    </div>
     <div class="panel-body">
       <ul class="patients">
         <%= render @patients %>

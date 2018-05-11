@@ -23,7 +23,13 @@ pt:
       name-contains: 'Procurar por nome'
       search: 'Procurar'
     index:
-      patients-index: 'Lista de Utentes'
+      patients-index: 'Lista de utentes'
+      patient-search: 'Pesquisa de utentes'
+    patient:
+      dob: 'Data de nascimento'
+      rnu: 'RNU'
+      npsonho: 'Processo'
+      age: 'Idade'
     new:
       patient-new: 'Adicionar utente'
     edit:

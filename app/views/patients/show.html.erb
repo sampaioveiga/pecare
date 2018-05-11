@@ -2,7 +2,7 @@
 
 <!-- aside column -->
 <aside class="col-md-3">
-  <div class="panel panel-default"> <!-- data-spy="affix" data-offset-top="55" -->
+  <div class="panel panel-default" data-spy="affix" data-offset-top="55">
     <div class="panel-heading">
       <h4><%= @patient.name %></h4>
     </div>
@@ -25,9 +25,12 @@
         <h4><%= t(".pulmonary-appointments") %> <span class="badge"><%= @patient.pulmonary_appointments.count %></span></h4>
       </div>
       <div class="panel-body">
-        <div class="panel-group" id="pulmonary_appointments_accordion" role="tablist" aria-multiselectable="true">
+        <div class="list-group">
           <%= render @pulmonary_appointments %>
         </div>
+        <!--<div class="panel-group" id="pulmonary_appointments_accordion" role="tablist" aria-multiselectable="true">-->
+          <%#= render @pulmonary_appointments %>
+        <!--</div>-->
       </div>
     </div>
   </div>

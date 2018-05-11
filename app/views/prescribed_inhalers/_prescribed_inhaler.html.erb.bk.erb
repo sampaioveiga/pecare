@@ -1,0 +1,17 @@
+<tr>
+  <td><%= prescribed_inhaler.inhaler_device.inhaler_device_type %></td>
+  <td><%= prescribed_inhaler.inhaler_device.active_ingredient_inn %></td>
+  <td><%= prescribed_inhaler.inhaler_device.active_ingredient_trade_name %></td>
+  <td><%= prescribed_inhaler.inhaler_device.medicine_dosage %></td>
+  <td>
+    <%= t(".bt-bad") if prescribed_inhaler.before_technic === 'bt_bad' %>
+    <%= t(".bt-average") if prescribed_inhaler.before_technic === 'bt_average' %>
+    <%= t(".bt-good") if prescribed_inhaler.before_technic === 'bt_good' %>
+  </td>
+  <td>
+    <%= t(".at-bad") if prescribed_inhaler.after_technic === 'at_bad' %>
+    <%= t(".at-average") if prescribed_inhaler.after_technic === 'at_average' %>
+    <%= t(".at-good") if prescribed_inhaler.after_technic === 'at_good' %>
+  </td>
+  <td><%= prescribed_inhaler.observation %></td>
+</tr>

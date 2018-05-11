@@ -1,56 +1,22 @@
-<div class="panel panel-default">
-  <div class="panel-heading" role="tab" id=<%= "heading_pulmonary_appointment_#{pulmonary_appointment.id}" %>>
-    <h4 class="panel-title">
-      <a role="button" data-toggle="collapse" data-parent="#pulmonary_appointments_accordion" href=<%= "#collapse_pulmonary_appointment_#{pulmonary_appointment.id}" %> aria-expanded="false" aria-controls="<%= "collapse_pulmonary_appointment_#{pulmonary_appointment.id}" %>">
-        <%= "#{pulmonary_appointment.appointment_date} - #{has_title(pulmonary_appointment.user)} #{pulmonary_appointment.user.full_name}" %>
-      </a>
-    </h4>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <span class="lead"><%= pulmonary_appointment.appointment_date %> - <%= pulmonary_appointment.user.title %> <%= pulmonary_appointment.user.full_name %></span>
   </div>
-  <div id="<%= "collapse_pulmonary_appointment_#{pulmonary_appointment.id}" %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="<%= "heading_pulmonary_appointment_#{pulmonary_appointment.id}" %>">
-    <div class="panel-body">
-      <table class="table table-condensed">
-        <thead>
-          <tr>
-            <th><%= t('.weight') %></th>
-            <th><%= t('.blood-pressure') %></th>
-            <th><%= t('.pulse') %></th>
-            <th><%= t('.oxygen') %></th>
-            <th><%= t('.pef') %></th>
-            <th><%= t('.inhaler') %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><%= pulmonary_appointment.weight %> Kg</td>
-            <td><%= pulmonary_appointment.blood_pressure %> mmHg</td>
-            <td><%= pulmonary_appointment.pulse %> bpm</td>
-            <td><%= pulmonary_appointment.oxygen %> %</td>
-            <td><%= pulmonary_appointment.pef %> l/m</td>
-            <td><%= t('.inhaler-yes') if pulmonary_appointment.inhaler? %><%= t('.inhaler-no') unless pulmonary_appointment.inhaler? %></td>
-          </tr>
-        </tbody>
-      </table>
-      <table class="table table-condensed">
-        <tbody>
-          <%= render pulmonary_appointment.prescribed_inhalers %>
-        </tbody>
-      </table>
-      <% unless pulmonary_appointment.medication.empty?%>
-        <table class="table table-condensed">
-          <tbody>
-            <tr>
-              <th><%= t('.medication') %></th>
-              <td><%= pulmonary_appointment.medication %></td>
-            </tr>
-          </tbody>
-        </table>
+  <div class="panel-body">
+    <ul class="list-inline">
+      <li><small><%= t('.weight') %>: </small><strong><%=pulmonary_appointment.weight %> Kg</strong></li>
+      <li><small><%= t('.blood-pressure') %>: </small><strong><%=pulmonary_appointment.blood_pressure %> mmHH</strong></li>
+      <li><small><%= t('.pulse') %>: </small><strong><%=pulmonary_appointment.pulse %> bpm</strong></li>
+      <li><small><%= t('.oxygen') %>: </small><strong><%=pulmonary_appointment.oxygen %> %</strong></li>
+      <li><small><%= t('.pef') %>: </small><strong><%=pulmonary_appointment.pef %> l/m</strong></li>
+      <li><small><%= t('.inhaler') %>: </small><strong><%= t('.inhaler-yes') if pulmonary_appointment.inhaler? %><%= t('.inhaler-no') unless pulmonary_appointment.inhaler? %></strong></li>
+      <% unless pulmonary_appointment.prescribed_inhalers.empty? %>
+        <%= render pulmonary_appointment.prescribed_inhalers %>
       <% end %>
-    </div>
-    <div class="panel-footer">
-      <div class="text-right">
-        <%= link_to t('.edit-patient-pulmonary-appointment'), edit_pulmonary_appointment_path(pulmonary_appointment), class: 'btn btn-default btn-xs' %>
-        <%#= link_to t('.destroy-patient-pulmonary-appointment'), pulmonary_appointment_path(pulmonary_appointment), method: :delete, data: { confirm: t('are-u-sure')} , class: 'btn btn-danger btn-xs' %>
-      </div>
-    </div>
+      <% unless pulmonary_appointment.medication.empty?%>
+        <li><small>Outra medicação: </small><strong><%=pulmonary_appointment.medication %></strong></li>
+      <% end %>
+    </ul>
+    <div class="text-right"><%= link_to t('.edit-patient-pulmonary-appointment'), edit_pulmonary_appointment_path(pulmonary_appointment), class: 'btn btn-default btn-xs' %></div>
   </div>
 </div>
