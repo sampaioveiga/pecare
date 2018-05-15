@@ -1,5 +1,12 @@
 class PulmonaryAppointmentsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_pulmonary_appointement, only: [ :show, :edit, :update, :destroy ]
 
+  def show
+    patient = @pulmonary_appointment.patient
+    redirect_to patient_path(patient)
+  end
+  
   def new
     @patient = Patient.find(params[:patient_id])
     @pulmonary_appointment = @patient.pulmonary_appointments.new(
@@ -20,13 +27,11 @@ class PulmonaryAppointmentsController < ApplicationController
   end
 
   def edit
-    @pulmonary_appointment = PulmonaryAppointment.find(params[:id])
     @pulmonary_appointment.user_id = current_user.id
     @patient = @pulmonary_appointment.patient
   end
 
   def update
-    @pulmonary_appointment = PulmonaryAppointment.find(params[:id])
     @patient = @pulmonary_appointment.patient
     if @pulmonary_appointment.update(pulmonary_appointment_params)
       flash[:success] = t('edit-form-saved-flash')
@@ -37,7 +42,6 @@ class PulmonaryAppointmentsController < ApplicationController
   end
 
   def destroy
-    @pulmonary_appointment = PulmonaryAppointment.find(params[:id])
     @patient = @pulmonary_appointment.patient
     @pulmonary_appointment.destroy
     flash[:danger] = t('item-removed-flash')
@@ -46,6 +50,10 @@ class PulmonaryAppointmentsController < ApplicationController
   end
 
   private
+
+    def set_pulmonary_appointement
+      @pulmonary_appointment = PulmonaryAppointment.find(params[:id])
+    end
 
     def pulmonary_appointment_params
       params.require(:pulmonary_appointment).permit(

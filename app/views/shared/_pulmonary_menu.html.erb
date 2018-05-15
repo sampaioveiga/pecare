@@ -1,5 +1,5 @@
-<li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('.device-types'), pulmonary_inhaler_device_types_path, class: 'btn btn-default' %></li>
-<li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('.new-inhaler-device-type'), new_pulmonary_inhaler_device_type_path, class: 'btn btn-default' %></li>
 <li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('.inhalers'), pulmonary_inhaler_devices_path, class: 'btn btn-default' %></li>
 <li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('.new-inhaler-device'), new_pulmonary_inhaler_device_path, class: 'btn btn-default' %></li>
+<li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('.device-types'), pulmonary_inhaler_device_types_path, class: 'btn btn-default' %></li>
+<li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('.new-inhaler-device-type'), new_pulmonary_inhaler_device_type_path, class: 'btn btn-default' %></li>
 <li role="presentation"><%= link_to t('.patient-index'), patients_path, class: 'btn btn-default' %></li>

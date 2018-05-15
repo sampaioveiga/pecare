@@ -1,0 +1,15 @@
+<% if @patient.pulmonary_appointments.any? %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t(".pulmonary-appointments") %> <span class="badge"><%= @patient.pulmonary_appointments.count %></span></h4>
+    </div>
+    <div class="panel-body">
+      <div class="list-group">
+        <%= render @pulmonary_appointments %>
+      </div>
+      <!--<div class="panel-group" id="pulmonary_appointments_accordion" role="tablist" aria-multiselectable="true">-->
+        <%#= render @pulmonary_appointments %>
+      <!--</div>-->
+    </div>
+  </div>
+<% end %>

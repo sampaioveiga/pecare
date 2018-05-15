@@ -4,8 +4,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4>
-        <%= @patient.name %><br />
-        <%= t('.edit-pulmonary-appointment') %>
+        <%= @patient.name %>
       </h4>
     </div>
     <div class="panel-body">
@@ -16,6 +15,9 @@
 
 <div class="col-md-9">
   <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.edit-pulmonary-appointment') %></h4>
+    </div>
     <div class="panel-body">
       <%= form_for(@pulmonary_appointment) do |f| %>
         <%= render 'shared/error_messages', obj: f.object %>
@@ -72,7 +74,7 @@
               <%= render 'prescribed_inhaler_fields', f: inhaler %>
             <% end %>
             <div class="links">
-              <%= link_to_add_association t('.add-inhaler'), f, :prescribed_inhalers, class: 'btn btn-primary' %>
+              <%= link_to_add_association t('.add-inhaler'), f, :prescribed_inhalers, class: 'btn btn-default' %>
             </div>
           </div>
         </div>
@@ -91,5 +93,3 @@
     </div>
   </div>
 </div>
-
-<% console %>

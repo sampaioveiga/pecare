@@ -24,9 +24,12 @@
           <%= f.text_field :active_ingredient_trade_name, class: 'form-control' %>
         </div>
 
-        <div class="field">
-          <%= f.label :medicine_dosage, t('.medicine-dosage') %>
-          <%= f.text_field :medicine_dosage, class: 'form-control' %>
+        <div class="row">
+          <div class="col-md-2">
+          <%= f.label :active do %>
+            <%= t('.active') %>  <%= f.check_box :active %> 
+          <% end %>
+          </div>
         </div>
 
         <div class="action">

@@ -11,4 +11,6 @@ class PulmonaryAppointment < ApplicationRecord
     presence: true
   validates :appointment_date,
     presence: true
+  validates :oxygen,
+    numericality: { only_integer: true, greater_than: 0, less_than_or_equal_to: 100 }, allow_blank: true
 end

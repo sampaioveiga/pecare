@@ -2,10 +2,10 @@ pt:
   form-cannot-be-saved-flash: 'A ficha não pode ser submetida.'
   new-form-saved-flash: 'A nova ficha foi criada.'
   edit-form-saved-flash: 'A ficha foi atualizada.'
-  item-removed-flash: 'A ficha foi definitivamente eliminada.'
+  item-removed-flash: 'A ficha foi eliminada definitivamente.'
   submit: 'Submeter'
   back: 'Cancelar'
-  are-u-sure: 'Tem a certeza? A remoção é definitiva!'
+  are-u-sure: 'Tem a certeza? A eliminação é definitiva!'
 
   layouts:
     header:
@@ -17,7 +17,6 @@ pt:
     show:
       edit-patient-link: 'Editar ficha'
       patient-index: 'Ver todas as fichas'
-      pulmonary-appointments: 'Consultas pneumologia'
       new-patient-pulmonary-appointment: 'Nova consulta pneumologia'
     search-patients:
       name-contains: 'Procurar por nome'
@@ -118,6 +117,8 @@ pt:
       patient-index: 'Ver todas as fichas'
 
   pulmonary:
+    appointments:
+      pulmonary-appointments: 'Consultas pneumologia'
     inhaler_device_types:
       index:
         inhaler-device-types: 'Dispositivos inaladores'
@@ -146,6 +147,9 @@ pt:
         medicine-dosage: 'Dose'
         edit: 'Editar'
         patient-index: 'Ver todas as fichas'
+        active: 'Ativo'
+        active-yes: 'Sim'
+        active-no: 'Não'
       new:
         new-inhaler-device: 'Novo inalador'
         inhaler-device-type: 'Tipo de inalador'
@@ -162,6 +166,7 @@ pt:
         active-ingredient-inn: 'Designação Comum Internacional'
         active-ingredient-trade-name: 'Nome comercial'
         medicine-dosage: 'Dosagem'
+        active: 'Ativo'
         submit: 'Submeter'
         cancel: 'Cancelar'
       update:

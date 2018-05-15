@@ -6,6 +6,7 @@ $logo-color: gray;
 $light-gray: lightgray;
 $dark-gray: darkgrey;
 $darker-gray: dimgray;
+$darkest-gray: #444;
 $error-color: red;
 
 @mixin box_sizing {
@@ -16,7 +17,7 @@ $error-color: red;
 
 body {
   padding-top: 55px;
-  background-color: $light-gray;
+  background-color: $darker-gray;
 }
 
 /* aside of show patient */
@@ -99,7 +100,7 @@ form {
 /* Footer */
 
 footer {
-  border-top: 1px solid $dark-gray;
+  border-top: 1px solid $darkest-gray;
   small {
     float: right;
   }

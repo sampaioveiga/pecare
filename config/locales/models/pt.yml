@@ -5,6 +5,7 @@ pt:
     rnu: "RNU"
     npsonho: "Processo"
     appointment_date: "Data da consulta"
+    oxygen: 'Oxigénio'
     password: 'Senha'
     full_name: 'Nome'
     employee_id: 'Número mecanográfico'
