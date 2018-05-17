@@ -74,6 +74,17 @@ class PulmonaryAppointmentsController < ApplicationController
           :after_technic,
           :observation,
           :_destroy
+        ],
+        oxygen_therapy_prescriptions_attributes: [
+          :id,
+          :oxygen_therapy_supplier,
+          :flow,
+          :number_hours,
+          :oxygen_tank,
+          :liquid_oxygen, 
+          :oxygen_concentrator,
+          :portable_oxygen_concentrator,
+          :_destroy
         ]
       )
     end

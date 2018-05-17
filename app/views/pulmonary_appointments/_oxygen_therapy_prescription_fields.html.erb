@@ -1,0 +1,56 @@
+<div class="nested-fields">
+  <div class="well">
+
+    <div class="col-md-6">
+      <div class="field">
+        <%= f.label :oxygen_therapy_supplier, t('.supplier') %>
+        <%= f.collection_select :oxygen_therapy_supplier, OxygenTherapySupplier.order(:supplier_name), :supplier_name, :supplier_name, {}, class: 'form-control'  %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="field">
+        <%= f.label :flow, t('.flow') %>
+        <%= f.number_field :flow, placeholder: 'L/m', class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-3">  
+      <div class="field">
+        <%= f.label :number_hours, t('.number-hours') %>
+        <%= f.number_field :number_hours, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="field">
+        <%= f.label :oxygen_tank, t('.oxygen-tank') %>
+        <%= f.check_box :oxygen_tank %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="field">
+        <%= f.label :liquid_oxygen, t('.liquid-oxygen') %>
+        <%= f.check_box :liquid_oxygen %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="field">
+        <%= f.label :oxygen_concentrator, t('.oxygen-concentrator') %>
+        <%= f.check_box :oxygen_concentrator %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="field">
+        <%= f.label :portable_oxygen_concentrator, t('.portable-oxygen-concentrator') %>
+        <%= f.check_box :portable_oxygen_concentrator %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= link_to_remove_association t('.remove-oxygen-therapy'), f, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>

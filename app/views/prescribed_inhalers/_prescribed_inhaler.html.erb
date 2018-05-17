@@ -1,33 +1,21 @@
-<!--<div class="list-group-item">
-  <h4 class="list-group-item-heading">-->
+<ul class="list-inline list-group-item-text">
   <li>
-    <ul class="list-inline list-group-item-text">
-      <li><strong>
-    <%= prescribed_inhaler.inhaler_device.inhaler_device_type %> - 
-    <%= prescribed_inhaler.inhaler_device.active_ingredient_inn %>,
-    <%= prescribed_inhaler.inhaler_device.active_ingredient_trade_name %>
-    <%= prescribed_inhaler.inhaler_device.medicine_dosage %>
+    <strong>
+      <%= prescribed_inhaler.inhaler_device.inhaler_device_type %> - 
+      <%= prescribed_inhaler.inhaler_device.active_ingredient_inn %>,
+      <%= prescribed_inhaler.inhaler_device.active_ingredient_trade_name %>
+      <%= prescribed_inhaler.inhaler_device.medicine_dosage %>
     </strong>
-    </li>
-  <!--</h4>-->
-  <!--<p class="">-->
-    <!--<ul class="list-inline list-group-item-text">
-      <li>--><li>
-        <%= t(".bt-bad") if prescribed_inhaler.before_technic === 'bt_bad' %>
-        <%= t(".bt-average") if prescribed_inhaler.before_technic === 'bt_average' %>
-        <%= t(".bt-good") if prescribed_inhaler.before_technic === 'bt_good' %>
-        </li>
-      <!--</li>
-      <li>-->
-      <li>
-        <%= t(".at-bad") if prescribed_inhaler.after_technic === 'at_bad' %>
-        <%= t(".at-average") if prescribed_inhaler.after_technic === 'at_average' %>
-        <%= t(".at-good") if prescribed_inhaler.after_technic === 'at_good' %>
-        </li>
-      <!--</li>-->
-      <li><%= prescribed_inhaler.observation %></li>
-    <!--</ul>-->
-    </ul>
   </li>
-  <!--</p>-->
-<!--</div>-->
+  <li>
+    <%= t(".bt-bad") if prescribed_inhaler.before_technic === 'bt_bad' %>
+    <%= t(".bt-average") if prescribed_inhaler.before_technic === 'bt_average' %>
+    <%= t(".bt-good") if prescribed_inhaler.before_technic === 'bt_good' %>
+  </li>
+  <li>
+    <%= t(".at-bad") if prescribed_inhaler.after_technic === 'at_bad' %>
+    <%= t(".at-average") if prescribed_inhaler.after_technic === 'at_average' %>
+    <%= t(".at-good") if prescribed_inhaler.after_technic === 'at_good' %>
+  </li>
+  <li><%= prescribed_inhaler.observation %></li>
+</ul>

@@ -78,7 +78,19 @@
         </div>
 
         <div class="col-md-12">
-          <%= f.label :medication, t('.medication') %>
+          <h3><%= t('.oxygen-therapy') %></h3>
+          <div id="oxygen_therapy_prescriptions">
+            <%= f.fields_for :oxygen_therapy_prescriptions do |o2| %>
+              <%= render 'oxygen_therapy_prescription_fields', f: o2 %>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association t('.add-oxygen-therapy'), f, :oxygen_therapy_prescriptions, class: 'btn btn-default' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <h3><%= t('.medication') %></h3>
           <%= f.text_area :medication, class: 'form-control' %>
         </div>
 

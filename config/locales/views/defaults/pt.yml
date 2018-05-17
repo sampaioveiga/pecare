@@ -53,6 +53,8 @@ pt:
       medication: 'Outra Medicação'
       inhalers: 'Inaladores'
       add-inhaler: 'Adicionar dispositivo'
+      oxygen-therapy: 'Oxigenoterapia domiciliária'
+      add-oxygen-therapy: 'Oxigenoterapia domiciliária'
     edit:
       edit-pulmonary-appointment: 'Editar consulta de pneumologia'
       user-name: 'Utilizador'
@@ -65,6 +67,8 @@ pt:
       inhaler: 'Inalador'
       medication: 'Outra Medicação'
       add-inhaler: 'Adicionar dispositivo'
+      oxygen-therapy: 'Oxigenoterapia domiciliária'
+      add-oxygen-therapy: 'Oxigenoterapia domiciliária'
     pulmonary_appointment:
       weight: 'Peso'
       blood-pressure: 'TA'
@@ -89,6 +93,15 @@ pt:
       at-bad: 'Má'
       at-average: 'Razoável'
       at-good: 'Boa'
+    oxygen_therapy_prescription_fields:
+      supplier: 'Fornecedor'
+      flow: 'Débito'
+      number-hours: 'Horas'
+      oxygen-tank: 'Garrafa'
+      liquid-oxygen: 'Líquido'
+      oxygen-concentrator: 'Concentrador'
+      portable-oxygen-concentrator: 'POC'
+      remove-oxygen-therapy: 'Remover'
     
   prescribed_inhalers:
     prescribed_inhaler:
@@ -171,3 +184,9 @@ pt:
         cancel: 'Cancelar'
       update:
         edit-inhaler-device-flash: 'Inalador atualizado'
+  oxygen_therapy_prescriptions:
+    oxygen_therapy_prescription:
+      oxygen-tank: 'Garrafa'
+      liquid-oxygen: 'Líquido'
+      oxygen-concentrator: 'Concentrador'
+      portable-oxygen-concentrator: 'POC'

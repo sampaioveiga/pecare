@@ -10,11 +10,20 @@
       <li><small><%= t('.oxygen') %>: </small><strong><%=pulmonary_appointment.oxygen %> %</strong></li>
       <li><small><%= t('.pef') %>: </small><strong><%=pulmonary_appointment.pef %> l/m</strong></li>
       <li><small><%= t('.inhaler') %>: </small><strong><%= t('.inhaler-yes') if pulmonary_appointment.inhaler? %><%= t('.inhaler-no') unless pulmonary_appointment.inhaler? %></strong></li>
+    </ul>
       <% unless pulmonary_appointment.prescribed_inhalers.empty? %>
         <%= render pulmonary_appointment.prescribed_inhalers %>
       <% end %>
+      
+      <% unless pulmonary_appointment.oxygen_therapy_prescriptions.empty? %>
+        <%= render pulmonary_appointment.oxygen_therapy_prescriptions %>
+      <% end %>
+
       <% unless pulmonary_appointment.medication.empty?%>
-        <li><small>Outra medicação: </small><strong><%=pulmonary_appointment.medication %></strong></li>
+        <ul class="list-inline list-group-item-text">
+          <li><strong>Outra medicação:</strong></li>
+          <li><%=pulmonary_appointment.medication %></li>
+        </ul>
       <% end %>
     </ul>
     <div class="text-right"><%= link_to t('.edit-patient-pulmonary-appointment'), edit_pulmonary_appointment_path(pulmonary_appointment), class: 'btn btn-default btn-xs' %></div>

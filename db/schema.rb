@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180504134032) do
+ActiveRecord::Schema.define(version: 20180515143642) do
 
   create_table "departments", force: :cascade do |t|
     t.string "department_name", null: false
@@ -43,6 +43,27 @@ ActiveRecord::Schema.define(version: 20180504134032) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["location_name"], name: "index_office_locations_on_location_name", unique: true
+  end
+
+  create_table "oxygen_therapy_prescriptions", force: :cascade do |t|
+    t.integer "pulmonary_appointment_id"
+    t.string "oxygen_therapy_supplier"
+    t.integer "flow"
+    t.integer "number_hours"
+    t.boolean "oxygen_tank", default: false
+    t.boolean "liquid_oxygen", default: false
+    t.boolean "oxygen_concentrator", default: false
+    t.boolean "portable_oxygen_concentrator", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pulmonary_appointment_id"], name: "index_oxygen_therapy_prescriptions_on_pulmonary_appointment_id"
+  end
+
+  create_table "oxygen_therapy_suppliers", force: :cascade do |t|
+    t.string "supplier_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["supplier_name"], name: "index_oxygen_therapy_suppliers_on_supplier_name", unique: true
   end
 
   create_table "patients", force: :cascade do |t|
