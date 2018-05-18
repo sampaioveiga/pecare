@@ -19,6 +19,10 @@
         <%= render pulmonary_appointment.oxygen_therapy_prescriptions %>
       <% end %>
 
+      <% unless pulmonary_appointment.niv_prescriptions.empty? %>
+        <%= render pulmonary_appointment.niv_prescriptions %>
+      <% end %>
+
       <% unless pulmonary_appointment.medication.empty?%>
         <ul class="list-inline list-group-item-text">
           <li><strong>Outra medicação:</strong></li>

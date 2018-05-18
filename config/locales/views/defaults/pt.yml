@@ -55,6 +55,8 @@ pt:
       add-inhaler: 'Adicionar dispositivo'
       oxygen-therapy: 'Oxigenoterapia domiciliária'
       add-oxygen-therapy: 'Oxigenoterapia domiciliária'
+      niv: 'Ventilação não invasiva'
+      add-niv: 'Ventilação não invasiva'
     edit:
       edit-pulmonary-appointment: 'Editar consulta de pneumologia'
       user-name: 'Utilizador'
@@ -69,6 +71,8 @@ pt:
       add-inhaler: 'Adicionar dispositivo'
       oxygen-therapy: 'Oxigenoterapia domiciliária'
       add-oxygen-therapy: 'Oxigenoterapia domiciliária'
+      niv: 'Ventilação não invasiva'
+      add-niv: 'Ventilação não invasiva'
     pulmonary_appointment:
       weight: 'Peso'
       blood-pressure: 'TA'
@@ -103,6 +107,16 @@ pt:
       oxygen-concentrator-tank: 'Concentrador e garrafa'
       portable-oxygen-concentrator: 'POC'
       remove-oxygen-therapy: 'Remover'
+    niv_prescription_fields:
+      bipap: 'BIPAP'
+      ipap: 'IPAP'
+      epap: 'EPAP'
+      cpap: 'CPAP'
+      pressure: 'Pressão'
+      hours: 'Horas'
+      oxygen: 'O2'
+      mask: 'Máscara'
+      remove-niv: 'Remover'
     
   prescribed_inhalers:
     prescribed_inhaler:
@@ -203,10 +217,22 @@ pt:
         supplier_name: 'Nome do fornecedor'
         submit: 'Submeter'
         cancel: 'Cancelar'
+
   oxygen_therapy_prescriptions:
     oxygen_therapy_prescription:
+      oxygen-therapy: 'Oxigenoterapia'
       oxygen-tank: 'Garrafa'
       liquid-oxygen: 'Líquido'
       oxygen-concentrator: 'Concentrador'
       oxygen-concentrator-tank: 'Concentrador e garrafa'
       portable-oxygen-concentrator: 'POC'
+
+  niv_prescriptions:
+    niv_prescription:
+      niv: 'Ventilação não invasiva'
+      ipap: 'IPAP'
+      epap: 'EPAP'
+      pressure: 'Pressão'
+      hours: 'Horas'
+      oxygen: 'O2'
+      mask: 'Máscara'

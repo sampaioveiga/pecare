@@ -92,6 +92,18 @@
         </div>
 
         <div class="col-md-12">
+          <h3><%= t('.niv') %></h3>
+          <div id="niv_prescriptions">
+            <%= f.fields_for :niv_prescriptions do |niv| %>
+              <%= render 'niv_prescription_fields', f: niv %>
+            <% end %>
+            <div class="links">
+              <%= link_to_add_association t('.add-niv'), f, :niv_prescriptions, class: 'btn btn-default' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12">
           <h3><%= t('.medication') %></h3>
           <%= f.text_area :medication, class: 'form-control' %>
         </div>

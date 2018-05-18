@@ -77,6 +77,7 @@ class PulmonaryAppointmentsController < ApplicationController
         ],
         oxygen_therapy_prescriptions_attributes: [
           :id,
+          :pulmonary_appointment_id,
           :oxygen_therapy_supplier,
           :flow,
           :number_hours,
@@ -85,6 +86,19 @@ class PulmonaryAppointmentsController < ApplicationController
           :oxygen_concentrator,
           :oxygen_concentrator_tank,
           :portable_oxygen_concentrator,
+          :_destroy
+        ],
+        niv_prescriptions_attributes: [
+          :id,
+          :pulmonary_appointment_id,
+          :bipap,
+          :ipap,
+          :epap,
+          :cpap,
+          :pressure,
+          :hours,
+          :oxygen,
+          :mask,
           :_destroy
         ]
       )

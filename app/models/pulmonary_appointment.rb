@@ -6,6 +6,8 @@ class PulmonaryAppointment < ApplicationRecord
   has_many :inhaler_devices, through: :prescribed_inhalers
   has_many :oxygen_therapy_prescriptions, inverse_of: :pulmonary_appointment
   accepts_nested_attributes_for :oxygen_therapy_prescriptions, allow_destroy: true
+  has_many :niv_prescriptions, inverse_of: :pulmonary_appointment
+  accepts_nested_attributes_for :niv_prescriptions, allow_destroy: true
   
   default_scope -> { order(appointment_date: :desc, created_at: :desc) }
 

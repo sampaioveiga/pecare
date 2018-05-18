@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180515143642) do
+ActiveRecord::Schema.define(version: 20180518132037) do
 
   create_table "departments", force: :cascade do |t|
     t.string "department_name", null: false
@@ -36,6 +36,21 @@ ActiveRecord::Schema.define(version: 20180515143642) do
     t.datetime "updated_at", null: false
     t.index ["active_ingredient_inn"], name: "index_inhaler_devices_on_active_ingredient_inn"
     t.index ["inhaler_device_type"], name: "index_inhaler_devices_on_inhaler_device_type"
+  end
+
+  create_table "niv_prescriptions", force: :cascade do |t|
+    t.integer "pulmonary_appointment_id"
+    t.string "bipap"
+    t.string "ipap"
+    t.string "epap"
+    t.string "cpap"
+    t.string "pressure"
+    t.string "hours"
+    t.string "oxygen"
+    t.string "mask"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pulmonary_appointment_id"], name: "index_niv_prescriptions_on_pulmonary_appointment_id"
   end
 
   create_table "office_locations", force: :cascade do |t|

@@ -1,0 +1,11 @@
+<ul class="list-inline list-group-item-text">
+  <li><strong><%= t('.niv') %></strong></li>
+  <li><%= niv_prescription.bipap unless niv_prescription.bipap.nil?  %></li>
+  <li><%= "#{t('.ipap')}: #{niv_prescription.ipap}" unless niv_prescription.ipap.nil?  %></li>
+  <li><%= "#{t('.epap')}: #{niv_prescription.epap}" unless niv_prescription.epap.nil?  %></li>
+  <li><%= niv_prescription.cpap unless niv_prescription.cpap.nil?  %></li>
+  <li><%= "#{t('.pressure')}: #{niv_prescription.pressure}" unless niv_prescription.pressure.nil?  %></li>
+  <li><%= "#{t('.hours')}: #{niv_prescription.hours}" unless niv_prescription.hours.nil?  %></li>
+  <li><%= "#{t('.oxygen')}: #{niv_prescription.oxygen}" unless niv_prescription.oxygen.nil?  %></li>
+  <li><%= "#{t('.mask')}: #{niv_prescription.mask}" unless niv_prescription.mask.nil?  %></li>
+</ul>
