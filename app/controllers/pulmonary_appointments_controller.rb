@@ -83,6 +83,7 @@ class PulmonaryAppointmentsController < ApplicationController
           :oxygen_tank,
           :liquid_oxygen, 
           :oxygen_concentrator,
+          :oxygen_concentrator_tank,
           :portable_oxygen_concentrator,
           :_destroy
         ]

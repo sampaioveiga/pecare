@@ -1,3 +1,5 @@
+<li role="presentation" class=<%= 'active' if current_page?(pulmonary_oxygen_therapy_suppliers_path) %>><%= link_to t('.oxygen-therapy-suppliers'), pulmonary_oxygen_therapy_suppliers_path, class: 'btn btn-default' %></li>
+<li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_oxygen_therapy_suppliers_path) %>><%= link_to t('.new-oxygen-therapy-supplier'), new_pulmonary_oxygen_therapy_supplier_path, class: 'btn btn-default' %></li>
 <li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('.inhalers'), pulmonary_inhaler_devices_path, class: 'btn btn-default' %></li>
 <li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('.new-inhaler-device'), new_pulmonary_inhaler_device_path, class: 'btn btn-default' %></li>
 <li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('.device-types'), pulmonary_inhaler_device_types_path, class: 'btn btn-default' %></li>

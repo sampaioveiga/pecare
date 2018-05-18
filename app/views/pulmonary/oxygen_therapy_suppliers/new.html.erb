@@ -1,0 +1,26 @@
+<% provide(:title, t('.new')) %>
+
+<div class="col-md-9 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.new') %></h4>
+    </div>
+    <div class="panel-body">
+      <%= form_for(@oxygen_therapy_supplier, url: pulmonary_oxygen_therapy_suppliers_path) do |f| %>
+        <%= render 'shared/error_messages', obj: f.object %>
+
+        <div class="field">
+          <%= f.label :supplier_name, t('.supplier_name') %>
+          <%= f.text_field :supplier_name, class: 'form-control' %>
+        </div>
+
+        <div class="action">
+          <div class="col-md-3">
+            <%= f.submit t('.submit'), class: 'btn btn-success' %>
+          </div>
+          <%= link_to t('.cancel'), :back, class: 'btn btn-default' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

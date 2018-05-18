@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20180515143642) do
     t.boolean "oxygen_tank", default: false
     t.boolean "liquid_oxygen", default: false
     t.boolean "oxygen_concentrator", default: false
+    t.boolean "oxygen_concentrator_tank", default: false
     t.boolean "portable_oxygen_concentrator", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

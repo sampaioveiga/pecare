@@ -16,6 +16,7 @@ pt:
     active_ingredient_inn: 'Designação Comum Internacional'
     active_ingredient_trade_name: 'Nome comercial'
     medicine_dosage: 'Dosagem'
+    supplier_name: 'Nome do fornecedor'
   activerecord:
     models:
       user: Utilizador

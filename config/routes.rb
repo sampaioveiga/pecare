@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   namespace :pulmonary do
     resources :inhaler_device_types, except: [ :destroy ]
     resources :inhaler_devices, except: [ :destroy ]
+    resources :oxygen_therapy_suppliers, except: [ :destroy ]
   end
 end
