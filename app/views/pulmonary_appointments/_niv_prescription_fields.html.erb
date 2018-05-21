@@ -4,7 +4,7 @@
     <div class="col-md-6">
       <div class="field">
         <%= f.label :bipap, t('.bipap') %>
-        <%= f.select :bipap, options_for_select([[t(".bipap"),"BIPAP"], [t(".bipap-auto"),"BIPAP Auto"]]), { include_blank: true }, class: 'form-control'  %>
+        <%= f.select :bipap, options_for_select([[t(".bipap"),"BIPAP"], [t(".bipap-auto"),"BIPAP Auto"]], f.object.bipap), { include_blank: true }, class: 'form-control'  %>
       </div>
     </div>
 
@@ -25,7 +25,7 @@
     <div class="col-md-6">
       <div class="field">
         <%= f.label :cpap, t('.cpap') %>
-        <%= f.select :cpap, options_for_select([[t(".cpap"),"CPAP"], [t(".cpap-auto"),"CPAP Auto"]]), { include_blank: true }, class: 'form-control'  %>
+        <%= f.select :cpap, options_for_select([[t(".cpap"),"CPAP"], [t(".cpap-auto"),"CPAP Auto"]], f.object.cpap), { include_blank: true }, class: 'form-control'  %>
       </div>
     </div>
 
@@ -53,7 +53,7 @@
     <div class="col-md-4">
       <div class="field">
         <%= f.label :mask, t('.mask') %>
-        <%= f.select :mask, options_for_select([[t(".nose"),"Nasal"], [t(".face"),"Facial"]]), { include_blank: true }, class: 'form-control'  %>
+        <%= f.select :mask, options_for_select([[t(".nose"),"Nasal"], [t(".face"),"Facial"]], f.object.mask), { include_blank: true }, class: 'form-control'  %>
       </div>
     </div>
     <div class="actions">

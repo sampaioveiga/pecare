@@ -11,14 +11,14 @@
     <div class="field">
       <div class="col-md-3">
         <%= f.label :before_technic, t('.before-technic') %>
-        <%= f.select :before_technic, options_for_select([[t(".bt-bad"),"bt_bad"], [t(".bt-average"),"bt_average"], [t(".bt-good"),"bt_good"]], [t(".bt-average"),"bt_average"]), {}, class: 'form-control' %>
+        <%= f.select :before_technic, options_for_select([[t(".bt-bad"),"bt_bad"], [t(".bt-average"),"bt_average"], [t(".bt-good"),"bt_good"]], f.object.before_technic), {}, class: 'form-control' %>
       </div>
     </div>
 
     <div class="field">
       <div class="col-md-3">
         <%= f.label :after_technic, t('.after-technic') %>
-        <%= f.select :after_technic, options_for_select([[t(".at-bad"),"at_bad"], [t(".at-average"),"at_average"], [t(".at-good"),"at_good"]], [t(".at-average"),"at_average"]), {}, class: 'form-control' %>
+        <%= f.select :after_technic, options_for_select([[t(".at-bad"),"at_bad"], [t(".at-average"),"at_average"], [t(".at-good"),"at_good"]], f.object.after_technic), {}, class: 'form-control' %>
       </div>
     </div>
 
