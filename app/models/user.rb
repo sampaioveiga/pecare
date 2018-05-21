@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :pulmonary_appointments
+  has_one :role
   before_save { self.email = email.downcase }
 
   devise :database_authenticatable, :registerable, 

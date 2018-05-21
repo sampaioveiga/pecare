@@ -19,6 +19,7 @@
 
 <!-- main column  -->
 <div class="col-md-9">
-  <!-- If current_user has access to pulmonary -->
-  <%= render 'pulmonary/appointments' %>
+  <% if can? :show, PulmonaryAppointment %>
+    <%= render 'pulmonary/appointments' %>
+  <% end %>
 </div>

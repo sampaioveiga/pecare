@@ -1,6 +1,7 @@
 class PatientsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_patient, only: [ :show, :edit, :update ]
+  load_and_authorize_resource
 
   def show
     @pulmonary_appointments = @patient.pulmonary_appointments.includes(:prescribed_inhalers, :inhaler_devices)

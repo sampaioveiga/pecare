@@ -1,6 +1,7 @@
 class PulmonaryAppointmentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_pulmonary_appointement, only: [ :show, :edit, :update, :destroy ]
+  load_and_authorize_resource
 
   def show
     patient = @pulmonary_appointment.patient

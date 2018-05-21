@@ -7,6 +7,10 @@ pt:
   back: 'Cancelar'
   are-u-sure: 'Tem a certeza? A eliminação é definitiva!'
 
+  unauthorized:
+    manage:
+      all: "Não tem permissões para aceder a esse recurso."
+
   layouts:
     header:
       help: 'Ajuda'
