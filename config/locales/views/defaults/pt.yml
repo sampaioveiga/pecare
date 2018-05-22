@@ -127,6 +127,8 @@ pt:
       hours: 'Horas'
       oxygen: 'O2'
       mask: 'Máscara'
+      nose: 'Nasal'
+      face: 'Facial'
       remove-niv: 'Remover'
     
   prescribed_inhalers:
