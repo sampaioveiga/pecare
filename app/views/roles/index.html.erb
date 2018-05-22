@@ -1,0 +1,29 @@
+<% provide(:title, t('.roles')) %>
+
+<div class="col-md-9 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.roles') %></h4>
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t('.user-full-name') %></th>
+            <th><%= t('.pulmonology') %></th>
+            <th><%= t('.icu') %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%#= link_to user.full_name, edit_role_path(user.id) %><%= user.full_name %></td>
+              <td><%= t(user.role.pulmonology) unless user.role.nil? %></td>
+              <td><%= t(user.role.icu) unless user.role.nil? %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

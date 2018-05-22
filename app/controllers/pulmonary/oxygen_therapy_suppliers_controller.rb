@@ -1,6 +1,7 @@
 class Pulmonary::OxygenTherapySuppliersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_oxygen_therapy_supplier, only: [ :edit, :update ]
+  load_and_authorize_resource
 
   def index
     @oxygen_therapy_suppliers = OxygenTherapySupplier.order(:supplier_name)

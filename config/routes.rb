@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :roles
   root 'static_pages#index'
 
   get 'static_pages/index'

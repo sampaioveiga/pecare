@@ -6,6 +6,13 @@ pt:
   submit: 'Submeter'
   back: 'Cancelar'
   are-u-sure: 'Tem a certeza? A eliminação é definitiva!'
+  roles: 'Permissões'
+  pulmonology-no-access: 'Sem acesso'
+  pulmonology-user: 'Utilizador'
+  pulmonology-superuser: 'Superutilizador'
+  icu-no-access: 'Sem acesso'
+  icu-user: 'Utilizador'
+  icu-superuser: 'Superutilizador'
 
   unauthorized:
     manage:

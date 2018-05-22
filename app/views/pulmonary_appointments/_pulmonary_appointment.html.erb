@@ -30,6 +30,8 @@
         </ul>
       <% end %>
     </ul>
-    <div class="text-right"><%= link_to t('.edit-patient-pulmonary-appointment'), edit_pulmonary_appointment_path(pulmonary_appointment), class: 'btn btn-default btn-xs' %></div>
+    <% if can? :manage, PulmonaryAppointment %>
+      <div class="text-right"><%= link_to t('.edit-patient-pulmonary-appointment'), edit_pulmonary_appointment_path(pulmonary_appointment), class: 'btn btn-default btn-xs' %></div>
+    <% end %>
   </div>
 </div>

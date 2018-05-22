@@ -1,6 +1,7 @@
 class Pulmonary::InhalerDevicesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_inhaler_device, only: [ :edit, :update ]
+  load_and_authorize_resource
 
   def index
     @inhaler_devices = InhalerDevice.order(inhaler_device_type: :asc ,active_ingredient_inn: :asc)

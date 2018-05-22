@@ -2,9 +2,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    #if user.admin?
-    #  can :manage, :all
-    #end
+    if user.admin?
+      #can :manage, :all
+      can :manage, Role
+    end
 
     # user has no role -> no permition
     unless user.role.nil?
@@ -12,11 +13,14 @@ class Ability
       can :manage, Patient
       
       # Pulmonary Appointments
-      if user.role.pulmonology === 1
+      if user.role.pulmonology === 'pulmonology-user'
         can :read, PulmonaryAppointment
       end
-      if user.role.pulmonology === 2
+      if user.role.pulmonology === 'pulmonology-superuser'
         can :manage, PulmonaryAppointment
+        can :manage, OxygenTherapySupplier
+        can :manage, InhalerDevice
+        can :manage, InhalerDeviceType
       end
     end
   end
