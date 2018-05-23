@@ -1,0 +1,18 @@
+<% provide(:title, t('.edit-role')) %>
+
+<div class="col-md-9 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.edit-role') %> <%= @user.full_name %><h4>
+    </div>
+    <div class="panel-body">
+      <%= form_for(@user, url: role_path) do |f| %>
+        <% Role.all.each do |role| %>
+          <%= check_box :role_id, role.id, @user.role_ids.include?(role.id) %>
+          <%= role.name %><br />
+        <% end %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

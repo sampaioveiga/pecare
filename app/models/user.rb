@@ -1,7 +1,8 @@
 class User < ApplicationRecord
+  rolify
   has_many :pulmonary_appointments
-  has_one :role
   before_save { self.email = email.downcase }
+  after_create :assign_default_role
 
   devise :database_authenticatable, :registerable, 
          :recoverable, :rememberable, :trackable, :validatable,
@@ -9,6 +10,10 @@ class User < ApplicationRecord
 
   belongs_to :office_location
   belongs_to :department
+
+  def assign_default_role
+    self.add_role(:no_access) if self.roles.blank?
+  end
 
   validates :full_name,
     presence: true

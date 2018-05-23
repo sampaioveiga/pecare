@@ -1,40 +1,44 @@
 class RolesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_role, only: [ :edit, :update ]
+  before_action :set_user, only: [ :show, :edit, :update ]
   load_and_authorize_resource
 
   def index
-    @users = User.order(:full_name).includes(:role)
+    @users = User.order(:full_name)
   end
 
   def show
-    redirect_to roles_path
   end
 
   def edit
+    render :show
   end
 
   def update
-    if @role.update(roles_params)
-      flash[:success] = 'Yes'
+    #params[:user][:role_ids] ||= []
+
+    if @user.update_attributes(role_params)
+      flash[:success] = t('.role-successfully-updated-flash')
       redirect_to roles_path
     else
-      render :edit
+      render :show
     end
   end
 
   private
 
-    def roles_params
-      params.require(:role).permit(
-        :pulmonology,
-        :icu
-      )
+    def set_user
+      @user = User.find(params[:id])
     end
 
-    def set_role
-      @user = User.find(params[:id])
-      @role = @user.role
+    def role_params
+      params.require(:user).permit(
+        role_ids: [
+          :id,
+          :user_id,
+          :role_id
+        ]
+      )
     end
 
 end

@@ -6,24 +6,14 @@
       <h4><%= t('.roles') %></h4>
     </div>
     <div class="panel-body">
-      <table class="table">
-        <thead>
-          <tr>
-            <th><%= t('.user-full-name') %></th>
-            <th><%= t('.pulmonology') %></th>
-            <th><%= t('.icu') %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @users.each do |user| %>
-            <tr>
-              <td><%#= link_to user.full_name, edit_role_path(user.id) %><%= user.full_name %></td>
-              <td><%= t(user.role.pulmonology) unless user.role.nil? %></td>
-              <td><%= t(user.role.icu) unless user.role.nil? %></td>
-            </tr>
+      <% @users.each do |user| %>
+        <ul class="list-inline">
+          <li><%= link_to user.full_name, role_path(user) %></li>
+          <% user.roles.each do |role| %>
+            <li><%= role.name %></li>
           <% end %>
-        </tbody>
-      </table>
+        <ul>
+      <% end %>
     </div>
   </div>
 </div>

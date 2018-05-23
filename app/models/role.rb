@@ -1,11 +1,15 @@
 class Role < ApplicationRecord
-  belongs_to :user
+has_and_belongs_to_many :users, :join_table => :users_roles
 
-  enum pulmonology: [ 'pulmonology-no-access', 'pulmonology-user', 'pulmonology-superuser' ]
-  enum icu: [ 'icu-no-access', 'icu-user', 'icu-superuser' ]
 
-  validates :pulmonomology,
-    presence: true
-  validates :icu,
-    presence: true
+belongs_to :resource,
+           :polymorphic => true,
+           :optional => true
+
+
+validates :resource_type,
+          :inclusion => { :in => Rolify.resource_types },
+          :allow_nil => true
+
+scopify
 end
