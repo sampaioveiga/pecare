@@ -28,6 +28,7 @@ gem 'devise-i18n' , '>= 1.6.2'
 gem 'cocoon', '>= 1.2.11'
 gem 'cancancan', '>= 2.2.0'
 gem 'rolify', '>= 5.2.0'
+gem 'rails_admin', '~> 1.3'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '>= 4.2'
