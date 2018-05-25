@@ -1,5 +1,6 @@
 class Patient < ApplicationRecord
   has_many :pulmonary_appointments
+  resourcify
   
   validates :name,
     presence: true

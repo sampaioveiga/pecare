@@ -8,6 +8,7 @@ class PulmonaryAppointment < ApplicationRecord
   accepts_nested_attributes_for :oxygen_therapy_prescriptions, allow_destroy: true
   has_many :niv_prescriptions, inverse_of: :pulmonary_appointment
   accepts_nested_attributes_for :niv_prescriptions, allow_destroy: true
+  resourcify
   
   default_scope -> { order(appointment_date: :desc, created_at: :desc) }
 
