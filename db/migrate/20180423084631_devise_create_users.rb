@@ -3,9 +3,9 @@
 class DeviseCreateUsers < ActiveRecord::Migration[5.1]
   def change
     create_table :users do |t|
-      t.string  :title
       t.string  :full_name,   null: false
       t.integer :employee_id, null: false
+      t.string  :title
       t.integer :phone_number
       t.integer :cellphone_number
 
