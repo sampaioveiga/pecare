@@ -7,29 +7,19 @@
     </div>
     <div class="panel-body">
       <ul>
-        <%#= number_field_tag :user_id, @user.id %>
         <% @roles.each do |role| %>
           <li>
-            <%= form_tag(remove_role_path(@user), method: "delete") do %>
-              <%= number_field_tag :user_id, @user.id %>
-              <%= text_field_tag :role, role.name %>      
-              <%= submit_tag %>
-            <% end %>
-            <%#= form_tag remove_role_path([@user.id, role.id]), method: "delete" do %>
-              <%#= role.name %>
-              <%#= submit_tag %>
-            <%# end %>
+            <%= role.name %>
+            <small><%= ": #{role.resource_type}" %></small>
+            <%= link_to 'Destroy', [@user,role], method: :delete, data: { confirm: t(".are-you-sure") } %>
           </li>
-          <% end %>
-        <%# end %>
+        <% end %>
       </ul>
       <h4><%= t(".new-role") %></h4>
-      <%= form_tag({controller: "roles", action: "add"}, method: "post") do %>
-        <%= number_field_tag :user_id, @user.id %>
-        <%= select_tag :role_id, options_from_collection_for_select(Role.all, "id", "full_role") %>
-        <%= submit_tag %>
+      <%= form_with(model: [ @user, @user.roles.build ], local: true) do |f| %>
+        <%= select_tag(:role, options_from_collection_for_select(Role.all, :id, :full_role)) %>
+        <%= f.submit %>
       <% end %>
-      
     </div>
   </div>
 </div>

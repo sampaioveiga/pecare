@@ -136,9 +136,9 @@ ActiveRecord::Schema.define(version: 20180523110743) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "title"
     t.string "full_name", null: false
     t.integer "employee_id", null: false
+    t.string "title"
     t.integer "phone_number"
     t.integer "cellphone_number"
     t.string "email", default: "", null: false

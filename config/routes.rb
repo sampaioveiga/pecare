@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
 
-  get 'roles/:id/add', to: 'roles#add', as: 'add_role'
-  get 'roles/:id/remove', to: 'roles#remove', as: 'remove_role'
-  resources :roles
+  resources :roles, only: [ :index, :show ]
+  resources :users do
+    resources :roles, only: [ :create, :destroy ]
+  end
 
   root 'static_pages#index'
 
