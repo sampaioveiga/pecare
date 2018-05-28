@@ -1,0 +1,36 @@
+<% provide(:title, t('.edit-roles')) %>
+
+<div class="col-md-9 col-md-offset-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.edit-roles') %> <%= @user.full_name %></h4>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <%#= number_field_tag :user_id, @user.id %>
+        <% @roles.each do |role| %>
+          <li>
+            <%= form_tag(remove_role_path(@user), method: "delete") do %>
+              <%= number_field_tag :user_id, @user.id %>
+              <%= text_field_tag :role, role.name %>      
+              <%= submit_tag %>
+            <% end %>
+            <%#= form_tag remove_role_path([@user.id, role.id]), method: "delete" do %>
+              <%#= role.name %>
+              <%#= submit_tag %>
+            <%# end %>
+          </li>
+          <% end %>
+        <%# end %>
+      </ul>
+      <h4><%= t(".new-role") %></h4>
+      <%= form_tag({controller: "roles", action: "add"}, method: "post") do %>
+        <%= number_field_tag :user_id, @user.id %>
+        <%= select_tag :role_id, options_from_collection_for_select(Role.all, "id", "full_role") %>
+        <%= submit_tag %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
+<% console %>

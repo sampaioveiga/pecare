@@ -12,4 +12,12 @@ class Role < ApplicationRecord
           :allow_nil => true
 
   scopify
+
+  def full_role
+    if self.resource_type.nil?
+      self.name
+    else
+      self.name + ": #{self.resource_type}"
+    end
+  end
 end

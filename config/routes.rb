@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
+
+  get 'roles/:id/add', to: 'roles#add', as: 'add_role'
+  get 'roles/:id/remove', to: 'roles#remove', as: 'remove_role'
   resources :roles
+
   root 'static_pages#index'
 
   get 'static_pages/index'
