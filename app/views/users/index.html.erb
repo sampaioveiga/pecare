@@ -8,7 +8,7 @@
     <div class="panel-body">
       <% @users.each do |user| %>
         <ul class="list-unstyled">
-          <li><%= link_to user.full_name, role_path(user) %></li>
+          <li><%= link_to user.full_name, user_path(user) %></li>
           <ul class="list-inline">
             <li class="col-md-1"></li>
             <% user.roles.each do |role| %>

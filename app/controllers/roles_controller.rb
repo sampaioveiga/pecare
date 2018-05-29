@@ -2,15 +2,6 @@ class RolesController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
 
-  def index
-    @users = User.order(:full_name)
-  end
-
-  def show
-    @user = User.find(params[:id])
-    @roles = @user.roles
-  end
-
   def create
     user = User.find(params[:user_id])
     role = Role.find(params[:role])
@@ -21,7 +12,7 @@ class RolesController < ApplicationController
       user.add_role role.name, role.resource_type.constantize
     end
     flash[:success] = t(".add-role-flash")
-    redirect_to roles_path()
+    redirect_to users_path()
   end
 
   def destroy
@@ -30,7 +21,7 @@ class RolesController < ApplicationController
 
     user.remove_role role.name
     flash[:success] = t(".remove-role-flash")
-    redirect_to roles_path()
+    redirect_to users_path()
   end
 
 end

@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
 
-  resources :roles, only: [ :index, :show ]
   resources :users do
     resources :roles, only: [ :create, :destroy ]
   end
