@@ -1,6 +1,5 @@
 class RolesController < ApplicationController
   before_action :authenticate_user!
-  #before_action :set_roles, only: [ :show ]
   load_and_authorize_resource
 
   def index
@@ -34,10 +33,4 @@ class RolesController < ApplicationController
     redirect_to roles_path()
   end
 
-  private
-
-    def set_roles
-      @user = User.find(params[:id])
-      @roles = @user.roles 
-    end
 end

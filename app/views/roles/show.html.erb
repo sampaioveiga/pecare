@@ -6,21 +6,26 @@
       <h4><%= t('.edit-roles') %> <%= @user.full_name %></h4>
     </div>
     <div class="panel-body">
-      <ul>
-        <% @roles.each do |role| %>
-          <li>
-            <%= role.name %>
-            <small><%= ": #{role.resource_type}" %></small>
+      <h4><%= t('.current-roles') %></h4>
+      <% @roles.each do |role| %>
+        <ul class="list-inline">
+          <li class="col-md-3">
+            <%= role.name %><small><%= ": #{role.resource_type}" %></small>
+          </li>
+          <li class="col-md-9">
             <%= link_to 'Destroy', [@user,role], method: :delete, data: { confirm: t(".are-you-sure") } %>
           </li>
-        <% end %>
-      </ul>
+        </ul>
+      <% end %>
       <h4><%= t(".new-role") %></h4>
       <%= form_with(model: [ @user, @user.roles.build ], local: true) do |f| %>
-        <%= select_tag(:role, options_from_collection_for_select(Role.all, :id, :full_role)) %>
-        <%= f.submit %>
+        <div class="col-md-9">
+        <%= select_tag(:role, options_from_collection_for_select(Role.all, :id, :full_role), class: 'form-control') %>
+        </div>
+        <div class="col-md-3">
+        <%= f.submit t('submit'), class: 'btn btn-success' %>
+        </div>
       <% end %>
     </div>
   </div>
 </div>
-<% console %>
