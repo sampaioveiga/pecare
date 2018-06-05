@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   get 'patients/npsonho', to: 'patients#npsonho', as: 'npsonho_patient'
   resources :patients, except: [ :destroy ] do
     resources :pulmonary_appointments, only: [ :new, :create ]
+    resources :tiss_evaluations, only: [ :new, :create ]
   end
   resources :pulmonary_appointments, only: [ :show, :edit, :update, :destroy ]
+  resources :tiss_evaluations, only: [ :show, :edit, :update, :destroy ]
 
   namespace :pulmonary do
     resources :inhaler_device_types, except: [ :destroy ]

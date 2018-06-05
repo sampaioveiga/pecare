@@ -10,6 +10,7 @@
       <%= render 'shared/patient_data' %>
       <ul class="nav nav-pills nav-stacked">
         <%= render 'shared/pulmonary_appointments_menu' if can? (:manage), PulmonaryAppointment %>
+        <%= render 'shared/tiss_evaluations_menu' if can? (:manage), TissEvaluation %>
         <li role="presentation"><%= link_to t('.edit-patient-link'), edit_patient_path(@patient), class: 'btn btn-default' %></li>
         <li role="presentation"><%= link_to t('.patient-index'), patients_path(), class: 'btn btn-default' %></li>
       </ul>
@@ -20,4 +21,5 @@
 <!-- main column  -->
 <div class="col-md-9">
   <%= render 'pulmonary/appointments' if can? :show, PulmonaryAppointment %>
+  <%= render 'icu/tiss_evaluations' if can? :show, TissEvaluation %>
 </div>

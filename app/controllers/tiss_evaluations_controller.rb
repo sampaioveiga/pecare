@@ -1,0 +1,2 @@
+class TissEvaluationsController < ApplicationController
+end

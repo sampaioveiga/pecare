@@ -1,5 +1,6 @@
 class Patient < ApplicationRecord
   has_many :pulmonary_appointments
+  has_many :tiss_evaluations
   resourcify
   
   validates :name,

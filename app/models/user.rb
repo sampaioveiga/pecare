@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   rolify
   has_many :pulmonary_appointments
+  has_many :tiss_evaluations
   before_save { self.email = email.downcase }
   after_create :assign_default_role
 

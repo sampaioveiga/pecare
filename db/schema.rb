@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180523110743) do
+ActiveRecord::Schema.define(version: 20180605102125) do
 
   create_table "departments", force: :cascade do |t|
     t.string "department_name", null: false
@@ -133,6 +133,45 @@ ActiveRecord::Schema.define(version: 20180523110743) do
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
+  create_table "tiss_evaluations", force: :cascade do |t|
+    t.date "evaluation_date", null: false
+    t.decimal "score", null: false
+    t.integer "ba_q1", null: false
+    t.integer "ba_q2", null: false
+    t.integer "ba_q3", null: false
+    t.integer "ba_q4", null: false
+    t.integer "ba_q5", null: false
+    t.integer "ba_q6", null: false
+    t.integer "ba_q7", null: false
+    t.integer "vs_q1", null: false
+    t.integer "vs_q2", null: false
+    t.integer "vs_q3", null: false
+    t.integer "vs_q4", null: false
+    t.integer "cs_q1", null: false
+    t.integer "cs_q2", null: false
+    t.integer "cs_q3", null: false
+    t.integer "cs_q4", null: false
+    t.integer "cs_q5", null: false
+    t.integer "cs_q6", null: false
+    t.integer "cs_q7", null: false
+    t.integer "rs_q1", null: false
+    t.integer "rs_q2", null: false
+    t.integer "rs_q3", null: false
+    t.integer "ns_q1", null: false
+    t.integer "ms_q1", null: false
+    t.integer "ms_q2", null: false
+    t.integer "ms_q3", null: false
+    t.integer "si_q1", null: false
+    t.integer "si_q2", null: false
+    t.integer "si_q3", null: false
+    t.integer "patient_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["patient_id"], name: "index_tiss_evaluations_on_patient_id"
+    t.index ["user_id"], name: "index_tiss_evaluations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
