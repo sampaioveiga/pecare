@@ -30,6 +30,9 @@ gem 'cancancan', '>= 2.2.0'
 gem 'rolify', '>= 5.2.0'
 gem 'rails_admin', '~> 1.3'
 gem 'd3-rails', '>= 5.4.0'
+gem 'gon', '>= 6.2.0'
+gem 'rabl', '0.13.1'
+gem 'oj', '3.6.2'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '>= 4.2'
