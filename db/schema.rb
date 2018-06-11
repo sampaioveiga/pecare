@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 20180605102125) do
     t.index ["npsonho"], name: "index_patients_on_npsonho", unique: true
     t.index ["rnu"], name: "index_patients_on_rnu", unique: true
     t.index [nil, nil], name: "index_patients_on_patient_id_and_appointment_date"
+    t.index [nil, nil], name: "index_patients_on_patient_id_and_evaluation_date"
   end
 
   create_table "prescribed_inhalers", force: :cascade do |t|

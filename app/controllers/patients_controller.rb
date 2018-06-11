@@ -5,7 +5,7 @@ class PatientsController < ApplicationController
 
   def show
     @pulmonary_appointments = @patient.pulmonary_appointments.includes(:prescribed_inhalers, :inhaler_devices)
-    gon.rabl
+    @tiss_evaluations = @patient.tiss_evaluations
   end
 
   def npsonho

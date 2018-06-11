@@ -33,6 +33,8 @@ gem 'd3-rails', '>= 5.4.0'
 gem 'gon', '>= 6.2.0'
 gem 'rabl', '0.13.1'
 gem 'oj', '3.6.2'
+gem 'chartkick', '>= 2.3.4'
+gem 'groupdate', '>= 4.0.1'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '>= 4.2'

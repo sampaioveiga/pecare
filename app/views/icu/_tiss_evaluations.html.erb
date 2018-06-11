@@ -4,12 +4,7 @@
       <h4><%= t(".tiss-evaluations") %> <span class="badge"><%= @patient.tiss_evaluations.count %></span></h4>
     </div>
     <div class="panel-body">
-      <%# @patient.tiss_evaluations.each do |tiss| %>
-        <%#= tiss.score %>
-      <%# end %>
-      <div id="d3">
-        <svg id="visualisation" width="1000" height="500"></svg>
-      </div>
+      <%= line_chart @tiss_evaluations.group_by_day(:evaluation_date).sum(:score), messages: {empty: "#{t('.no-data')}"}, curve: false, discrete: true, ytitle: t('.tiss-scores'), download: t(".tiss-score") %>
     </div>
   </div>
 <% end %>
