@@ -1,6 +1,7 @@
 class PulmonaryAppointmentsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_pulmonary_appointement, only: [ :show, :edit, :update, :destroy ]
+  before_action :load_patient, only: [ :new, :create ]
   load_and_authorize_resource
 
   def show
@@ -9,7 +10,7 @@ class PulmonaryAppointmentsController < ApplicationController
   end
   
   def new
-    @patient = Patient.find(params[:patient_id])
+    #@patient = Patient.find(params[:patient_id])
     @pulmonary_appointment = @patient.pulmonary_appointments.new(
       appointment_date: Date.today,
       user_id: current_user.id
@@ -17,7 +18,7 @@ class PulmonaryAppointmentsController < ApplicationController
   end
 
   def create
-    @patient = Patient.find(params[:patient_id])
+    #@patient = Patient.find(params[:patient_id])
     @pulmonary_appointment = @patient.pulmonary_appointments.build(pulmonary_appointment_params)
     if @pulmonary_appointment.save
       flash[:success] = t('new-form-saved-flash')
@@ -54,6 +55,10 @@ class PulmonaryAppointmentsController < ApplicationController
 
     def set_pulmonary_appointement
       @pulmonary_appointment = PulmonaryAppointment.find(params[:id])
+    end
+
+    def load_patient
+      @patient = Patient.find(params[:patient_id])
     end
 
     def pulmonary_appointment_params

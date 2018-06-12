@@ -1,0 +1,430 @@
+<% provide(:title, t('.new-tiss-score')) %>
+
+<aside class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= @patient.name %></h4>
+    </div>
+    <div class="panel-body">
+      <%= render "shared/patient_data" %>
+    </div>
+  </div>
+</aside>
+
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.new-tiss-score') %></h4>
+    </div>
+    <div class="panel-body">
+      <%= form_for([@patient, @tiss_evaluation]) do |f| %>
+        <%= render 'shared/error_messages', obj: f.object %>
+
+        <div class="row">
+          <div class="col-md-6">
+            <%= f.label :user_id, t('.user-name') %>
+            <%= text_field_tag :user_full_name, current_user.full_name, disabled: true, class: 'form-control' %>
+            <%= f.hidden_field :user_id %>
+          </div>
+
+          <div class="col-md-6">
+            <%= f.label :evaluation_date, t('.evaluation-date') %>
+            <%= f.date_field :evaluation_date, class: 'form-control'%>
+          </div>
+        </div>
+
+        <!-- basic activities -->
+        <h4><%= t('.ba-q') %></h4>
+        <div class="row">
+          <%= f.label :ba_q1, t('.ba_q1'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q1, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q1, 5 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :ba_q2, t('.ba_q2'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q2, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q2, 1 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :ba_q3, t('.ba_q3'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q3, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q3, 2 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :ba_q4, t('.ba_q4'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q4, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q4, 3 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :ba_q5, t('.ba_q5'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q5, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q5, 1 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :ba_q6, t('.ba_q6'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q6, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q6, 1 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :ba_q7, t('.ba_q7'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q7, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ba_q7, 3 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ventilatory support -->
+        <h4><%= t('.vs-q') %></h4>
+        <div class="row">
+          <%= f.label :vs_q1, t('.vs_q1'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :vs_q1, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :vs_q1, 5 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :vs_q2, t('.vs_q2'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :vs_q2, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :vs_q2, 2 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :vs_q3, t('.vs_q3'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :vs_q3, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :vs_q3, 1 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :vs_q4, t('.vs_q4'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :vs_q4, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :vs_q4, 1 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- cardiovascular support -->
+        <h4><%= t('.cs-q') %></h4>
+        <div class="row">
+          <%= f.label :cs_q1, t('.cs_q1'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q1, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q1, 3 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :cs_q2, t('.cs_q2'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q2, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q2, 4 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :cs_q3, t('.cs_q3'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q3, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q3, 4 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :cs_q4, t('.cs_q4'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q4, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q4, 5 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :cs_q5, t('.cs_q5'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q5, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q5, 8 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :cs_q6, t('.cs_q6'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q6, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q6, 2 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :cs_q7, t('.cs_q7'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q7, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :cs_q7, 3 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- renal support -->
+        <h4><%= t('.rs-q') %></h4>
+        <div class="row">
+          <%= f.label :rs_q1, t('.rs_q1'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :rs_q1, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :rs_q1, 3 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :rs_q2, t('.rs_q2'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :rs_q2, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :rs_q2, 2 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :rs_q3, t('.rs_q3'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :rs_q3, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :rs_q3, 3 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- neurologic support -->
+        <h4><%= t('.ns-q') %></h4>
+        <div class="row">
+          <%= f.label :ns_q1, t('.ns_q1'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ns_q1, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ns_q1, 4 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- metabolic support -->
+        <h4><%= t('.ms-q') %></h4>
+        <div class="row">
+          <%= f.label :ms_q1, t('.ms_q1'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ms_q1, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ms_q1, 4 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :ms_q2, t('.ms_q2'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ms_q2, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ms_q2, 3 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :ms_q3, t('.ms_q3'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :ms_q3, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :ms_q3, 2 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- specific interventions -->
+        <h4><%= t('.si-q') %></h4>
+        <div class="row">
+          <%= f.label :si_q1, t('.si_q1'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :si_q1, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :si_q1, 3 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :si_q2, t('.si_q2'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :si_q2, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :si_q2, 5 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <%= f.label :si_q3, t('.si_q3'), class: 'control-label col-md-10' %>
+          <div class="col-md-2">
+            <div class="radio-inline">
+              <%= f.radio_button :si_q3, 0, checked: true %>
+              <span class="radio-inline-label"><%= t('r-no') %></span>
+            </div>
+            <div class="radio-inline">
+              <%= f.radio_button :si_q3, 5 %>
+              <span class="radio-inline-label"><%= t('r-yes') %></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-2">
+          <%= f.submit t('submit'), class: 'btn btn-success' %>
+        </div>
+
+        <%= link_to t('back'), :back, class: 'btn btn-default' %>
+
+      <% end %>
+    </div>
+  </div>
+</div>

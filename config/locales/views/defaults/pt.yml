@@ -13,6 +13,8 @@ pt:
   icu-no-access: 'Sem acesso'
   icu-user: 'Utilizador'
   icu-superuser: 'Superutilizador'
+  r-no: 'Não'
+  r-yes: 'Sim'
 
   unauthorized:
     manage:
@@ -140,6 +142,47 @@ pt:
       at-average: 'Técnica depois razoável'
       at-good: 'Técnica depois boa'
 
+  tiss_evaluations:
+    new:
+      new-tiss-score: 'Nova avaliação TISS'
+      user-name: 'Utilizador'
+      evaluation-date: 'Data'
+      ba-q: 'Atividades básicas'
+      ba_q1: 'Monitorização padrão. Sinais Vitais horários, registros e cálculo regular do balanço hídrico.'
+      ba_q2: 'Laboratório. Investigações bioquímicas e microbiológicas.'
+      ba_q3: 'Medicação única. Endovenosa, intramuscular, subcutânea, e/ou oral / SNG.'
+      ba_q4: 'Medicações endovenosas múltiplas. Mais que uma droga.'
+      ba_q5: 'Troca de curativos de rotina. Cuidados e prevenção de úlceras de decúbito / troca diária de curativo.'
+      ba_q6: 'Trocas frequentes de curativos. Troca frequente de curativo (pelo menos uma vez por turno de enfermagem) e/ou cuidados com feridas extensas.'
+      ba_q7: 'Cuidados com drenos. Todos (excepto SNG).'
+      vs-q: 'Suporte ventilatório'
+      vs_q1: 'Ventilação mecânica. Qualquer forma de ventilação mecânica/ventilação assitida com ou sem PEEP. Com ou sem relaxantes musculares respiração espontânea com PEEP.'
+      vs_q2: 'Suporte ventilatório suplementar. Respiração espontânea através do tubo endotraqueal sem PEEP; O2 suplementar por qualquer método excepto aplicação de parâmetros de ventilação mecânica.'
+      vs_q3: 'Cuidados com vias aéreas artificiais. Tubo endotraqueal ou traqueostomia.'
+      vs_q4: 'Tratamento para melhora da função pulmunar. Fisioterapia torácica, espirometria estimulada, terapia de inalação, aspiração endotraqueal.'
+      cs-q: 'Suporte cardiovascular'
+      cs_q1: 'Medicação vasoativa única. Qualquer droga vasoativa.'
+      cs_q2: 'Medicação vasoativa múltipla. Mais que uma droga vasoativa independente do tipo e dose.'
+      cs_q3: 'Reposição de grandes perdas volêmicas. Administração de volume >3l/m2/d, independente do tipo.'
+      cs_q4: 'Cateter arterial periférico.'
+      cs_q5: 'Monitorização do átrio esquerdo. Cateter de artéria pulmunar com ou sem medida de débito cardíaco.'
+      cs_q6: 'Via venosa central.'
+      cs_q7: 'Ressuscitação cardiopulmunar (PCR nas últimas 24 horas).'
+      rs-q: 'Suporte renal'
+      rs_q1: 'Técnicas de hemofiltração. Técnicas dialíticas.'
+      rs_q2: 'Medida quantitativa do débito urinário (ex. SVD).'
+      rs_q3: 'Diurese ativa (ex. furosemida > 0,5 mg/Kg/dia).'
+      ns-q: 'Suporte neurológico'
+      ns_q1: 'Medida de Pressão Intracraniana.'
+      ms-q: 'Suporte metabólico'
+      ms_q1: 'Tratamento de acidose/alcalose metabólica complicada.'
+      ms_q2: 'Nutrição Parenteral Total endovenosa'
+      ms_q3: 'Nutrição enteral (ex. SNG) ou outra via como por ex. jejunostomia.'
+      si-q: 'Interveções específicas'
+      si_q1: 'Intervenção específica única na UTI. Intubação naso ou orotraqueal, introdução de marcapasso, cardioversão, cirurgia de emergência nas últimas 24h, lavagem gástrica, não estão incluídas intervenções de rotina sem consequências diretas para as condições do paciente, tais como RX, ecografias, ECG, curativos, introdução de cateter venoso central.'
+      si_q2: 'Intervenções específicas múltiplas na UTI. Mais que uma conforme descritas acima.'
+      si_q3: 'Intervenções específicas fora da UTI. Procedimentos diagnósticos ou cirurgicos.'
+
   shared:
     patient_data:
       dob: 'Data de nascimento'
@@ -159,6 +202,10 @@ pt:
       inhalers: 'Inaladores'
       new-inhaler-device: 'Novo inalador'
       patient-index: 'Ver todas as fichas'
+    tiss_evaluations_menu:
+      tiss-evaluation-options: 'Menu UCI'
+      new-tiss-evaluation: 'Novo score TISS28'
+
 
   pulmonary:
     appointments:
@@ -249,3 +296,8 @@ pt:
       hours: 'Horas'
       oxygen: 'O2'
       mask: 'Máscara'
+
+  icu:
+    tiss_evaluations:
+      tiss-evaluations: 'TISS28'
+      tiss-scores: 'Scores'

@@ -59,6 +59,10 @@ body {
 
 /* forms */
 
+form {
+  margin-bottom: 1em;
+}
+
 input, textarea, select, .uneditable-input {
   border: 1px solid $dark-gray;
   width: 100%;
@@ -70,8 +74,13 @@ input {
   height: auto !important;
 }
 
-form {
-  margin-bottom: 1em;
+.radio-inline {
+  position: relative;
+}
+
+.radio-inline-label {
+  position: relative;
+  left: 10px;
 }
 
 #error_explanation {
