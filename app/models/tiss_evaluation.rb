@@ -1,6 +1,7 @@
 class TissEvaluation < ApplicationRecord
   belongs_to :patient
   belongs_to :user
+  resourcify
 
   before_save :obtain_score
 
