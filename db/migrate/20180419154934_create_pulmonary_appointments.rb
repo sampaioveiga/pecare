@@ -13,6 +13,6 @@ class CreatePulmonaryAppointments < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :patients, [ :patient_id, :appointment_date]
+    add_index :pulmonary_appointments, [ :patient_id, :appointment_date]
   end
 end

@@ -1,6 +1,8 @@
-<li>
-  <span class="lead"><%= link_to patient.name, patient %></span>
-  <small><%= t('.npsonho') %></small> <strong><%= patient.npsonho %></strong>
-  <small><%= t('.rnu') %></small> <strong><%= patient.rnu %></strong>
-  <small><%= t('.dob') %></small> <strong><%= patient.date_of_birth %></strong>
+<li class="list-group-item">
+  <ul class="list-inline">
+  <li><span class="lead"><%= link_to patient.name, patient %></span></li>
+  <li><small><%= t('.npsonho') %></small> <strong><%= patient.npsonho %></strong></li>
+  <li><small><%= t('.rnu') %></small> <strong><%= patient.rnu %></strong></li>
+  <li><small><%= t('.dob') %></small> <strong><%= patient.date_of_birth %></strong></li>
+  </ul>
 </li>

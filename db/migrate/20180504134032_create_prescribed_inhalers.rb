@@ -9,5 +9,6 @@ class CreatePrescribedInhalers < ActiveRecord::Migration[5.1]
       
       t.timestamps
     end
+    add_index :prescribed_inhalers, [ :pulmonary_appointment_id, :id ]
   end
 end

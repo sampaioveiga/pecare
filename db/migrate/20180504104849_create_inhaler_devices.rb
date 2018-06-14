@@ -9,7 +9,7 @@ class CreateInhalerDevices < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :inhaler_devices, :inhaler_device_type
-    add_index :inhaler_devices, :active_ingredient_inn
+    add_index :inhaler_devices, [ :inhaler_device_type, :active_ingredient_inn ], name: 'by_inhaler_type_and_inn'
+    #add_index :inhaler_devices, :active_ingredient_inn
   end
 end

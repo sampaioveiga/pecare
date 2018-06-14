@@ -13,5 +13,6 @@ class CreateOxygenTherapyPrescriptions < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
+    add_index :oxygen_therapy_prescriptions, [ :pulmonary_appointment_id, :id ], name: 'by_appointment_o2'
   end
 end

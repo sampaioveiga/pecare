@@ -143,6 +143,9 @@ pt:
       at-good: 'Técnica depois boa'
 
   tiss_evaluations:
+    index:
+      tiss-index: 'Mapa de Scores'
+      15-day-stats: 'Estatísticas'
     new:
       new-tiss-score: 'Nova avaliação TISS'
       user-name: 'Utilizador'
@@ -205,6 +208,7 @@ pt:
     tiss_evaluations_menu:
       tiss-evaluation-options: 'Menu UCI'
       new-tiss-evaluation: 'Novo score TISS28'
+      tiss-index: 'Scores'
 
 
   pulmonary:

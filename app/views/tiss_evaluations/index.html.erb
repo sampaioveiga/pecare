@@ -1,0 +1,39 @@
+<% provide(:title, t('.tiss-index')) %>
+
+<aside class="col-md-3">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.15-day-stats') %></h4>
+    </div>
+    <div class="panel-body">
+      <p><%= t('.15-day-minimum') %> <%= @tiss.first.score %> - <%= @tiss.first.patient.name %></p>
+      <p><%= t('.15-day-maximum') %> <%= @tiss.last.score %> - <%= @tiss.last.patient.name %></p>
+
+    </div>
+  </div>
+</aside>
+
+<div class="col-md-9">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.tiss-index') %> - <%= l(Date.yesterday) %></h4>
+    </div>
+    <div class="panel-body">
+      <ul class="list-group">
+        <% @patients.each do |patient| %>
+          <li class="list-group-item">
+            <ul class="list-inline">
+              <li><span class="lead"><%= link_to patient.name, patient_path(patient) %></span></li>
+              <% patient.tiss_evaluations.order(evaluation_date: :ASC).last(3).each do |tiss| %>
+                <li><small><%= tiss.evaluation_date %>:</small> <strong><%= tiss.score %></strong></li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+      <%= line_chart @patients.map { |patient|
+        { name: patient.name, data: patient.tiss_evaluations.group_by_day(:evaluation_date, range: 2.weeks.ago.midnight..Time.now, series: false).sum(:score) }
+      }, download: 'tiss_15_days' %>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,6 @@ class CreateInhalerDeviceTypes < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :inhaler_device_types, :inhaler_type_name
+    add_index :inhaler_device_types, :inhaler_type_name, unique: true
   end
 end

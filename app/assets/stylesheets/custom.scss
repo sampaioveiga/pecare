@@ -3,6 +3,7 @@
 
 /* Variables, mixims */
 $logo-color: gray;
+$lightest-gray: #eee;
 $light-gray: lightgray;
 $dark-gray: darkgrey;
 $darker-gray: dimgray;
@@ -81,6 +82,10 @@ input {
 .radio-inline-label {
   position: relative;
   left: 10px;
+}
+
+.underline {
+  border-bottom: 1px solid $lightest-gray;
 }
 
 #error_explanation {

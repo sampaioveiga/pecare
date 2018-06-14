@@ -4,5 +4,6 @@
   </a>
   <ul class="dropdown-menu">
     <li role="presentation"><%= link_to t('.new-tiss-evaluation'), new_patient_tiss_evaluation_path(@patient) %></li>
+    <li role="presentation"><%= link_to "#{t('.tiss-index')} #{l(Date.yesterday)}", tiss_evaluations_path() %></li>
   </ul>
 </li>

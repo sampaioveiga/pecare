@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180605102125) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "departments", force: :cascade do |t|
     t.string "department_name", null: false
     t.datetime "created_at", null: false
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 20180605102125) do
     t.string "inhaler_type_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["inhaler_type_name"], name: "index_inhaler_device_types_on_inhaler_type_name"
+    t.index ["inhaler_type_name"], name: "index_inhaler_device_types_on_inhaler_type_name", unique: true
   end
 
   create_table "inhaler_devices", force: :cascade do |t|
@@ -34,12 +37,11 @@ ActiveRecord::Schema.define(version: 20180605102125) do
     t.boolean "active", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["active_ingredient_inn"], name: "index_inhaler_devices_on_active_ingredient_inn"
-    t.index ["inhaler_device_type"], name: "index_inhaler_devices_on_inhaler_device_type"
+    t.index ["inhaler_device_type", "active_ingredient_inn"], name: "by_inhaler_type_and_inn"
   end
 
   create_table "niv_prescriptions", force: :cascade do |t|
-    t.integer "pulmonary_appointment_id"
+    t.bigint "pulmonary_appointment_id"
     t.string "bipap"
     t.string "ipap"
     t.string "epap"
@@ -50,6 +52,7 @@ ActiveRecord::Schema.define(version: 20180605102125) do
     t.string "mask"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pulmonary_appointment_id", "id"], name: "index_niv_prescriptions_on_pulmonary_appointment_id_and_id"
     t.index ["pulmonary_appointment_id"], name: "index_niv_prescriptions_on_pulmonary_appointment_id"
   end
 
@@ -61,7 +64,7 @@ ActiveRecord::Schema.define(version: 20180605102125) do
   end
 
   create_table "oxygen_therapy_prescriptions", force: :cascade do |t|
-    t.integer "pulmonary_appointment_id"
+    t.bigint "pulmonary_appointment_id"
     t.string "oxygen_therapy_supplier"
     t.integer "flow"
     t.integer "number_hours"
@@ -72,6 +75,7 @@ ActiveRecord::Schema.define(version: 20180605102125) do
     t.boolean "portable_oxygen_concentrator", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["pulmonary_appointment_id", "id"], name: "by_appointment_o2"
     t.index ["pulmonary_appointment_id"], name: "index_oxygen_therapy_prescriptions_on_pulmonary_appointment_id"
   end
 
@@ -92,19 +96,18 @@ ActiveRecord::Schema.define(version: 20180605102125) do
     t.index ["name"], name: "index_patients_on_name"
     t.index ["npsonho"], name: "index_patients_on_npsonho", unique: true
     t.index ["rnu"], name: "index_patients_on_rnu", unique: true
-    t.index [nil, nil], name: "index_patients_on_patient_id_and_appointment_date"
-    t.index [nil, nil], name: "index_patients_on_patient_id_and_evaluation_date"
   end
 
   create_table "prescribed_inhalers", force: :cascade do |t|
-    t.integer "pulmonary_appointment_id"
-    t.integer "inhaler_device_id"
+    t.bigint "pulmonary_appointment_id"
+    t.bigint "inhaler_device_id"
     t.integer "before_technic"
     t.integer "after_technic"
     t.text "observation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["inhaler_device_id"], name: "index_prescribed_inhalers_on_inhaler_device_id"
+    t.index ["pulmonary_appointment_id", "id"], name: "index_prescribed_inhalers_on_pulmonary_appointment_id_and_id"
     t.index ["pulmonary_appointment_id"], name: "index_prescribed_inhalers_on_pulmonary_appointment_id"
   end
 
@@ -117,10 +120,11 @@ ActiveRecord::Schema.define(version: 20180605102125) do
     t.integer "pef"
     t.boolean "inhaler", default: false
     t.text "medication"
-    t.integer "patient_id"
+    t.bigint "patient_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
+    t.bigint "user_id"
+    t.index ["patient_id", "appointment_date"], name: "index_pulmonary_appointments_on_patient_id_and_appointment_date"
     t.index ["patient_id"], name: "index_pulmonary_appointments_on_patient_id"
     t.index ["user_id"], name: "index_pulmonary_appointments_on_user_id"
   end
@@ -128,7 +132,7 @@ ActiveRecord::Schema.define(version: 20180605102125) do
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.string "resource_type"
-    t.integer "resource_id"
+    t.bigint "resource_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
@@ -167,10 +171,11 @@ ActiveRecord::Schema.define(version: 20180605102125) do
     t.integer "si_q1", null: false
     t.integer "si_q2", null: false
     t.integer "si_q3", null: false
-    t.integer "patient_id"
-    t.integer "user_id"
+    t.bigint "patient_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["patient_id", "evaluation_date"], name: "index_tiss_evaluations_on_patient_id_and_evaluation_date"
     t.index ["patient_id"], name: "index_tiss_evaluations_on_patient_id"
     t.index ["user_id"], name: "index_tiss_evaluations_on_user_id"
   end
@@ -200,8 +205,8 @@ ActiveRecord::Schema.define(version: 20180605102125) do
     t.datetime "locked_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "office_location_id"
-    t.integer "department_id"
+    t.bigint "office_location_id"
+    t.bigint "department_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["department_id"], name: "index_users_on_department_id"
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -213,11 +218,21 @@ ActiveRecord::Schema.define(version: 20180605102125) do
   end
 
   create_table "users_roles", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "role_id"
+    t.bigint "user_id"
+    t.bigint "role_id"
     t.index ["role_id"], name: "index_users_roles_on_role_id"
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id"
     t.index ["user_id"], name: "index_users_roles_on_user_id"
   end
 
+  add_foreign_key "niv_prescriptions", "pulmonary_appointments"
+  add_foreign_key "oxygen_therapy_prescriptions", "pulmonary_appointments"
+  add_foreign_key "prescribed_inhalers", "inhaler_devices"
+  add_foreign_key "prescribed_inhalers", "pulmonary_appointments"
+  add_foreign_key "pulmonary_appointments", "patients"
+  add_foreign_key "pulmonary_appointments", "users"
+  add_foreign_key "tiss_evaluations", "patients"
+  add_foreign_key "tiss_evaluations", "users"
+  add_foreign_key "users", "departments"
+  add_foreign_key "users", "office_locations"
 end

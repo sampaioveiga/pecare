@@ -10,7 +10,11 @@ class TissEvaluation < ApplicationRecord
     presence: true,
     uniqueness: { scope: [:patient_id], message: "already-has-evaluation" }
 
+  scope :yesterday, -> { where(evaluation_date: Date.yesterday) }
+  scope :fifteen_days, -> { where('evaluation_date > ?', Date.today - 15.days ) }
+
   private
+
     def obtain_score
       self.score =
         self.ba_q1 + 

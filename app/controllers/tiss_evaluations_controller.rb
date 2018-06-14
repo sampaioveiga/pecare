@@ -1,8 +1,12 @@
 class TissEvaluationsController < ApplicationController
   before_action :authenticate_user!
-  #before_action :set_pulmonary_appointement, only: [ :show, :edit, :update, :destroy ]
   before_action :load_patient, only: [ :new, :create ]
   load_and_authorize_resource
+
+  def index
+    @patients = Patient.joins(:tiss_evaluations).merge(TissEvaluation.yesterday).order(:name)
+    @tiss = TissEvaluation.fifteen_days.order(score: :ASC).includes(:patient)
+  end
 
   def new
     @tiss_evaluation = @patient.tiss_evaluations.new(

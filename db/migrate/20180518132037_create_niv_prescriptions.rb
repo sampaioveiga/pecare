@@ -13,5 +13,6 @@ class CreateNivPrescriptions < ActiveRecord::Migration[5.1]
       
       t.timestamps
     end
+    add_index :niv_prescriptions, [ :pulmonary_appointment_id, :id ]
   end
 end

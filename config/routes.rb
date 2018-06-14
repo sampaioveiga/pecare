@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :tiss_evaluations, only: [ :new, :create ]
   end
   resources :pulmonary_appointments, only: [ :show, :edit, :update, :destroy ]
-  resources :tiss_evaluations, only: [ :show, :edit, :update, :destroy ]
+  resources :tiss_evaluations, only: [ :index ]
 
   namespace :pulmonary do
     resources :inhaler_device_types, except: [ :destroy ]

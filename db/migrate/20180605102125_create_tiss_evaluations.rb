@@ -51,6 +51,6 @@ class CreateTissEvaluations < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :patients, [ :patient_id, :evaluation_date ]
+    add_index :tiss_evaluations, [ :patient_id, :evaluation_date ]
   end
 end
