@@ -9,6 +9,7 @@ $dark-gray: darkgrey;
 $darker-gray: dimgray;
 $darkest-gray: #444;
 $error-color: red;
+$white: #ffffff;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -124,11 +125,23 @@ input {
 
 /* Footer */
 
-footer {
+.footer {
   border-top: 1px solid $darkest-gray;
+  color: $light-gray;
   small {
     float: right;
+    margin-right: 1em;
   }
+  a {
+    color: $white;
+  }
+  /*ul {
+    float: left;
+    list-style: none;
+    li {
+      float: right;
+    }
+  }*/
 }
 
 /* Debug div */

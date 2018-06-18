@@ -11,10 +11,10 @@ class Patient < ApplicationRecord
     presence: true,
     uniqueness: true,
     numericality: { only_integer: true },
-    length: { is: 9 }
+    length: { in: 6..9 }
   validates :npsonho,
     presence: true,
     uniqueness: true,
     numericality: { only_integer: true },
-    length: { is: 6 }
+    length: { in: 4..6 }
 end

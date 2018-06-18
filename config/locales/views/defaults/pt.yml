@@ -144,8 +144,12 @@ pt:
 
   tiss_evaluations:
     index:
-      tiss-index: 'Mapa de Scores'
-      15-day-stats: 'Estatísticas'
+      tiss-index: 'Mapa TISS'
+      yesterday-scores: 'Evolução dos Scores'
+      15-day-map: 'Mapa quinzenal'
+      15-day-stats: 'Estatística quizenal'
+      15-day-minimum: 'Mínima quinzenal'
+      15-day-maximum: 'Máxima quinzenal'
     new:
       new-tiss-score: 'Nova avaliação TISS'
       user-name: 'Utilizador'
@@ -208,7 +212,7 @@ pt:
     tiss_evaluations_menu:
       tiss-evaluation-options: 'Menu UCI'
       new-tiss-evaluation: 'Novo score TISS28'
-      tiss-index: 'Scores'
+      tiss-index: 'Mapa de Scores'
 
 
   pulmonary:

@@ -6,9 +6,12 @@
       <h4><%= t('.15-day-stats') %></h4>
     </div>
     <div class="panel-body">
-      <p><%= t('.15-day-minimum') %> <%= @tiss.first.score %> - <%= @tiss.first.patient.name %></p>
-      <p><%= t('.15-day-maximum') %> <%= @tiss.last.score %> - <%= @tiss.last.patient.name %></p>
-
+      <dl>
+        <dt><%= t('.15-day-minimum') %></dt>
+        <dd><%= @tiss.first.score %> - <%= link_to @tiss.first.patient.name, patient_path(@tiss.first.patient) %></dd>
+        <dt><%= t('.15-day-maximum') %></dt>
+        <dd><%= @tiss.last.score %> - <%= link_to @tiss.last.patient.name, patient_path(@tiss.last.patient) %></dd>
+      </dl>
     </div>
   </div>
 </aside>
@@ -16,7 +19,7 @@
 <div class="col-md-9">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4><%= t('.tiss-index') %> - <%= l(Date.yesterday) %></h4>
+      <h4><%= t('.yesterday-scores') %> - <%= l(Date.yesterday) %></h4>
     </div>
     <div class="panel-body">
       <ul class="list-group">
@@ -31,8 +34,15 @@
           </li>
         <% end %>
       </ul>
-      <%= line_chart @patients.map { |patient|
-        { name: patient.name, data: patient.tiss_evaluations.group_by_day(:evaluation_date, range: 2.weeks.ago.midnight..Time.now, series: false).sum(:score) }
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4><%= t('.15-day-map') %></h4>
+    </div>
+    <div class="panel-body">
+      <%= line_chart @patients_graph.map { |patient|
+        { name: patient.name, data: patient.tiss_evaluations.group_by_day(:evaluation_date, range: 15.days.ago..Time.now, series: false).sum(:score) }
       }, download: 'tiss_15_days' %>
     </div>
   </div>

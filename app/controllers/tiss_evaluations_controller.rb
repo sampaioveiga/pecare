@@ -6,6 +6,7 @@ class TissEvaluationsController < ApplicationController
   def index
     @patients = Patient.joins(:tiss_evaluations).merge(TissEvaluation.yesterday).order(:name)
     @tiss = TissEvaluation.fifteen_days.order(score: :ASC).includes(:patient)
+    @patients_graph = Patient.joins(:tiss_evaluations).merge(TissEvaluation.fifteen_days).order(:name).uniq
   end
 
   def new

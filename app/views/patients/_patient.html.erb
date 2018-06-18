@@ -3,6 +3,6 @@
   <li><span class="lead"><%= link_to patient.name, patient %></span></li>
   <li><small><%= t('.npsonho') %></small> <strong><%= patient.npsonho %></strong></li>
   <li><small><%= t('.rnu') %></small> <strong><%= patient.rnu %></strong></li>
-  <li><small><%= t('.dob') %></small> <strong><%= patient.date_of_birth %></strong></li>
+  <li><small><%= t('.dob') %></small> <strong><%= l(patient.date_of_birth) %></strong></li>
   </ul>
 </li>
