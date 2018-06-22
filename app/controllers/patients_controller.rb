@@ -4,7 +4,7 @@ class PatientsController < ApplicationController
   load_and_authorize_resource
 
   def show
-    @pulmonary_appointments = @patient.pulmonary_appointments.includes(:prescribed_inhalers, :inhaler_devices)
+    @pulmonary_appointments = @patient.pulmonary_appointments.includes(:prescribed_inhalers)
     @tiss_evaluations = @patient.tiss_evaluations
   end
 
