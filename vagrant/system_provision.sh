@@ -9,7 +9,7 @@ apt-get install -y open-vm-tools && apt-get install -y linux-image-virtual
 
 # nodeJS
 cd /tmp
-curl -sL https://deb.nodesource.com/setup_9.x | bash -
+curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get install -y nodejs
 
 # postgreSQL
