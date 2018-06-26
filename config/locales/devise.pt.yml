@@ -29,7 +29,7 @@ pt:
         employee_id: 'Número mecanográfico'
         email: 'E-mail'
         password: 'Senha'
-        remember-me: 'Não expirar sessão'
+        remember-me: 'Manter sessão ativa'
       signed_in: 'Autenticação efetuada com sucesso.'
       signed_out: 'Saiu da sessão com sucesso.'
     passwords:

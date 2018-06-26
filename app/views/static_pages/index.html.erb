@@ -1,16 +1,12 @@
-<% provide(:title, "Início") %>
+<% provide(:title, t(".index")) %>
 
-<div class="col-md-9 col-md-offset-3">
+<div class="col-md-8 col-md-offset-2">
   <div class="panel panel-default">
-    <div class="panel-heading">
-      <h1>Content</h1>
-    </div>
     <div class="panel-body">
-      <h2>  
-        <%= link_to 'Patients', patients_path() %><br />
-        <%= link_to 'New patient', new_patient_path() %><br />
-        <%= link_to 'Patient 1', patient_path(1) if Patient.count > 0 %>
-      </h2>
+      <div class="jumbotron">
+        <h1>PeCARE</h1>
+        <h2>Cuidados de saúde integrados - Medicina ao serviço dos doentes</h2>
+      </div>
     </div>
   </div>
 </div>

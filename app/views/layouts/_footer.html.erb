@@ -2,4 +2,11 @@
   <small>
     PeCARE | <a href="mailto:miguel.veiga@ulsne.min-saude.pt">Miguel Sampaio da Veiga</a> | 2018
   </small>
+  <nav>
+    <ul class="list-unstyled">
+      <li>
+        <%= "#{t('.version')} #{Git::REVISION} @ #{Rails.env}" %>
+      </li>
+    </ul>
+  </nav>
 </footer>

@@ -25,6 +25,12 @@ pt:
       help: 'Ajuda'
       log-in: 'Entrar'
       log-out: 'Sair'
+    footer:
+      version: 'Versão'
+
+  static_pages:
+    index:
+      index: 'Início'
 
   patients:
     show:
