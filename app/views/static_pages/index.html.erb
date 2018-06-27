@@ -6,6 +6,7 @@
       <div class="jumbotron">
         <h1>PeCARE</h1>
         <h2>Cuidados de saúde integrados - Medicina ao serviço dos doentes</h2>
+        <%= link_to t('.patients'), patients_path(), class: 'btn btn-lg btn-block btn-primary' if current_user %>
       </div>
     </div>
   </div>

@@ -31,6 +31,7 @@ pt:
   static_pages:
     index:
       index: 'Início'
+      patients: 'Lista de utentes'
 
   patients:
     show:
