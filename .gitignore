@@ -35,3 +35,6 @@ Gemfile.lock
 
 # Log files (if you are creating logs in debug mode, uncomment this)
 *.logs
+
+# ignore mail initializer
+/config/initializers/setup_mail.rb
