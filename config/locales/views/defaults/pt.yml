@@ -32,6 +32,8 @@ pt:
     index:
       index: 'Início'
       patients: 'Lista de utentes'
+    help:
+      about: 'Acerca'
 
   patients:
     show:
