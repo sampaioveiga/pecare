@@ -159,6 +159,7 @@ pt:
       15-day-stats: 'Estatística quizenal'
       15-day-minimum: 'Mínima quinzenal'
       15-day-maximum: 'Máxima quinzenal'
+    no-tiss-evaluations: 'Não há avaliações recentes para mostrar'
     new:
       new-tiss-score: 'Nova avaliação TISS'
       user-name: 'Utilizador'
