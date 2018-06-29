@@ -16,6 +16,4 @@
 //= require turbolinks
 //= require cocoon
 //= require d3
-//= require Chart.bundle
-//= require chartkick
 //= require_tree .
