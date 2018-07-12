@@ -15,6 +15,11 @@ pt:
   icu-superuser: 'Superutilizador'
   r-no: 'Não'
   r-yes: 'Sim'
+  pulmonary-appointment-options: 'Menu pneumologia'
+  new-patient-pulmonary-appointment: 'Nova consulta'
+  device-types: 'Tipos de dispositivos'
+  inhalers: 'Inaladores'
+  suppliers: 'Fornecedores'
 
   unauthorized:
     manage:
@@ -205,12 +210,6 @@ pt:
       dob: 'Data de nascimento'
       age: 'Idade'
       npsonho: 'Processo'
-    pulmonary_appointments_menu:
-      pulmonary-appointment-options: 'Menu pneumologia'
-      new-patient-pulmonary-appointment: 'Nova consulta'
-      device-types: 'Tipos de dispositivos'
-      inhalers: 'Inaladores'
-      suppliers: 'Fornecedores'
     pulmonary_menu:
       oxygen-therapy-suppliers: 'Fornecedores'
       new-oxygen-therapy-supplier: 'Novo fornecedor'

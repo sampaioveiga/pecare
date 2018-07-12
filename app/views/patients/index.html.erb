@@ -9,6 +9,20 @@
     <div class="panel-body">
       <div>
         <%= render 'search-patients' %>
+        <% if can? (:manage), PulmonaryAppointment %>
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation" class="dropdown active">
+            <a class="dropdown-toggle btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <%= t('pulmonary-appointment-options') %> <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('suppliers'), pulmonary_oxygen_therapy_suppliers_path %></li>
+              <li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('inhalers'), pulmonary_inhaler_devices_path %></li>
+              <li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('device-types'), pulmonary_inhaler_device_types_path %></li>
+            </ul>
+          </li>
+        </ul>
+        <% end %>
       </div>
     </div>
   </div>
