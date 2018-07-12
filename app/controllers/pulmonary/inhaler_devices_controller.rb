@@ -4,7 +4,7 @@ class Pulmonary::InhalerDevicesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @inhaler_devices = InhalerDevice.order(inhaler_device_type: :asc ,active_ingredient_inn: :asc)
+    @inhaler_devices = InhalerDevice.order(inhaler_device_type: :asc, active_ingredient_inn: :asc, active_ingredient_trade_name: :asc, medicine_dosage: :asc)
   end
 
   def show
