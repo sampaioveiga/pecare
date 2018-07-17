@@ -18,6 +18,7 @@ class PatientsController < ApplicationController
       )
       render(:new)
     else
+      @tiss_evaluations = @patient.tiss_evaluations
       render(:show)
     end
   end
