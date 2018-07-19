@@ -1,10 +1,9 @@
-<li role="presentation" class="dropdown active">
-  <a class="dropdown-toggle btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+<li role="presentation"><%= link_to t('new-patient-pulmonary-appointment'), new_patient_pulmonary_appointment_path(@patient) %></li>
+<li role="presentation" class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="" aria-haspopup="true" aria-expanded="false">
     <%= t('pulmonary-appointment-options') %> <span class="caret"></span>
   </a>
   <ul class="dropdown-menu">
-    <li role="presentation"><%= link_to t('new-patient-pulmonary-appointment'), new_patient_pulmonary_appointment_path(@patient) %></li>
-    <li role="separator" class="divider"></li>
     <li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('suppliers'), pulmonary_oxygen_therapy_suppliers_path %></li>
     <li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('inhalers'), pulmonary_inhaler_devices_path %></li>
     <li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('device-types'), pulmonary_inhaler_device_types_path %></li>

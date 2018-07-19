@@ -16,10 +16,11 @@ pt:
   r-no: 'Não'
   r-yes: 'Sim'
   pulmonary-appointment-options: 'Menu pneumologia'
-  new-patient-pulmonary-appointment: 'Nova consulta'
+  new-patient-pulmonary-appointment: 'Adicionar dispositivo'
   device-types: 'Tipos de dispositivos'
   inhalers: 'Inaladores'
   suppliers: 'Fornecedores'
+  tiss-index: 'Mapa quinzenal TISS'
 
   unauthorized:
     manage:
@@ -45,6 +46,7 @@ pt:
       edit-patient-link: 'Editar ficha'
       patient-index: 'Ver todas as fichas'
       new-patient-pulmonary-appointment: 'Nova consulta pneumologia'
+      patient-menu: 'Menu utente'
     search-patients:
       name-contains: 'Procurar por nome'
       search: 'Procurar'
@@ -158,7 +160,6 @@ pt:
 
   tiss_evaluations:
     index:
-      tiss-index: 'Mapa TISS'
       yesterday-scores: 'Evolução dos Scores'
       15-day-map: 'Mapa quinzenal'
       15-day-stats: 'Estatística quizenal'

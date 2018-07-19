@@ -1,7 +1,32 @@
-<li role="presentation" class=<%= 'active' if current_page?(pulmonary_oxygen_therapy_suppliers_path) %>><%= link_to t('.oxygen-therapy-suppliers'), pulmonary_oxygen_therapy_suppliers_path, class: 'btn btn-default' %></li>
-<li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_oxygen_therapy_suppliers_path) %>><%= link_to t('.new-oxygen-therapy-supplier'), new_pulmonary_oxygen_therapy_supplier_path, class: 'btn btn-default' %></li>
-<li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('.inhalers'), pulmonary_inhaler_devices_path, class: 'btn btn-default' %></li>
-<li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('.new-inhaler-device'), new_pulmonary_inhaler_device_path, class: 'btn btn-default' %></li>
-<li role="presentation" class=<%= 'active' if current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('.device-types'), pulmonary_inhaler_device_types_path, class: 'btn btn-default' %></li>
-<li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('.new-inhaler-device-type'), new_pulmonary_inhaler_device_type_path, class: 'btn btn-default' %></li>
-<li role="presentation"><%= link_to t('.patient-index'), patients_path, class: 'btn btn-default' %></li>
+<li role="presentation" class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+    <%= t('.oxygen-therapy-suppliers') %> <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li role="presentation"><%= link_to t('.oxygen-therapy-suppliers'), pulmonary_oxygen_therapy_suppliers_path %></li>
+    <li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_oxygen_therapy_suppliers_path) %>><%= link_to t('.new-oxygen-therapy-supplier'), new_pulmonary_oxygen_therapy_supplier_path %></li>
+  </ul>
+</li>
+
+<li role="presentation" class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+    <%= t('.inhalers') %> <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li role="presentation"><%= link_to t('.inhalers'), pulmonary_inhaler_devices_path %></li>
+    <li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_inhaler_devices_path) %>><%= link_to t('.new-inhaler-device'), new_pulmonary_inhaler_device_path %></li>
+  </ul>
+</li>
+
+
+<li role="presentation" class="dropdown">
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+    <%= t('.device-types') %> <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li role="presentation"><%= link_to t('.device-types'), pulmonary_inhaler_device_types_path %></li>
+    <li role="presentation" class=<%= 'disabled' unless current_page?(pulmonary_inhaler_device_types_path) %>><%= link_to t('.new-inhaler-device-type'), new_pulmonary_inhaler_device_type_path %></li>
+  </ul>
+</li>
+
+<li role="presentation"><%= link_to t('back'), :back %></li>
