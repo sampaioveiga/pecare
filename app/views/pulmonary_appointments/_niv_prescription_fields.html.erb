@@ -1,63 +1,74 @@
 <div class="nested-fields">
   <div class="well">
 
-    <div class="col-md-6">
-      <div class="field">
-        <%= f.label :bipap, t('.bipap') %>
-        <%= f.select :bipap, options_for_select([[t(".bipap"),"BIPAP"], [t(".bipap-auto"),"BIPAP Auto"]], f.object.bipap), { include_blank: true }, class: 'form-control'  %>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="field">
+          <%= f.label :bipap, t('.bipap') %>
+          <%= f.select :bipap, options_for_select([[t(".bipap"),"BIPAP"], [t(".bipap-auto"),"BIPAP Auto"]], f.object.bipap), { include_blank: true }, class: 'form-control'  %>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="field">
+          <%= f.label :ipap, t('.ipap') %>
+          <%= f.text_field :ipap, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-3">  
+        <div class="field">
+          <%= f.label :epap, t('.epap') %>
+          <%= f.text_field :epap, class: 'form-control' %>
+        </div>
       </div>
     </div>
 
-    <div class="col-md-3">
-      <div class="field">
-        <%= f.label :ipap, t('.ipap') %>
-        <%= f.text_field :ipap, class: 'form-control' %>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="field">
+          <%= f.label :cpap, t('.cpap') %>
+          <%= f.select :cpap, options_for_select([[t(".cpap"),"CPAP"], [t(".cpap-auto"),"CPAP Auto"]], f.object.cpap), { include_blank: true }, class: 'form-control'  %>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="field">
+          <%= f.label :pressure, t('.pressure') %>
+          <%= f.text_field :pressure, class: 'form-control' %>
+        </div>
       </div>
     </div>
 
-    <div class="col-md-3">  
-      <div class="field">
-        <%= f.label :epap, t('.epap') %>
-        <%= f.text_field :epap, class: 'form-control' %>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="field">
+          <%= f.label :hours, t('.hours') %>
+          <%= f.text_field :hours, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="field">
+          <%= f.label :oxygen, t('.oxygen') %>
+          <%= f.text_field :oxygen, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="field">
+          <%= f.label :mask, t('.mask') %>
+          <%= f.select :mask, options_for_select([[t(".nose"),"Nasal"], [t(".face"),"Facial"]], f.object.mask), { include_blank: true }, class: 'form-control'  %>
+        </div>
       </div>
     </div>
 
-    <div class="col-md-6">
-      <div class="field">
-        <%= f.label :cpap, t('.cpap') %>
-        <%= f.select :cpap, options_for_select([[t(".cpap"),"CPAP"], [t(".cpap-auto"),"CPAP Auto"]], f.object.cpap), { include_blank: true }, class: 'form-control'  %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="actions">
+          <%= link_to_remove_association t('.remove-niv'), f, class: 'btn btn-danger' %>
+        </div>
       </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="field">
-        <%= f.label :pressure, t('.pressure') %>
-        <%= f.text_field :pressure, class: 'form-control' %>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="field">
-        <%= f.label :hours, t('.hours') %>
-        <%= f.text_field :hours, class: 'form-control' %>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="field">
-        <%= f.label :oxygen, t('.oxygen') %>
-        <%= f.text_field :oxygen, class: 'form-control' %>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="field">
-        <%= f.label :mask, t('.mask') %>
-        <%= f.select :mask, options_for_select([[t(".nose"),"Nasal"], [t(".face"),"Facial"]], f.object.mask), { include_blank: true }, class: 'form-control'  %>
-      </div>
-    </div>
-    <div class="actions">
-      <%= link_to_remove_association t('.remove-niv'), f, class: 'btn btn-danger' %>
     </div>
   </div>
 </div>
