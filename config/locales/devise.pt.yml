@@ -37,6 +37,12 @@ pt:
         forgot-password: 'Recuperar senha'
         email: 'E-mail'
         send-me-reset-password-instructions: 'Submeter'
+      edit:
+        change-password: 'Mudar a senha'
+        new-password: 'Nova senha'
+        confirm-new-password: 'Confirmação'
+        characters-minimum: 'caracteres no mínimo'
+        change-my-password: 'Alterar senha'
       send_instructions: 'Dentro de alguns minutos irá receber um e-mail com instruções de reinicialização da palavra-passe.'
       updated: 'A sua palavra-passe foi alterada com sucesso. Agora está autenticado.'
       updated_not_active: 'A sua palavra-passe foi alterada com sucesso.'
@@ -103,10 +109,23 @@ pt:
     mailer:
       confirmation_instructions:
         subject: 'Instruções de confirmação'
+        welcome: 'Bemvindo'
+        you-can-confirm-your-account-email-through-the-link-below: 'Pode confirmar a sua conta através da ligação abaixo'
+        confirm-my-account: 'Confirmar a minha conta'
       reset_password_instructions:
         subject: 'Instruções de recuperação da palavra-passe'
+        hello: 'Olá'
+        someone-has-requested-a-link-to-change-your-password-you-can-do-this-through-the-link-below: 'Pode mudar a sua senha usando a ligação abaixo'
+        change-my-password: 'Alterar a senha'
+        if-you-didnt-request-this-please-ignore-this-email: 'Se não pediu a mudança da senha ignore este email'
+        your-password-wont-change-until-you-access-the-link-above-and-create-a-new-one: 'A senha não será alterada até usar a ligação enviada'
       unlock_instructions:
         subject: 'Instruções de desbloqueio'
+        hello: 'Olá'
+        your-account-has-been-locked-due-to-an-excessive-number-of-unsuccessful-sign-in-attempts: 'A sua conta foi bloqueada por excessivas tentativas falhadas'
+        click-the-link-below-to-unlock-your-account: 'Use a ligação abaixo para desbloquear a conta'
+        unlock-my-account: 'Desbloquear conta'
+
     shared:
       links:
         log-in: 'Entrar'

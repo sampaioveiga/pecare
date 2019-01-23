@@ -9,8 +9,8 @@
 </div>
 <div class="col-md-9">
   <div class="panel panel-default">
-    <div class="panel-heaading">
-      <h4>t(".change-password")</h4>
+    <div class="panel-heading">
+      <h4><%= t(".change-password") %></h4>
     </div>
     <div class="panel-body">
 
@@ -19,20 +19,20 @@
         <%= f.hidden_field :reset_password_token %>
 
         <div class="field">
-          <%= f.label :password, "New password" %><br />
+          <%= f.label :password, t(".new-password") %>
           <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+            <em>(<%= @minimum_password_length %> <%= t(".characters-minimum")%>)</em>
           <% end %>
-          <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
+          <%= f.password_field :password, autofocus: true, autocomplete: "off", class: 'form-control' %>
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation, "Confirm new password" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+          <%= f.label :password_confirmation, t(".confirm-new-password") %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
         </div>
 
-        <div class="actions">
-          <%= f.submit "Change my password" %>
+        <div class="actions col-md-2">
+          <%= f.submit t(".change-my-password"), class: 'btn btn-success' %>
         </div>
       <% end %>
     </div>

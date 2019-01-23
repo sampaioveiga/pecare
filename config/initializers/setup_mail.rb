@@ -1,5 +1,5 @@
 ActionMailer::Base.raise_delivery_errors = false
 ActionMailer::Base.smtp_settings = {  
-	address:              '0.0.0.0',
+	address:              '192.168.1.218',
 	enable_starttls_auto: false,
 }
